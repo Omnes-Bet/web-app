@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import CheckoutForm from "../../components/checkoutForm/CheckoutForm";
+import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
