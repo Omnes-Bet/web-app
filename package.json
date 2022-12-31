@@ -1,0 +1,34 @@
+{
+  "name": "omnes-bet-webapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@date-io/jalaali": "^2.16.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.2",
+    "@mui/styles": "^5.11.2",
+    "@mui/x-date-pickers": "^5.0.12",
+    "@next/font": "13.1.1",
+    "@stripe/react-stripe-js": "^1.16.1",
+    "@stripe/stripe-js": "^1.46.0",
+    "axios": "^1.2.1",
+    "date-fns": "^2.29.3",
+    "dayjs": "^1.11.7",
+    "moment": "^2.29.4",
+    "moment-jalaali": "^0.9.6",
+    "next": "13.1.1",
+    "nookies": "^2.5.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.41.1",
+    "stripe": "^11.5.0"
+  }
+}
