@@ -4,7 +4,7 @@ import { parseCookies } from "nookies";
 const { 'nextauth.token': token } = parseCookies();
 
 const Provider = axios.create({
-    baseURL: `http://localhost:3002/v1`,
+    baseURL: `https://omnes-api.herokuapp.com/v1`,
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'

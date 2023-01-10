@@ -22,7 +22,7 @@ function CheckoutForm({ plandId, planName }) {
       });
 
       const response = await fetch(
-        "http://localhost:3002/v1/create-subscription",
+        "https://omnes-api.herokuapp.com/v1/create-subscription",
         {
           method: "POST",
           headers: {
