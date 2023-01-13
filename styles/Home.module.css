@@ -7,6 +7,13 @@
   min-height: 100vh;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 6rem;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;

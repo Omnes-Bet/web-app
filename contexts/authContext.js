@@ -7,7 +7,7 @@ export const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const { registerUser, getUser, getUserInfo } = useAuth();
+  const { registerUser, getUser, getUserInfo, isLoading } = useAuth();
 
   const isAuthenticated = !!user;
 
@@ -87,7 +87,7 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, isAuthenticated, signup, signin, logout }}
+      value={{ user, isAuthenticated, signup, signin, logout, isLoading }}
     >
       {children}
     </AuthContext.Provider>

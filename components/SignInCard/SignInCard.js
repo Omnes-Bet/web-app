@@ -7,17 +7,18 @@ import {
   TextField,
   Box,
   Button,
-  FormControl
+  CircularProgress,
+  Modal,
 } from "@mui/material";
-import useAuth from "../../hooks/useAuth";
 import { AuthContext } from "../../contexts/authContext";
 
 const SignInCard = () => {
-
-  // const { getUser } = useAuth();
-  const { signin } = useContext(AuthContext)
+  const { signin, isLoading } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
     const credentials = {
@@ -28,23 +29,27 @@ const SignInCard = () => {
     await signin(credentials);
   };
 
-  // useEffect(() => {
-  //   const payload = handleSubmit();
-
-  //   if (payload?.email.length > 0) {
-  //     getUser(payload)
-  //     .then(() => {
-  //       Router.push("/");
-  //     })
-  //     .catch(() => { 
-  //         setEmail('');
-  //         setPassword('');
-  //      });
-  //   }
-  // }, [getUser]);
+  useEffect(() => {
+    isLoading ? handleOpen() : handleClose();
+  }, [isLoading]);
 
   return (
     <Card sx={{ maxWidth: 345, margin: "150px auto" }}>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        sx={{
+          paddingTop: "6rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "300px",
+        }}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <CircularProgress />
+      </Modal>
       <CardContent sx={{ textAlign: "center" }}>
         <Typography gutterBottom variant="h5" component="h2">
           Enter your credentials
@@ -76,7 +81,9 @@ const SignInCard = () => {
           />
           <Button
             variant="contained"
-            onClick={() => handleSubmit()}
+            onClick={() => {
+              handleSubmit();
+            }}
           >
             Press to Log In
           </Button>
