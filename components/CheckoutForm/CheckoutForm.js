@@ -1,3 +1,5 @@
+import { Box } from "@mui/system";
+import { Button, TextField } from "@mui/material";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
@@ -9,6 +11,25 @@ function CheckoutForm({ plandId, planName }) {
 
   const stripe = useStripe();
   const elements = useElements();
+
+  const cardStyle = {
+    style: {
+      base: {
+        color: "#32325d",
+        fontFamily: 'Arial, sans-serif',
+        fontSmoothing: "antialiased",
+        fontSize: "20px",
+        "::placeholder": {
+          color: "#32325d"
+        }
+      },
+      invalid: {
+        fontFamily: 'Arial, sans-serif',
+        color: "#fa755a",
+        iconColor: "#fa755a"
+      }
+    }
+  };
 
   const createSubscription = async () => {
     try {
@@ -47,6 +68,8 @@ function CheckoutForm({ plandId, planName }) {
         alert(confirmPayment.error.message);
       } else {
         alert("Success! Check your email for the invoice.");
+        window.location.href = "https://omnesbet.com";
+
       }
     } catch (error) {
       console.log(error);
@@ -54,27 +77,28 @@ function CheckoutForm({ plandId, planName }) {
   };
 
   return (
-    <div className="grid gap-4 m-auto">
-      <input placeholder="Name" type="text" value={name} />
-      <input
-        placeholder="Name"
-        type="text"
+    <Box sx={{ width: "300px" }}>
+      <TextField 
+        fullWidth
+        required 
+        label="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <br />
-      <input
-        placeholder="Email"
-        type="text"
+      <TextField 
+        sx={{ marginBottom: "15px" }}
+        fullWidth
+        required 
+        label="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-
-      <CardElement />
-      <button onClick={createSubscription} disabled={!stripe}>
+      <CardElement options={cardStyle} />
+      <Button sx={{ marginTop: "15px" }} variant="contained" color="success" onClick={createSubscription} disabled={!stripe}>
         Subscribe
-      </button>
-    </div>
+      </Button>
+      </Box>
   );
 }
 

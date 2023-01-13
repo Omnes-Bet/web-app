@@ -67,9 +67,12 @@ export function AuthProvider({ children }) {
       setUser(userInfo.data.data);
     }
 
-    setTimeout(getUserInformation, 1000);
+    setTimeout(() => {
+      getUserInformation();
+      Router.push("/");
+    }, 1000);
 
-    Router.push("/");
+    
   }
 
   function logout() {

@@ -8,10 +8,9 @@ import {
   Button,
   Stack,
 } from "@mui/material";
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { MobileDatePicker } from "@mui/x-date-pickers";
 import { LocalizationProvider } from "@mui/x-date-pickers";
-import AdapterJalaali from '@date-io/jalaali';
-import useAuth from "../../hooks/useAuth";
 import { AuthContext } from "../../contexts/authContext";
 
 
@@ -41,25 +40,6 @@ const SignUpCard = () => {
     await signup(credentials);
   };
 
-  // useEffect(() => {
-  //   const payload = handleSubmit();
-
-  //   if (payload?.email.length > 0) {
-  //     registerUser(payload)
-  //     .then(() => {
-  //       Router.push("/");
-  //     })
-  //     .catch(() => { 
-  //       setName('');
-  //       setPhoneNumber('');
-  //       setEmail('');
-  //       setBirthday('');
-  //       setPassword('');
-  //       setChange(false);
-  //      });
-  //   }
-  // }, [change]);
-
 
   return (
     <Card sx={{ maxWidth: 400, margin: "150px auto" }}>
@@ -68,7 +48,7 @@ const SignUpCard = () => {
           Please fill out these fields
         </Typography>
 
-        <LocalizationProvider dateAdapter={AdapterJalaali}>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
           <Stack spacing={6}>
             <Box
               component="form"
@@ -97,8 +77,8 @@ const SignUpCard = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <MobileDatePicker
-                label="Date mobile"
-                inputFormat="MM/DD/YYYY"
+                label="Date of Birth"
+                inputFormat="MM/dd/yyyy"
                 value={birthday}
                 onChange={handleChange}
                 renderInput={(params) => <TextField {...params} />}
@@ -112,14 +92,6 @@ const SignUpCard = () => {
                 autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-              />
-              <TextField
-                width={70}
-                m="auto"
-                id="outlined-password-input"
-                label="Confirm Password"
-                type="password"
-                autoComplete="current-password"
               />
               <Button 
                 variant="contained"

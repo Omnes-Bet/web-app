@@ -9,6 +9,7 @@ import {
   Box,
   Typography,
   Button,
+  useMediaQuery
 } from "@mui/material";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -17,6 +18,20 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: "6rem"
+  },
+  paymentSection: {
+    display: "flex",
+    gap: "15px"
+  },
+  paymentSectionMobile: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "15px"
+  },
   section: {
     backgroundImage: 'url("nereus-assets/img/bg/pattern1.png")',
     backgroundRepeat: "no-repeat",
@@ -64,20 +79,21 @@ const subscriptionOptions = [
 const Payments = () => {
   const router = useRouter();
   const classes = useStyles();
+  const matches = useMediaQuery('(min-width:600px)');
 
   const content = subscriptionOptions.filter(
     (i) => i.title == router.query.planSelected
   )[0];
 
   return (
-    <div className={styles.main}>
+    <div className={classes.main}>
       <div>
         <Link href={"/payments/all"}>
           <Button variant="outlined" color="primary">
             See other plans
           </Button>
         </Link>
-        <div style={{ display: "flex" }}>
+        <div className={matches ? classes.paymentSection : classes.paymentSectionMobile}>
           <Grid item xs={12} md={4}>
             <Card variant="outlined">
               <CardHeader
