@@ -7,6 +7,8 @@ import {
   Box,
   Button,
   Stack,
+  CircularProgress,
+  Modal
 } from "@mui/material";
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { MobileDatePicker } from "@mui/x-date-pickers";
@@ -15,13 +17,16 @@ import { AuthContext } from "../../contexts/authContext";
 
 
 const SignUpCard = () => {
-  const { signup } = useContext(AuthContext)
+  const { signup, isLoading } = useContext(AuthContext)
 
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
   const [password, setPassword] = useState('');
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleChange = (newValue) => {
     setBirthday(newValue);
@@ -40,9 +45,28 @@ const SignUpCard = () => {
     await signup(credentials);
   };
 
+  useEffect(() => {
+    isLoading ? handleOpen() : handleClose();
+  }, [isLoading]);
+
 
   return (
     <Card sx={{ maxWidth: 400, margin: "150px auto" }}>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        sx={{
+          paddingTop: "6rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "300px",
+        }}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <CircularProgress />
+      </Modal>
       <CardContent sx={{ textAlign: "center" }}>
         <Typography gutterBottom variant="h5" component="h2">
           Please fill out these fields

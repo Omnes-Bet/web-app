@@ -6,7 +6,7 @@ import { Container, Box, Typography, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Plans from "../components/Plans/Plans";
 import { AuthContext } from "../contexts/authContext";
-import { CenterFocusStrong } from "@mui/icons-material";
+import logo from "../assets/logo-black.png"
 
 const useStyles = makeStyles((theme) => ({
   iframeDesktop: {
@@ -28,13 +28,15 @@ export default function Home() {
   const classes = useStyles();
   const matches = useMediaQuery('(min-width:600px)');
 
+  console.log("logo", logo)
+
   return (
     <>
       <Head>
         <title>Omnesbet</title>
         <meta name="description" content="Best Software for Sports Betting Arbitrage" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={logo.src} />
       </Head>
       <main className={styles.home}>
         <Container>

@@ -1,13 +1,22 @@
 import { Box } from "@mui/system";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Modal, CircularProgress } from "@mui/material";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
+import useSubscription from "../../hooks/useSubscription";
 
 function CheckoutForm({ plandId, planName }) {
   const { user } = useContext(AuthContext);
+  const { createSubscription, isLoading } = useSubscription();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  useEffect(() => {
+    isLoading ? handleOpen() : handleClose();
+  }, [isLoading]);
 
   const stripe = useStripe();
   const elements = useElements();
@@ -31,7 +40,7 @@ function CheckoutForm({ plandId, planName }) {
     }
   };
 
-  const createSubscription = async () => {
+  const handleNewSubscription = async () => {
     try {
       const paymentMethod = await stripe?.createPaymentMethod({
         type: "card",
@@ -42,26 +51,17 @@ function CheckoutForm({ plandId, planName }) {
         },
       });
 
-      const response = await fetch(
-        "https://omnes-api.herokuapp.com/v1/create-subscription",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
+      const result = await createSubscription({
             paymentMethod: paymentMethod?.paymentMethod?.id,
             name,
             email,
             priceId: plandId,
             userId: user?.id,
             planName
-          }),
-        }
-      ).then((res) => res.json());
+      })
 
       const confirmPayment = await stripe?.confirmCardPayment(
-        response.clientSecret
+        result.data.clientSecret
       );
 
       if (confirmPayment?.error) {
@@ -78,6 +78,21 @@ function CheckoutForm({ plandId, planName }) {
 
   return (
     <Box sx={{ width: "300px" }}>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        sx={{
+          paddingTop: "6rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "300px",
+        }}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <CircularProgress />
+      </Modal>
       <TextField 
         fullWidth
         required 
@@ -95,10 +110,10 @@ function CheckoutForm({ plandId, planName }) {
         onChange={(e) => setEmail(e.target.value)}
       />
       <CardElement options={cardStyle} />
-      <Button sx={{ marginTop: "15px" }} variant="contained" color="success" onClick={createSubscription} disabled={!stripe}>
+      <Button sx={{ marginTop: "15px" }} variant="contained" color="success" onClick={handleNewSubscription} disabled={!stripe}>
         Subscribe
       </Button>
-      </Box>
+    </Box>
   );
 }
 

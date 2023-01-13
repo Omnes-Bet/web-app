@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import omnislogo from '../../assets/omnislogo.png'
+import omnislogo from '../../assets/logo-no-background.png'
 
 import {
     ListItem,
