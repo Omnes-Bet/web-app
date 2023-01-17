@@ -39,7 +39,7 @@ const UserHeader = ({ user }) => {
     <Link href={"/user"} className={classes.userCard}>
       <CardContent className={classes.userCard}>
         <Box className={classes.userInfo}>
-          <Typography>Hi, {user.name}</Typography>
+          <Typography>{user.name}</Typography>
           <Box className={classes.userWallet}>
             <Wallet />
             {(user?.status == "active") ? "ACTIVE" : "INACTIVE"}

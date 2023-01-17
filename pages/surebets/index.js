@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
-import { Paper, Container, Box } from "@mui/material";
+import {
+  Paper,
+  Container,
+  Box,
+  CircularProgress
+} from "@mui/material";
 import SurebetTable from "../../components/SurebetTable/SurebetTable";
 import useArbs from "../../hooks/useArbs";
 import { parseCookies } from "nookies";
-import { AlarmSharp } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,22 +31,29 @@ const Surebet = () => {
     getArbs();
   }, []);
 
-  console.log("", )
-
   return (
     <Container sx={{ marginTop: "140px" }}>
-      {arbs &&
+      {arbs ? (
         arbs?.data?.map((data) => {
           return (
-          <Box my={8}>
-            <Box>
-              <Paper className={classes.overview} elevation={2} square="false">
-                <SurebetTable arbsData={data} />
-              </Paper>
+            <Box my={8}>
+              <Box>
+                <Paper
+                  className={classes.overview}
+                  elevation={2}
+                  square="false"
+                >
+                  <SurebetTable arbsData={data}  />
+                </Paper>
+              </Box>
             </Box>
-          </Box>
-          )
-        })}
+          );
+        })
+      ) : (
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <CircularProgress />
+        </Box>
+      )}
     </Container>
   );
 };

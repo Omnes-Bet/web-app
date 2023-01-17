@@ -29,11 +29,11 @@ export function AuthProvider({ children }) {
     });
 
     setCookie(undefined, "nextauth.token", userInfo.data.token, {
-      maxAge: 60 * 60 * 1, //one hour
+      maxAge: 60 * 60 * 5, //one hour
     });
 
     setCookie(undefined, "nextauth.email", userInfo.data.data.email, {
-      maxAge: 60 * 60 * 1, //one hour
+      maxAge: 60 * 60 * 5, //one hour
     });
 
     setUser(userInfo.data.data);

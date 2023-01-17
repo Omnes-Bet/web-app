@@ -34,7 +34,7 @@ const SideBar = ({ isOpen, setOpen }) => {
       >
         <List>
           {user?.status == "active" && (
-            <Link href={"/surebets"}>
+            <Link href={"/surebets"} onClick={() => setOpen(false)}>
               <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
@@ -47,7 +47,7 @@ const SideBar = ({ isOpen, setOpen }) => {
           )}
 
           {!(user?.status == "active") && (
-            <Link href={"/payments/all"}>
+            <Link href={"/payments/all"} onClick={() => setOpen(false)}>
               <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
@@ -59,7 +59,10 @@ const SideBar = ({ isOpen, setOpen }) => {
             </Link>
           )}
 
-          <Link href={"/surebets/what-is-surebet"}>
+          <Link
+            href={"/surebets/what-is-surebet"}
+            onClick={() => setOpen(false)}
+          >
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -70,7 +73,7 @@ const SideBar = ({ isOpen, setOpen }) => {
             </ListItem>
           </Link>
 
-          <Link href={"/contact"}>
+          <Link href={"/contact"} onClick={() => setOpen(false)}>
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -83,7 +86,14 @@ const SideBar = ({ isOpen, setOpen }) => {
         </List>
 
         {user && (
-          <Button variant="contained" color="error" onClick={() => logout()}>
+          <Button
+            variant="contained"
+            color="error"
+            onClick={() => {
+              logout();
+              setOpen(false);
+            }}
+          >
             Logout
           </Button>
         )}

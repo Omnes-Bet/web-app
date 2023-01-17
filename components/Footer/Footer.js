@@ -22,7 +22,7 @@ const Footer = () => {
       <Container>
         <Grid container spacing={4}>
           <Grid item xs>
-            <img src={omnislogo.src} alt='OmnisBet' height={'75px'} />
+            <img src={omnislogo.src} alt='OmnesBet' height={'75px'} />
             <Box display={'flex'} mt={4}>
               <Box mr={2} color='grey.400'>
                 <FacebookRounded />
@@ -68,7 +68,7 @@ const Footer = () => {
           <Divider />
         </Box>
         <Box color='grey.400' pt={10}>
-          <Typography>© 2023 OmnisBet. All rights reserved.</Typography>
+          <Typography>© 2023 OmnesBet. All rights reserved.</Typography>
         </Box>
       </Container>
     </Box>
