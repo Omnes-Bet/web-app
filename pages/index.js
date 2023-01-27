@@ -7,6 +7,7 @@ import { makeStyles } from "@mui/styles";
 import Plans from "../components/Plans/Plans";
 import { AuthContext } from "../contexts/authContext";
 import logo from "../assets/logo-black.png"
+import Particle from "../components/Particles/Particles";
 
 const useStyles = makeStyles((theme) => ({
   iframeDesktop: {
@@ -39,6 +40,7 @@ export default function Home() {
       <main className={styles.home}>
         <Container>
           <Box my={8}>
+            <Particle />
             <MainBanner />
           </Box>
           <Box
