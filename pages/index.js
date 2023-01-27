@@ -57,8 +57,8 @@ export default function Home() {
               allowfullscreen
             ></iframe>
             <Box>
-              <Typography variant="h4"> Learn About Surebets</Typography>
-              <Typography>
+              <Typography variant="h4" color="white"> Learn About Surebets</Typography>
+              <Typography color="white">
                 A complete video explaining how it works behind the scenes.
               </Typography>
             </Box>

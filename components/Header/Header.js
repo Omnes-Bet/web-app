@@ -16,7 +16,7 @@ const Header = ({ setOpen }) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <AppBar>
+    <AppBar sx={{ backgroundColor: "#303134" }}>
       <Container maxWidth="lg">
         <Toolbar>
           <IconButton
