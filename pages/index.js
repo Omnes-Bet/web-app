@@ -28,8 +28,6 @@ export default function Home() {
   const classes = useStyles();
   const matches = useMediaQuery('(min-width:600px)');
 
-  console.log("logo", logo)
-
   return (
     <>
       <Head>

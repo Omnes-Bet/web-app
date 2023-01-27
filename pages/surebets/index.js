@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import { makeStyles } from "@mui/styles";
-import {
-  Paper,
-  Container,
-  Box,
-  CircularProgress
-} from "@mui/material";
+import { Paper, Container, Box, CircularProgress } from "@mui/material";
 import SurebetTable from "../../components/SurebetTable/SurebetTable";
 import useArbs from "../../hooks/useArbs";
-import { parseCookies } from "nookies";
+import { AuthContext } from "../../contexts/authContext";
+import Router from "next/router";
+//import { parseCookies } from "nookies";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,11 +21,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Surebet = () => {
+  const { user } = useContext(AuthContext);
   const { getArbs, arbs } = useArbs();
   const classes = useStyles();
 
   useEffect(() => {
-    getArbs();
+    if (!(user?.status == "active")) {
+      Router.push("/");
+    } else {
+      getArbs();
+    }
   }, []);
 
   return (
@@ -43,7 +45,7 @@ const Surebet = () => {
                   elevation={2}
                   square="false"
                 >
-                  <SurebetTable arbsData={data}  />
+                  <SurebetTable arbsData={data} />
                 </Paper>
               </Box>
             </Box>
@@ -60,19 +62,19 @@ const Surebet = () => {
 
 export default Surebet;
 
-export const getServerSideProps = async (ctx) => {
-  const { ["nextauth.token"]: token } = parseCookies(ctx);
+// export const getServerSideProps = async (ctx) => {
+//   const { ["nextauth.token"]: token } = parseCookies(ctx);
 
-  if (!token) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
+//   if (!token) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  return {
-    props: {},
-  };
-};
+//   return {
+//     props: {},
+//   };
+// };

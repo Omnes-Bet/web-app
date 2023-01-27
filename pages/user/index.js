@@ -8,7 +8,6 @@ import {
   Button,
   Modal,
 } from "@mui/material";
-import { parseCookies } from "nookies";
 import { AuthContext } from "../../contexts/authContext";
 import useSubscription from "../../hooks/useSubscription";
 import Router from "next/router";
@@ -30,12 +29,12 @@ function ChildModal({ handleCloseParent, handleOpen }) {
   const [open, setOpen] = React.useState(false);
 
   const handleOpenModal = () => {
-    setOpen(handleOpen)
+    setOpen(handleOpen);
   };
 
   useEffect(() => {
     handleOpenModal();
-  }, [handleOpen])
+  }, [handleOpen]);
 
   return (
     <React.Fragment>
@@ -81,12 +80,18 @@ const User = () => {
 
   const { user } = useContext(AuthContext);
 
+  useEffect(() => {
+    if (!(user?.status == "active")) {
+      Router.push("/");
+    }
+  }, []);
+
   const { cancelSubscription } = useSubscription();
 
   const handleCancelSubscription = async () => {
     await cancelSubscription({ userId: user?.id });
     handleOpenChildModal();
-  }
+  };
 
   return (
     <Container>
@@ -112,7 +117,7 @@ const User = () => {
 
             <Box>
               <Typography>
-                Your subscription status is: 
+                Your subscription status is:
                 {user?.status == "active" ? " ACTIVE" : " DEACTIVATED"}
               </Typography>
             </Box>
@@ -157,8 +162,8 @@ const User = () => {
                           justifyContent: "space-between",
                         }}
                       >
-                        <Button 
-                          variant="contained" 
+                        <Button
+                          variant="contained"
                           color="error"
                           onClick={handleCancelSubscription}
                         >
@@ -171,7 +176,10 @@ const User = () => {
                         >
                           Back
                         </Button>
-                        <ChildModal handleCloseParent={handleClose} handleOpen={openChild} />
+                        <ChildModal
+                          handleCloseParent={handleClose}
+                          handleOpen={openChild}
+                        />
                       </Box>
                     </Box>
                   </Modal>
@@ -195,20 +203,3 @@ const User = () => {
 };
 
 export default User;
-
-export const getServerSideProps = async (ctx) => {
-  const { ["nextauth.token"]: token } = parseCookies(ctx);
-
-  if (!token) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {},
-  };
-};
