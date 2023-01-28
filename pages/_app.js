@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Analytics } from '@vercel/analytics/react';
 import "../styles/globals.css";
 import { AuthProvider } from "../contexts/authContext";
 import Header from "../components/Header/Header";
@@ -10,11 +11,15 @@ export default function App({ Component, pageProps }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
-    <AuthProvider>
-      <Header setOpen={setIsDrawerOpen} />
-      <SideBar isOpen={isDrawerOpen} setOpen={setIsDrawerOpen} />
-      <Component {...pageProps} />
-      <Footer />
-    </AuthProvider>
+    <>
+      <AuthProvider>
+        <Header setOpen={setIsDrawerOpen} />
+        <SideBar isOpen={isDrawerOpen} setOpen={setIsDrawerOpen} />
+        <Component {...pageProps} />
+        <Footer />
+      </AuthProvider>
+      <Analytics />
+    </>
+    
   );
 }
