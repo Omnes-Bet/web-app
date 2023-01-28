@@ -33,11 +33,17 @@ export default function Home() {
     <>
       <Head>
         <title>Omnesbet | Arbitrage Software</title>
-        <meta name="description" content="Best Software for Sports Betting Arbitrage" />
+        <meta name="description" content="Best Software for Sports Betting Arbitrage. Earn risk free money." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={logo.src} />
+        <link
+          rel="canonical"
+          href="https://omnesbet.com"
+          key="canonical"
+        />
       </Head>
       <main className={styles.home}>
+        <h1 style={{ display: "none" }}>Omnesbet</h1>
         <Container>
           <Box my={8}>
             <Particle />
