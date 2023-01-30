@@ -14,6 +14,7 @@ import {
 
   import { FacebookRounded } from '@mui/icons-material';
   import { Instagram } from '@mui/icons-material';
+import Link from 'next/link';
 
 
 const Footer = () => {
@@ -28,7 +29,10 @@ const Footer = () => {
                 <FacebookRounded />
               </Box>
               <Box color='grey.400'>
-                <Instagram />
+                <Link href={"https://www.instagram.com/omnesbet/"}>
+                  <Instagram />
+                </Link>
+                
               </Box>
             </Box>
           </Grid>
