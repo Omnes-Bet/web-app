@@ -33,7 +33,7 @@ export default function Home() {
     <>
       <Head>
         <title>Omnesbet | Arbitrage Software</title>
-        <meta name="description" content="Best Software for Sports Betting Arbitrage. Earn risk free money." />
+        <meta name="description" content="Best Software for Sports Betting Arbitrage. Earn risk free money with Omnesbet Software." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={logo.src} />
         <link
