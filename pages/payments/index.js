@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PageSeo from "../../components/PageSeo";
 import { makeStyles } from "@mui/styles";
 import {
   Grid,
