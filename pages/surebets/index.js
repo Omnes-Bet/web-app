@@ -1,10 +1,11 @@
-import React, { useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { makeStyles } from "@mui/styles";
 import { Paper, Container, Box, CircularProgress } from "@mui/material";
 import SurebetTable from "../../components/SurebetTable/SurebetTable";
 import useArbs from "../../hooks/useArbs";
 import { AuthContext } from "../../contexts/authContext";
 import Router from "next/router";
+import PageSeo from "../../components/PageSeo";
 //import { parseCookies } from "nookies";
 
 const useStyles = makeStyles((theme) => ({
@@ -24,6 +25,17 @@ const Surebet = () => {
   const { user } = useContext(AuthContext);
   const { getArbs, arbs } = useArbs();
   const classes = useStyles();
+  const [pageUrl, setPageUrl] = useState();
+
+  useEffect(() => {
+    setPageUrl(window?.location?.href);
+  }, []);
+
+  const pageSeoProps = {
+    title: "Omnesbet | Surebets",
+    description: "Choose the best arbitrage and earn money with it",
+    pageUrl: pageUrl,
+  };
 
   useEffect(() => {
     if (!(user?.status == "active")) {
@@ -35,6 +47,7 @@ const Surebet = () => {
 
   return (
     <Container sx={{ marginTop: "140px" }}>
+      <PageSeo seoProps={pageSeoProps} />
       {arbs ? (
         arbs?.data?.map((data) => {
           return (

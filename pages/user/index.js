@@ -12,6 +12,7 @@ import { AuthContext } from "../../contexts/authContext";
 import useSubscription from "../../hooks/useSubscription";
 import Router from "next/router";
 import Link from "next/link";
+import PageSeo from "../../components/PageSeo";
 
 const style = {
   position: "absolute",
@@ -27,6 +28,17 @@ const style = {
 
 function ChildModal({ handleCloseParent, handleOpen }) {
   const [open, setOpen] = React.useState(false);
+  const [pageUrl, setPageUrl] = useState();
+
+  useEffect(() => {
+    setPageUrl(window?.location?.href);
+  }, []);
+
+  const pageSeoProps = {
+    title: "Omnesbet | User Info",
+    description: "Check your info and subscription status",
+    pageUrl: pageUrl,
+  };
 
   const handleOpenModal = () => {
     setOpen(handleOpen);
@@ -38,6 +50,7 @@ function ChildModal({ handleCloseParent, handleOpen }) {
 
   return (
     <React.Fragment>
+      <PageSeo seoProps={pageSeoProps} />
       <Modal
         hideBackdrop
         open={open}

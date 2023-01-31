@@ -67,18 +67,11 @@ const Particle = () => {
                     move: {
                         directions: "none",
                         enable: true,
-                        outModes: {
-                            default: "bounce",
-                        },
                         random: false,
-                        speed: 4,
+                        speed: 2,
                         straight: false,
                     },
                     number: {
-                        density: {
-                            enable: true,
-                            area: 800,
-                        },
                         value: 80,
                     },
                     opacity: {

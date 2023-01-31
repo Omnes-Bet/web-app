@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import styles from "../../styles/Home.module.css";
 import {
   Grid,
   Card,
@@ -9,7 +8,7 @@ import {
   Box,
   Typography,
   Button,
-  useMediaQuery
+  useMediaQuery,
 } from "@mui/material";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -21,16 +20,16 @@ const useStyles = makeStyles((theme) => ({
   main: {
     display: "flex",
     justifyContent: "center",
-    paddingTop: "6rem"
+    paddingTop: "6rem",
   },
   paymentSection: {
     display: "flex",
-    gap: "15px"
+    gap: "15px",
   },
   paymentSectionMobile: {
     display: "flex",
     flexDirection: "column",
-    gap: "15px"
+    gap: "15px",
   },
   section: {
     backgroundImage: 'url("nereus-assets/img/bg/pattern1.png")',
@@ -77,9 +76,20 @@ const subscriptionOptions = [
 ];
 
 const Payments = () => {
+  const [pageUrl, setPageUrl] = useState();
   const router = useRouter();
   const classes = useStyles();
-  const matches = useMediaQuery('(min-width:600px)');
+  const matches = useMediaQuery("(min-width:600px)");
+
+  useEffect(() => {
+    setPageUrl(window?.location?.href);
+  }, []);
+
+  const pageSeoProps = {
+    title: "Omnesbet | Plan Selected",
+    description: "Subscribe and enjoy the data",
+    pageUrl: pageUrl,
+  };
 
   const content = subscriptionOptions.filter(
     (i) => i.title == router.query.planSelected
@@ -87,13 +97,18 @@ const Payments = () => {
 
   return (
     <div className={classes.main}>
+      <PageSeo seoProps={pageSeoProps} />
       <div>
         <Link href={"/payments/all"}>
           <Button variant="outlined" color="primary">
             See other plans
           </Button>
         </Link>
-        <div className={matches ? classes.paymentSection : classes.paymentSectionMobile}>
+        <div
+          className={
+            matches ? classes.paymentSection : classes.paymentSectionMobile
+          }
+        >
           <Grid item xs={12} md={4}>
             <Card variant="outlined">
               <CardHeader
@@ -146,7 +161,10 @@ const Payments = () => {
             </Card>
           </Grid>
           <Elements stripe={stripePromise}>
-            <CheckoutForm plandId={router.query.id} planName={router.query.planSelected} />
+            <CheckoutForm
+              plandId={router.query.id}
+              planName={router.query.planSelected}
+            />
           </Elements>
         </div>
       </div>

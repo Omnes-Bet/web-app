@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import MainBanner from "../components/MainBanner/MainBanner";
@@ -8,6 +8,7 @@ import Plans from "../components/Plans/Plans";
 import { AuthContext } from "../contexts/authContext";
 import logo from "../assets/logo-black.png"
 import Particle from "../components/Particles/Particles";
+import PageSeo from "../components/PageSeo";
 
 const useStyles = makeStyles((theme) => ({
   iframeDesktop: {
@@ -25,15 +26,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Home() {
+  const [pageUrl, setPageUrl] = useState();
   const { user } = useContext(AuthContext);
   const classes = useStyles();
   const matches = useMediaQuery('(min-width:600px)');
 
+  useEffect(() => {
+    setPageUrl(window?.location?.href)
+  }, []);
+
+  const pageSeoProps = {
+    title: "Omnesbet | Arbitrage Software2",
+    description: "Best Software for Sports Betting Arbitrage. Earn risk free money with Omnesbet Software.",
+    pageUrl: pageUrl,
+  }
+
   return (
     <>
       <Head>
-        <title>Omnesbet | Arbitrage Software</title>
-        <meta name="description" content="Best Software for Sports Betting Arbitrage. Earn risk free money with Omnesbet Software." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={logo.src} />
         <link
@@ -42,6 +52,7 @@ export default function Home() {
           key="canonical"
         />
       </Head>
+      <PageSeo seoProps={pageSeoProps} />
       <main className={styles.home}>
         <h1 style={{ display: "none" }}>Omnesbet</h1>
         <Container>
