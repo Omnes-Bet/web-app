@@ -28,17 +28,6 @@ const style = {
 
 function ChildModal({ handleCloseParent, handleOpen }) {
   const [open, setOpen] = React.useState(false);
-  const [pageUrl, setPageUrl] = useState();
-
-  useEffect(() => {
-    setPageUrl(window?.location?.href);
-  }, []);
-
-  const pageSeoProps = {
-    title: "Omnesbet | User Info",
-    description: "Check your info and subscription status",
-    pageUrl: pageUrl,
-  };
 
   const handleOpenModal = () => {
     setOpen(handleOpen);
@@ -50,7 +39,6 @@ function ChildModal({ handleCloseParent, handleOpen }) {
 
   return (
     <React.Fragment>
-      <PageSeo seoProps={pageSeoProps} />
       <Modal
         hideBackdrop
         open={open}
@@ -90,11 +78,21 @@ const User = () => {
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
   const handleOpenChildModal = () => setOpenChild(true);
-
+  const [pageUrl, setPageUrl] = useState();
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    if (!(user?.status == "active")) {
+    setPageUrl(window?.location?.href);
+  }, []);
+
+  const pageSeoProps = {
+    title: "Omnesbet | User Info",
+    description: "Check your info and subscription status",
+    pageUrl: pageUrl,
+  };
+
+  useEffect(() => {
+    if (!user) {
       Router.push("/");
     }
   }, []);
@@ -108,6 +106,7 @@ const User = () => {
 
   return (
     <Container>
+      <PageSeo seoProps={pageSeoProps} />
       <Box my={8}>
         <Box container className={styles.main}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
