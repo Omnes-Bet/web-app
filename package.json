@@ -17,6 +17,7 @@
     "@mui/styles": "^5.11.2",
     "@mui/x-date-pickers": "^5.0.13",
     "@next/font": "13.1.1",
+    "@sendgrid/mail": "^7.7.0",
     "@stripe/react-stripe-js": "^1.16.1",
     "@stripe/stripe-js": "^1.46.0",
     "@vercel/analytics": "^0.1.8",

@@ -12,11 +12,12 @@ import UserHeader from "../UserHeader/UserHeader";
 import Link from "next/link";
 import { AuthContext } from "../../contexts/authContext";
 
+
 const Header = ({ setOpen }) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <AppBar sx={{ backgroundColor: "#303134" }}>
+    <AppBar sx={{ backgroundColor: "#07090f" }}>
       <Container maxWidth="lg">
         <Toolbar>
           <IconButton
@@ -34,7 +35,7 @@ const Header = ({ setOpen }) => {
           {!user ? (
             <>
               <Link href={"signin"} style={{ marginLeft: "auto" }}>
-                <Button variant="contained" color="error">
+                <Button variant="contained" sx={{ backgroundColor: "#1c50abcc" }}>
                   Log In
                 </Button>
               </Link>
@@ -42,8 +43,7 @@ const Header = ({ setOpen }) => {
               <Link href={"/signup"}>
                 <Button
                   variant="contained"
-                  sx={{ marginLeft: "5px" }}
-                  color="error"
+                  sx={{ marginLeft: "5px", backgroundColor: "#1c50abcc" }}
                 >
                   Register
                 </Button>
