@@ -1,11 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import {
-  Box,
-  useMediaQuery,
-  Button,
-} from "@mui/material";
+import { Box, useMediaQuery, Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Plans from "../components/Plans/Plans";
 import { AuthContext } from "../contexts/authContext";
@@ -117,18 +113,37 @@ export default function Home() {
               !isMobile ? classes.heroMobileInfo : classes.heroDesktopInfo
             }
           >
-            <h1>Ensure your winning bets</h1>
-            <p>
-              Make you bets and investments safe with our arbitrage services
-            </p>
-            <Link href={"/payments/all"}>
-              <Button
-                variant="contained"
-                sx={{ backgroundColor: "#1c50abcc", width: "fit-content" }}
-              >
-                Subscribe Now
-              </Button>
-            </Link>
+            {!(user?.status == "active") ? (
+              <>
+                <h1>Ensure your winning bets</h1>
+                <p>
+                  Make you bets and investments safe with our arbitrage services
+                </p>
+                <Link href={"/payments/all"}>
+                  <Button
+                    variant="contained"
+                    sx={{ backgroundColor: "#1c50abcc", width: "fit-content" }}
+                  >
+                    Subscribe Now
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <h1>Check the current Arbs & Surebts</h1>
+                <p>
+                  Make you bets and investments safe with our arbitrage services
+                </p>
+                <Link href={"/surebets"}>
+                  <Button
+                    variant="contained"
+                    sx={{ backgroundColor: "#1c50abcc", width: "fit-content" }}
+                  >
+                    Surebets
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
 

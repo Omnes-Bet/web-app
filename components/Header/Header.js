@@ -12,7 +12,6 @@ import UserHeader from "../UserHeader/UserHeader";
 import Link from "next/link";
 import { AuthContext } from "../../contexts/authContext";
 
-
 const Header = ({ setOpen }) => {
   const { user } = useContext(AuthContext);
 
