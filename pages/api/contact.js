@@ -1,25 +1,34 @@
-const mail = require("@sendgrid/mail")
-const sendGridKey = "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"
-mail.setApiKey(sendGridKey);
+const nodemailer = require("nodemailer");
 
 export default async (req, res) => {
-    const body = JSON.parse(req.body);
+  const { name, email, message } = JSON.parse(req.body);
 
-    const message = `
-    Name: ${body.name}\r\n
-    Email: ${body.email}\r\n
-    Message: ${body.message}
-    `
+  let transporter = nodemailer.createTransport({
+    host: "smtp.office365.com",
+    port: "587",
+    auth: {
+      user: "daniel.alves@omnesbet.com",
+      pass: "Helo150517",
+    },
+  });
 
-    const msg = {
-        to: body.email, // Change to your recipient
-        from: 'daniel.alves@omnesbet.com', // Change to your verified sender
-        subject: 'Sending with SendGrid is Fun',
-        text: 'and easy to do anywhere, even with Node.js',
-        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-      }
-
-    const emailResult = await mail.send(msg)
-
-    res.status(200).json(emailResult);
-}
+  transporter
+    .sendMail({
+      from: `"Fred Foo 👻" <daniel.alves@omnesbet.com>`, // sender address
+      to: "daniel.alves@omnesbet.com", // list of receivers
+      subject: "User Question / Ask for Support", // Subject line
+      text: message, // plain text body
+      html: `<div>
+      <h2>Hi, I'm ${name}</h2>
+      <h2>My email adress is ${email}</h2>
+      <b>Could you ask me the following question?:</b>
+      <p>${message}</p>
+      </div>`, // html body
+    })
+    .then((response) => {
+      res.send(response);
+    })
+    .catch((error) => {
+      res.send(error);
+    });
+};
