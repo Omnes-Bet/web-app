@@ -7,6 +7,7 @@ import Plans from "../components/Plans/Plans";
 import { AuthContext } from "../contexts/authContext";
 import logo from "../assets/logo-black.png";
 import PageSeo from "../components/PageSeo";
+import WhatIsASurebetBanner from "../components/WhatIsASurebetBanner/WhatIsASurebetBanner";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -146,6 +147,8 @@ export default function Home() {
             )}
           </div>
         </div>
+
+        <WhatIsASurebetBanner />
 
         {!(user?.subsInfo?.status == "active") && (
           <Box>
