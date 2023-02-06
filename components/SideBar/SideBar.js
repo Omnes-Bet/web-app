@@ -33,7 +33,7 @@ const SideBar = ({ isOpen, setOpen }) => {
         }}
       >
         <List>
-          {user?.status == "active" && (
+          {user?.subsInfo?.status == "active" && (
             <Link href={"/surebets"} onClick={() => setOpen(false)}>
               <ListItem disablePadding>
                 <ListItemButton>
@@ -46,7 +46,7 @@ const SideBar = ({ isOpen, setOpen }) => {
             </Link>
           )}
 
-          {!(user?.status == "active") && (
+          {!(user?.subsInfo?.status == "active") && (
             <Link href={"/payments/all"} onClick={() => setOpen(false)}>
               <ListItem disablePadding>
                 <ListItemButton>

@@ -38,7 +38,7 @@ const Surebet = () => {
   };
 
   useEffect(() => {
-    if (!(user?.status == "active")) {
+    if (!(user?.subsInfo?.status == "active")) {
       Router.push("/");
     } else {
       getArbs();

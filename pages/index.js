@@ -113,7 +113,7 @@ export default function Home() {
               !isMobile ? classes.heroMobileInfo : classes.heroDesktopInfo
             }
           >
-            {!(user?.status == "active") ? (
+            {!(user?.subsInfo?.status == "active") ? (
               <>
                 <h1>Ensure your winning bets</h1>
                 <p>
@@ -147,7 +147,7 @@ export default function Home() {
           </div>
         </div>
 
-        {!(user?.status == "active") && (
+        {!(user?.subsInfo?.status == "active") && (
           <Box>
             <Plans />
           </Box>

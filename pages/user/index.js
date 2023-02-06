@@ -85,6 +85,10 @@ const User = () => {
     setPageUrl(window?.location?.href);
   }, []);
 
+  const dataDoCancelamento = new Date(user?.subsInfo?.cancel_at * 1000)
+  const dataCancel = dataDoCancelamento.getMonth() + "/" + dataDoCancelamento?.getDate()
+  console.log("user", user)
+
   const pageSeoProps = {
     title: "Omnesbet | User Info",
     description: "Check your info and subscription status",
@@ -130,9 +134,14 @@ const User = () => {
             <Box>
               <Typography>
                 Your subscription status is:
-                {user?.status == "active" ? " ACTIVE" : " DEACTIVATED"}
+                {user?.subsInfo?.status == "active" ? " ACTIVE" : " DEACTIVATED"}
               </Typography>
             </Box>
+            {user?.subsInfo?.cancel_at_period_end && <Box>
+              <Typography>
+                Your plan is scheduled to be canceled at: {dataCancel}
+              </Typography>
+            </Box>}
             <Box
               sx={{
                 display: " flex",
@@ -140,7 +149,7 @@ const User = () => {
                 justifyContent: "space-between",
               }}
             >
-              {user?.status == "active" ? (
+              {user?.subsInfo?.status == "active" ? (
                 <>
                   <Typography>Cancelar plano:</Typography>
                   <Button
