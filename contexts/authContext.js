@@ -36,7 +36,9 @@ export function AuthProvider({ children }) {
       maxAge: 60 * 60 * 5, //one hour
     });
 
-    setUser(userInfo.data.data);
+    getUserInfo(email).then((response) => {
+      setUser(response.data);
+    });
 
     Router.push("/");
   }
@@ -64,7 +66,9 @@ export function AuthProvider({ children }) {
         maxAge: 60 * 60 * 1, //one hour
       });
 
-      setUser(userInfo.data.data);
+      getUserInfo(email).then((response) => {
+        setUser(response.data);
+      });
     }
 
     setTimeout(() => {
