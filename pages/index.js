@@ -118,7 +118,7 @@ export default function Home() {
               <>
                 <h1>Ensure your winning bets</h1>
                 <p>
-                  Make you bets and investments safe with our arbitrage services
+                  Make your bets and investments safe with our arbitrage services
                 </p>
                 <Link href={"/payments/all"}>
                   <Button
