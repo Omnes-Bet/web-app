@@ -8,6 +8,7 @@ import { AuthContext } from "../contexts/authContext";
 import logo from "../assets/logo-black.png";
 import PageSeo from "../components/PageSeo";
 import WhatIsASurebetBanner from "../components/WhatIsASurebetBanner/WhatIsASurebetBanner";
+import WinEveryWeekBanner from "../components/WinEveryWeekBanner/WinEveryWeekBanner";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -149,6 +150,7 @@ export default function Home() {
         </div>
 
         <WhatIsASurebetBanner />
+        <WinEveryWeekBanner />
 
         {!(user?.subsInfo?.status == "active") && (
           <Box>
