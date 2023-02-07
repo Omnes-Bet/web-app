@@ -9,6 +9,7 @@ import logo from "../assets/logo-black.png";
 import PageSeo from "../components/PageSeo";
 import WhatIsASurebetBanner from "../components/WhatIsASurebetBanner/WhatIsASurebetBanner";
 import WinEveryWeekBanner from "../components/WinEveryWeekBanner/WinEveryWeekBanner";
+import SocialProof from "../components/SocialProof/SocialProof";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -81,7 +82,7 @@ export default function Home() {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | Arbitrage Software2",
+    title: "Omnesbet | Arbitrage Software",
     description:
       "Best Software for Sports Betting Arbitrage. Earn risk free money with Omnesbet Software.",
     pageUrl: pageUrl,
@@ -151,6 +152,7 @@ export default function Home() {
 
         <WhatIsASurebetBanner />
         <WinEveryWeekBanner />
+        <SocialProof />
 
         {!(user?.subsInfo?.status == "active") && (
           <Box>
