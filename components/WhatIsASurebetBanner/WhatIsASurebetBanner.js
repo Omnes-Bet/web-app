@@ -11,14 +11,22 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "5px",
     padding: "15px",
   },
-  box: {
+  boxDesktop: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-around",
     background: "rgba(245, 245, 245, 0.1)",
     borderRadius: "16px",
     width: "600px",
-    height: "500px",
+    height: "430px",
+  },
+  boxMobile: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-around",
+    background: "rgba(245, 245, 245, 0.1)",
+    borderRadius: "16px",
+    width: "600px"
   },
   textSection: {
     color: "white",
@@ -51,11 +59,11 @@ const useStyles = makeStyles((theme) => ({
 
 const WhatIsASurebetBanner = () => {
   const classes = useStyles();
-  const isMobile = useMediaQuery("(min-width:600px)");
+  const isDesktop = useMediaQuery("(min-width:600px)");
 
   return (
     <div className={classes.main}>
-      <div className={classes.box}>
+      <div className={isDesktop ? classes.boxDesktop : classes.boxMobile}>
         <div className={classes.textSection}>
           <h3 className={classes.title}>What are surebets?</h3>
           <div className={classes.description}>
@@ -65,7 +73,7 @@ const WhatIsASurebetBanner = () => {
         </div>
         <div>
           <img
-            className={!isMobile ? classes.imgMobile : classes.imgDesktop}
+            className={isDesktop ? classes.imgDesktop : classes.imgMobile}
             src={mobileSurebets.src}
           />
         </div>

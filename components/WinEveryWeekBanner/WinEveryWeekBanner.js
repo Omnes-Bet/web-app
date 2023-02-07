@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "Column",
     justifyContent: "space-around",
-    width: "170px"
+    width: "170px",
   },
   option: {
     display: "flex",
@@ -79,8 +79,20 @@ const WinEveryWeekBanner = () => {
           <div className={classes.titleSection}>
             <h2 className={classes.title}>Win Every Week</h2>
           </div>
-          <div className={isDesktop ? classes.optionSectionDesktop : classes.optionSectionMobile}>
-            <div className={isDesktop ? classes.optionsColumnDesktop : classes.optionsColumnMobile}>
+          <div
+            className={
+              isDesktop
+                ? classes.optionSectionDesktop
+                : classes.optionSectionMobile
+            }
+          >
+            <div
+              className={
+                isDesktop
+                  ? classes.optionsColumnDesktop
+                  : classes.optionsColumnMobile
+              }
+            >
               <div className={classes.option}>
                 <AttachMoneyIcon />
                 <h3 className={classes.optionTitle}>Profitable Surebets</h3>
@@ -91,13 +103,25 @@ const WinEveryWeekBanner = () => {
                 <h3 className={classes.optionTitle}>Algorithms work for you</h3>
               </div>
             </div>
-            <div className={isDesktop ? classes.optionsColumnDesktop : classes.optionsColumnMobile}>
-              <div className={classes.option}>
+            <div
+              className={
+                isDesktop
+                  ? classes.optionsColumnDesktop
+                  : classes.optionsColumnMobile
+              }
+            >
+              <div
+                className={classes.option}
+                style={isDesktop ? {"":""} : { paddingTop: "16px" }}
+              >
                 <CloudQueueIcon />
                 <h3 className={classes.optionTitle}> No need to download</h3>
               </div>
 
-              <div className={classes.option}>
+              <div
+                className={classes.option}
+                style={isDesktop ? {"":""} : { paddingTop: "16px" }}
+              >
                 <AccountTreeIcon />
                 <h3 className={classes.optionTitle}>
                   Bet on all the results of a event and still profit
