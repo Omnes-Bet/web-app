@@ -6,6 +6,7 @@ import useArbs from "../../hooks/useArbs";
 import { AuthContext } from "../../contexts/authContext";
 import Router from "next/router";
 import PageSeo from "../../components/PageSeo";
+import SurebetWidget from "../../components/SurebetWidget/SurebetWidget";
 //import { parseCookies } from "nookies";
 
 const useStyles = makeStyles((theme) => ({
@@ -26,6 +27,7 @@ const Surebet = () => {
   const { getArbs, arbs } = useArbs();
   const classes = useStyles();
   const [pageUrl, setPageUrl] = useState();
+  const [odds, setOdds] = useState();
 
   useEffect(() => {
     setPageUrl(window?.location?.href);
@@ -37,18 +39,34 @@ const Surebet = () => {
     pageUrl: pageUrl,
   };
 
+  const calAPI = async () => {
+    await fetch("https://oddspedia.com/api/v1/getSurebets?markets=&geoCode=BR&geoState=&sports=&bookmakers=&wettsteuer=0&sort=profit&language=br")
+    .then((response) => response.json())
+    .then((data) => setOdds(data));
+  }
+
   useEffect(() => {
     if (!(user?.subsInfo?.status == "active")) {
       Router.push("/");
     } else {
       getArbs();
+      calAPI();
     }
   }, []);
 
   return (
     <Container sx={{ marginTop: "140px" }}>
       <PageSeo seoProps={pageSeoProps} />
-      {arbs ? (
+      {
+        odds ? odds?.data?.slice(0, 30).map(i => {
+          return <SurebetWidget obj={i} />
+        })
+        :
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <CircularProgress />
+        </Box>
+      }
+      {/* {arbs ? (
         arbs?.data?.map((data) => {
           return (
             <Box my={8}>
@@ -68,7 +86,7 @@ const Surebet = () => {
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
         </Box>
-      )}
+      )} */}
     </Container>
   );
 };
