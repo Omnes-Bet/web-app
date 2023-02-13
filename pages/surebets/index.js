@@ -79,16 +79,17 @@ const Surebet = () => {
       limit: "5",
     };
 
-    const script = document.createElement('script');
-    script.src = 'https://widgets.oddspedia.com/js/widget/init.js';
+    const script = document.createElement("script");
+    script.src = "https://widgets.oddspedia.com/js/widget/init.js";
     script.async = true;
     document.body.appendChild(script);
   }, []);
 
   return (
-    <div id="oddspedia-widget-sure-bets" style={{ paddingTop: "6rem" }}>
-      <PageSeo seoProps={pageSeoProps} />
-      {/* {odds ? (
+    <div>
+      <div id="oddspedia-widget-sure-bets">
+        <PageSeo seoProps={pageSeoProps} />
+        {/* {odds ? (
         odds?.data?.slice(0, 30).map((i) => {
           return <SurebetWidget obj={i} />;
         })
@@ -97,7 +98,7 @@ const Surebet = () => {
           <CircularProgress />
         </Box>
       )} */}
-      {/* {arbs ? (
+        {/* {arbs ? (
         arbs?.data?.map((data) => {
           return (
             <Box my={8}>
@@ -118,6 +119,7 @@ const Surebet = () => {
           <CircularProgress />
         </Box>
       )} */}
+      </div>
     </div>
   );
 };
