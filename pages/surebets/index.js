@@ -46,21 +46,21 @@ const Surebet = () => {
     pageUrl: pageUrl,
   };
 
-  const calAPI = async () => {
-    await fetch(
-      "https://oddspedia.com/api/v1/getSurebets?markets=&geoCode=BR&geoState=&sports=&bookmakers=&wettsteuer=0&sort=profit&language=br"
-    )
-      .then((response) => response.json())
-      .then((data) => setOdds(data));
-  };
+  // const calAPI = async () => {
+  //   await fetch(
+  //     "https://oddspedia.com/api/v1/getSurebets?markets=&geoCode=BR&geoState=&sports=&bookmakers=&wettsteuer=0&sort=profit&language=br"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => setOdds(data));
+  // };
 
   useEffect(() => {
     if (!(user?.subsInfo?.status == "active")) {
       Router.push("/");
-    } else {
+    } /*else {
       getArbs();
       calAPI();
-    }
+    }*/
   }, []);
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const Surebet = () => {
   }, []);
 
   return (
-    <div id="oddspedia-widget-sure-bets">
+    <div id="oddspedia-widget-sure-bets" style={{ paddingTop: "6rem" }}>
       <PageSeo seoProps={pageSeoProps} />
       {/* {odds ? (
         odds?.data?.slice(0, 30).map((i) => {
