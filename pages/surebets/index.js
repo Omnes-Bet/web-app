@@ -63,10 +63,33 @@ const Surebet = () => {
     }
   }, []);
 
+  useEffect(() => {
+    window.oddspediaWidget = {
+      api_token: "4284fe60768c63b526c6af991cfc1608063cc071f7e15bd6ace4fd5f58a0",
+      type: "sure-bets",
+      domain: "omnesbet.com",
+      selector: "oddspedia-widget-sure-bets",
+      width: "0",
+      theme: "0",
+      odds_type: "1",
+      language: "en",
+      primary_color: "#0F5D75",
+      accent_color: "#1AB7AC",
+      font: "Roboto",
+      limit: "5",
+    };
+
+    const script = document.createElement('script');
+    script.src = 'https://widgets.oddspedia.com/js/widget/init.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className={classes.surebetWrapper}>
       <PageSeo seoProps={pageSeoProps} />
-      {odds ? (
+      <div id="oddspedia-widget-sure-bets"></div>
+      {/* {odds ? (
         odds?.data?.slice(0, 30).map((i) => {
           return <SurebetWidget obj={i} />;
         })
@@ -74,7 +97,7 @@ const Surebet = () => {
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
         </Box>
-      )}
+      )} */}
       {/* {arbs ? (
         arbs?.data?.map((data) => {
           return (
