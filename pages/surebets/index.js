@@ -86,9 +86,8 @@ const Surebet = () => {
   }, []);
 
   return (
-    <div className={classes.surebetWrapper}>
+    <div id="oddspedia-widget-sure-bets">
       <PageSeo seoProps={pageSeoProps} />
-      <div id="oddspedia-widget-sure-bets"></div>
       {/* {odds ? (
         odds?.data?.slice(0, 30).map((i) => {
           return <SurebetWidget obj={i} />;
