@@ -20,6 +20,13 @@ const useStyles = makeStyles((theme) => ({
     padding: 2,
     borderRadius: "10px",
   },
+  surebetWrapper: {
+    marginTop: "140px",
+    padding: "10px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
 }));
 
 const Surebet = () => {
@@ -40,10 +47,12 @@ const Surebet = () => {
   };
 
   const calAPI = async () => {
-    await fetch("https://oddspedia.com/api/v1/getSurebets?markets=&geoCode=BR&geoState=&sports=&bookmakers=&wettsteuer=0&sort=profit&language=br")
-    .then((response) => response.json())
-    .then((data) => setOdds(data));
-  }
+    await fetch(
+      "https://oddspedia.com/api/v1/getSurebets?markets=&geoCode=BR&geoState=&sports=&bookmakers=&wettsteuer=0&sort=profit&language=br"
+    )
+      .then((response) => response.json())
+      .then((data) => setOdds(data));
+  };
 
   useEffect(() => {
     if (!(user?.subsInfo?.status == "active")) {
@@ -55,17 +64,17 @@ const Surebet = () => {
   }, []);
 
   return (
-    <Container sx={{ marginTop: "140px" }}>
+    <div className={classes.surebetWrapper}>
       <PageSeo seoProps={pageSeoProps} />
-      {
-        odds ? odds?.data?.slice(0, 30).map(i => {
-          return <SurebetWidget obj={i} />
+      {odds ? (
+        odds?.data?.slice(0, 30).map((i) => {
+          return <SurebetWidget obj={i} />;
         })
-        :
+      ) : (
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
         </Box>
-      }
+      )}
       {/* {arbs ? (
         arbs?.data?.map((data) => {
           return (
@@ -87,7 +96,7 @@ const Surebet = () => {
           <CircularProgress />
         </Box>
       )} */}
-    </Container>
+    </div>
   );
 };
 

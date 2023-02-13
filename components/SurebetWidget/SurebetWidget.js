@@ -1,22 +1,44 @@
 import React, { useState } from "react";
-import { InputLabel, MenuItem, FormControl, Select } from "@mui/material";
+import {
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+  useMediaQuery,
+} from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
-  main: {
+  mainDesktop: {
     display: "flex",
-    width: "100%",
+    width: "900px",
     backgroundColor: "white",
     height: "250px",
     borderRadius: "20px",
     overflow: "hidden",
-    margin: "30px"
+    marginBottom: "15px",
   },
-  oddsBox: {
+  mainMobile: {
+    display: "flex",
+    width: "100%",
+    backgroundColor: "white",
+    height: "400px",
+    borderRadius: "20px",
+    overflow: "hidden",
+    marginBottom: "15px",
+  },
+  oddsBoxDesktop: {
     width: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    padding: "40px",
+  },
+  oddsBoxMobile: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
     padding: "40px",
   },
   eventInfoWrapper: {
@@ -29,9 +51,16 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "sans-serif",
     fontWeight: "300",
   },
-  oddsSection: {
+  oddsSectionDesktop: {
     display: "flex",
     justifyContent: "space-between",
+    height: "120px",
+    textAlign: "center",
+  },
+  oddsSectionMobile: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
     height: "120px",
     textAlign: "center",
   },
@@ -54,11 +83,12 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     gap: "20px",
     fontFamily: "sans-serif",
-    fontSize: "large"
+    fontSize: "large",
   },
 }));
 
 const SurebetWidget = ({ obj }) => {
+  const isDesktop = useMediaQuery("(min-width:600px)");
   const classes = useStyles();
   const [oddHome, setOddHome] = useState("");
   const [oddDraw, setOddDraw] = useState("");
@@ -77,13 +107,21 @@ const SurebetWidget = ({ obj }) => {
   };
 
   return (
-    <div className={classes.main}>
-      <div className={classes.oddsBox}>
+    <div className={isDesktop ? classes.mainDesktop : classes.mainMobile}>
+      <div
+        className={isDesktop ? classes.oddsBoxDesktop : classes.oddsBoxMobile}
+      >
         <div className={classes.eventInfoWrapper}>
-          <h4 className={classes.infoTexts}>{obj.category_name} - {obj.league_name}</h4>
+          <h4 className={classes.infoTexts}>
+            {obj.category_name} - {obj.league_name}
+          </h4>
           <h4 className={classes.infoTexts}>{obj.md}</h4>
         </div>
-        <div className={classes.oddsSection}>
+        <div
+          className={
+            isDesktop ? classes.oddsSectionDesktop : classes.oddsSectionMobile
+          }
+        >
           <div className={classes.oddsInfo}>
             <h3 className={classes.infoTexts}>{obj.ht}</h3>
             <h3 className={classes.infoTexts}>{oddHome}</h3>
