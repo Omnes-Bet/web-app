@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import { makeStyles } from "@mui/styles";
-import { Paper, Container, Box, CircularProgress } from "@mui/material";
-import SurebetTable from "../../components/SurebetTable/SurebetTable";
-import useArbs from "../../hooks/useArbs";
+// import { Paper, Container, Box, CircularProgress } from "@mui/material";
+// import SurebetTable from "../../components/SurebetTable/SurebetTable";
+// import useArbs from "../../hooks/useArbs";
+import { useMediaQuery } from "@mui/material";
 import { AuthContext } from "../../contexts/authContext";
 import Router from "next/router";
 import PageSeo from "../../components/PageSeo";
-import SurebetWidget from "../../components/SurebetWidget/SurebetWidget";
+// import SurebetWidget from "../../components/SurebetWidget/SurebetWidget";
 //import { parseCookies } from "nookies";
 
 const useStyles = makeStyles((theme) => ({
@@ -27,14 +28,22 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
+  oddsPediaIframeDesktop: {
+    padding: "6rem",
+    backgroundColor: "white"
+  },
+  oddsPediaIframeMobile: {
+    backgroundColor: "white"
+  }
 }));
 
 const Surebet = () => {
   const { user } = useContext(AuthContext);
-  const { getArbs, arbs } = useArbs();
+  // const { getArbs, arbs } = useArbs();
   const classes = useStyles();
+  const isDesktop = useMediaQuery("(min-width:600px)");
   const [pageUrl, setPageUrl] = useState();
-  const [odds, setOdds] = useState();
+  // const [odds, setOdds] = useState();
 
   useEffect(() => {
     setPageUrl(window?.location?.href);
@@ -86,7 +95,7 @@ const Surebet = () => {
   }, []);
 
   return (
-    <div>
+    <div className={isDesktop ? classes.oddsPediaIframeDesktop : classes.oddsPediaIframeMobile}>
       <div id="oddspedia-widget-sure-bets">
         <PageSeo seoProps={pageSeoProps} />
         {/* {odds ? (
