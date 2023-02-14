@@ -67,15 +67,6 @@ const Surebet = () => {
   // };
 
   useEffect(() => {
-    if (!(user?.subsInfo?.status == "active")) {
-      Router.push("/");
-    } /*else {
-      getArbs();
-      calAPI();
-    }*/
-  }, []);
-
-  useEffect(() => {
     window.oddspediaWidget = {
       api_token: "4284fe60768c63b526c6af991cfc1608063cc071f7e15bd6ace4fd5f58a0",
       type: "sure-bets",
@@ -95,6 +86,15 @@ const Surebet = () => {
     script.src = "https://widgets.oddspedia.com/js/widget/init.js";
     script.async = true;
     document.body.appendChild(script);
+  }, []);
+
+  useEffect(() => {
+    if (!(user?.subsInfo?.status == "active")) {
+      Router.push("/");
+    } /*else {
+      getArbs();
+      calAPI();
+    }*/
   }, []);
 
   return (
