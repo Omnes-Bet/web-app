@@ -81,7 +81,7 @@ const Footer = () => {
           </Box>
           <Link href={"https://oddspedia.com"}>
             <Box color="grey.400" pt={10} sx={{ display: "flex", gap: "5px" }}>
-              <Typography>Data powered by</Typography>
+              <Typography>Data powered by Oddspedia</Typography>
               <img
                 src="https://widgets.oddspedia.com/images/logo-oddspedia-dark.svg"
                 alt="Oddspedia"
