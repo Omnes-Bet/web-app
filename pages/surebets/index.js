@@ -34,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white"
   },
   oddsPediaIframeMobile: {
+    paddingTop: "7rem",
+    paddingBottom: "4rem",
     backgroundColor: "white"
   }
 }));
