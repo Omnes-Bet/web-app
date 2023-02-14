@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   oddsPediaIframeDesktop: {
-    padding: "6rem",
+    paddingTop: "7rem",
+    paddingBottom: "6rem",
     backgroundColor: "white"
   },
   oddsPediaIframeMobile: {
