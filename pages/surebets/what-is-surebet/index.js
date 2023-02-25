@@ -1,7 +1,75 @@
 import React, { useState, useEffect } from "react";
-import styles from "../../../styles/Home.module.css";
-import { Typography } from "@mui/material";
+import { Container, Box, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import surebetsImg from "../../../assets/surebets.png";
+import arbitrageImg from "../../../assets/arbitrage.webp";
 import PageSeo from "../../../components/PageSeo";
+
+const useStyles = makeStyles(() => ({
+  container: {
+    paddingTop: "6rem",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: 40,
+    marginTop: 40,
+    backgroundColor: "#212121",
+    color: "#fff",
+    borderRadius: 20,
+    boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.4)",
+    "@media (max-width: 600px)": {
+      padding: 20,
+      marginTop: 20,
+    },
+  },
+  section: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 80,
+    marginBottom: 80,
+    "@media (max-width: 600px)": {
+      flexDirection: "column",
+      alignItems: "flex-start",
+      justifyContent: "flex-start",
+      marginTop: 40,
+      marginBottom: 40,
+    },
+  },
+  sectionTitle: {
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    letterSpacing: 3,
+    marginBottom: 20,
+    "@media (max-width: 600px)": {
+      fontSize: "2rem",
+      marginBottom: 10,
+    },
+  },
+  sectionContent: {
+    textAlign: "justify",
+    maxWidth: 800,
+    lineHeight: 1.5,
+    marginRight: 80,
+    "@media (max-width: 600px)": {
+      marginRight: 0,
+      marginBottom: 20,
+    },
+  },
+  sectionImage: {
+    height: "auto",
+    borderRadius: 10,
+    boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.2)",
+    "@media (max-width: 600px)": {
+      marginLeft: 0,
+      maxWidth: 300,
+    },
+  },
+  highlight: {
+    color: "#ffc107",
+  },
+}));
 
 const WhatIsSurebet = () => {
   const [pageUrl, setPageUrl] = useState();
@@ -17,123 +85,74 @@ const WhatIsSurebet = () => {
     pageUrl: pageUrl,
   };
 
+  const classes = useStyles();
+
+
   return (
-    <div className={styles.main}>
+    <Container maxWidth="lg" className={classes.container}>
       <PageSeo seoProps={pageSeoProps} />
-
-      <div className={styles.articleWhatIsSurebet}>
-        <Typography variant="h2">What is a surebet & arbitrage</Typography>
-        <Typography>
-          Before starting to work with surebets, it is important to learn a
-          little more about them. This article provides detailed information
-          about arbitrage betting and gives valuable tips for beginners.
-        </Typography>
-      </div>
-
-      <div className={styles.articleWhatIsSurebet}>
-        <Typography variant="h4">
-          What is a surebet (arb) and how does it come about?
-        </Typography>
-        <Typography>
-          A surebet (arb) is a mathematically calculated arbitrage situation
-          that allows betting on opposite outcomes for the same event at
-          different bookmakers. The bettor wins whatever the outcome!
-        </Typography>
-        <Typography>
-          There are different reasons that lead to the emergence of an
-          arbitration situation, namely:
-        </Typography>
-        <Typography>
-          1 - Overvalued odds due to competition between bookmakers.
-        </Typography>
-        <Typography>
-          2 - Bookmakers cannot keep track of each other's actions and offer
-          different odds.
-        </Typography>
-        <Typography>3 - Bookmaker errors leading to incorrect odds.</Typography>
-        <Typography>
-          If you want to know more about arbs and how they work, read the other
-          in-depth article on surebets.
-        </Typography>
-      </div>
-
-      <div className={styles.articleWhatIsSurebet}>
-        <Typography variant="h4">Surebet example</Typography>
-        <Typography>
-          For example, one bookmaker offers @ 2.17 for AH1(-1.5) in Arsenal Tula
-          - FC Tambov clash, and the second – @ 2.31 for AH2(+1.5).
-        </Typography>
-        <Typography>
-          Our bankroll for this surebet is €100, €52 of which we bet on AH1
-          (-1.5) and €48 on AH2(+1.5). Then, let’s calculate:
-        </Typography>
-        <Typography>
-          AH1(-1.5) – €52 * 2.17 = €112.84 = €12.84 net income.
-        </Typography>
-        <Typography>
-          AH2(+1.5) – €48 * 2.31 = €110.88 = €10.88 net income.
-        </Typography>
-        <Typography>
-          Thus, regardless of the result of the match, our profit will be either
-          €10.88 or €12.84. All this is thanks to the surebet, on which we have
-          bet.
-        </Typography>
-      </div>
-
-      <div className={styles.articleWhatIsSurebet}>
-        <Typography variant="h4">Types of Surebets</Typography>
-        <Typography>
-          Prematch surebet – is an arbitrage situation, which arises due to the
-          odds difference before the event.
-        </Typography>
-        <Typography>
-          Live surebet – is an arbitrage situation, which springs up due to the
-          odds difference in Live Betting (stakes during the game on).
-        </Typography>
-        <Typography>
-          Of course, each of these surebet types has its own pros and cons,
-          which we would like to tell you about in more detail today.
-        </Typography>
-      </div>
-
-      <div className={styles.articleWhatIsSurebet}>
-        <Typography variant="h4">
-          The Main Differences between Prematch and Live Surebets
-        </Typography>
-        <Typography>
-          Prematch surebets are placed before the event (match, race etc.). On
-          Live it’s a bit different; you have to bet during the ongoing
-          competition.
-        </Typography>
-        <Typography>
-          In Prematch odds are changing much more slower than Live ones.
-          Therefore, newbies are advised to start from Prematch surebets as it’s
-          easier to make it on the required stake.
-        </Typography>
-        <Typography>
-          On Live one may find more profitable arbs than on Prematch. This is
-          due to the fact that bookmakers don’t have time to keep track of all
-          the odds in Live mode. As a result, there are a lot of overstated
-          odds, and one may calculate a large number of profitable Live arbs.
-        </Typography>
-        <Typography>
-          On Live it is pretty hard to identify you as an arber, as bookmakers
-          have no time to analyze your stakes. Accordingly, the risk of your
-          account to get limited is much lower.
-        </Typography>
-        <Typography>
-          Bankroll return and profit growth on Live comes much more rapidly than
-          on Prematch. All you have to do is to wait till the match ends and get
-          your money. On Prematch you will have to wait until the match starts
-          and get your earnings only after a couple of days.
-        </Typography>
-        <Typography>
-          If you want to learn more about surebets and how to work with it,
-          click the Next button to go to the second article from our educational
-          cycle.
-        </Typography>
-      </div>
-    </div>
+      <Box className={classes.section}>
+        <Box className={classes.sectionContent}>
+          <Typography variant="h4" className={classes.sectionTitle}>
+            What are Surebets?
+          </Typography>
+          <Typography variant="body1">
+            Surebets, also known as arbitrage bets, are a type of bet where the
+            bettor can make a profit regardless of the outcome of the game. This
+            is achieved by taking advantage of differences in odds offered by
+            different bookmakers.
+          </Typography>
+          <Typography variant="body1">
+            In a surebet, the bettor places a bet on all possible outcomes of a
+            game with different bookmakers, so that the total odds are greater
+            than 1. This ensures a profit no matter the outcome of the game. The
+            profit is usually small, but can be significant when large amounts
+            of money are bet.
+          </Typography>
+          <Typography variant="body1">
+            Surebets are popular among professional bettors, who are always
+            looking for opportunities to make a profit. However, they require
+            careful analysis and monitoring of odds, and can be difficult to
+            find and execute.
+          </Typography>
+        </Box>
+        <Box className={classes.sectionImage}>
+          <img src={surebetsImg.src} alt="surebets" />
+        </Box>
+      </Box>
+      <Box className={classes.section} sx={{ gap: "40px" }}>
+        <Box className={classes.sectionImage}>
+          <img src={arbitrageImg.src} alt="arbitrage" />
+        </Box>
+        <Box className={classes.sectionContent}>
+          <Typography variant="h4" className={classes.sectionTitle}>
+            What is Arbitrage?
+          </Typography>
+          <Typography variant="body1">
+            Arbitrage is a trading strategy that involves buying and selling the
+            same asset on different markets in order to take advantage of price
+            differences and make a profit. In the world of sports betting,
+            arbitrage refers to the same concept, but instead of trading assets,
+            the bettor is placing bets on different outcomes of the same game.
+          </Typography>
+          <Typography variant="body1">
+            Like surebets, arbitrage bets can be used to guarantee a profit
+            regardless of the outcome of the game. This is done by taking
+            advantage of differences in odds offered by different bookmakers.
+            The bettor places bets on all possible outcomes of the game with
+            different bookmakers, so that the total odds are greater than 1. In
+            this way, the bettor can make a profit no matter the outcome of the
+            game.
+          </Typography>
+          <Typography variant="body1">
+            However, as with surebets, arbitrage bets require careful analysis
+            and monitoring of odds, and can be difficult to find and execute.
+            The profit from arbitrage bets is usually small, but can be
+            significant when large amounts of money are bet.
+          </Typography>
+        </Box>
+      </Box>
+    </Container>
   );
 };
 
