@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useMediaQuery } from "@mui/material";
 import surebetsImg from "../../../assets/surebets.png";
 import arbitrageImg from "../../../assets/arbitrage.webp";
 import PageSeo from "../../../components/PageSeo";
@@ -39,6 +40,7 @@ const useStyles = makeStyles(() => ({
   },
   sectionTitle: {
     fontWeight: "bold",
+    textAlign: "left",
     textTransform: "uppercase",
     letterSpacing: 3,
     marginBottom: 20,
@@ -86,6 +88,7 @@ const WhatIsSurebet = () => {
   };
 
   const classes = useStyles();
+  const isDesktop = useMediaQuery("(min-width:600px)");
 
 
   return (
@@ -116,13 +119,13 @@ const WhatIsSurebet = () => {
             find and execute.
           </Typography>
         </Box>
-        <Box className={classes.sectionImage}>
-          <img src={surebetsImg.src} alt="surebets" />
+        <Box className={classes.sectionImage} style={{ margin: !isDesktop ? "0 auto" : ""}}>
+          <img style={{ width: !isDesktop ? "100%" : ""}} src={surebetsImg.src} alt="surebets" />
         </Box>
       </Box>
       <Box className={classes.section} sx={{ gap: "40px" }}>
-        <Box className={classes.sectionImage}>
-          <img src={arbitrageImg.src} alt="arbitrage" />
+        <Box className={classes.sectionImage} style={{ margin: !isDesktop ? "0 auto" : ""}}>
+          <img style={{ width: !isDesktop ? "100%" : ""}} src={arbitrageImg.src} alt="arbitrage" />
         </Box>
         <Box className={classes.sectionContent}>
           <Typography variant="h4" className={classes.sectionTitle}>
