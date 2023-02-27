@@ -102,11 +102,12 @@ const Surebet = () => {
   return (
     <div className={isDesktop ? classes.oddsPediaIframeDesktop : classes.oddsPediaIframeMobile}>
       <PageSeo seoProps={pageSeoProps} />
-        {isLoading ? (
+      <div id="oddspedia-widget-sure-bets" />
+        {isLoading && (
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
         </Box>
-        ) : (<div id="oddspedia-widget-sure-bets" />)}
+        )}
         
         {/* {odds ? (
         odds?.data?.slice(0, 30).map((i) => {
