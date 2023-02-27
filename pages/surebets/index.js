@@ -87,7 +87,7 @@ const Surebet = () => {
     script.src = "https://widgets.oddspedia.com/js/widget/init.js";
     script.async = true;
     document.body.appendChild(script);
-    setIsLoading(false);
+    setTimeout(() => setIsLoading(false), 5000);
   }, []);
 
   useEffect(() => {
