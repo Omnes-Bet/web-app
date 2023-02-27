@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 // import { Paper, Container, Box, CircularProgress } from "@mui/material";
 // import SurebetTable from "../../components/SurebetTable/SurebetTable";
 // import useArbs from "../../hooks/useArbs";
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery, Box, CircularProgress } from "@mui/material";
 import { AuthContext } from "../../contexts/authContext";
 import Router from "next/router";
 import PageSeo from "../../components/PageSeo";
@@ -46,6 +46,7 @@ const Surebet = () => {
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width:600px)");
   const [pageUrl, setPageUrl] = useState();
+  const [isLoading, setIsLoading] = useState(true)
   // const [odds, setOdds] = useState();
 
   useEffect(() => {
@@ -86,6 +87,7 @@ const Surebet = () => {
     script.src = "https://widgets.oddspedia.com/js/widget/init.js";
     script.async = true;
     document.body.appendChild(script);
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -99,8 +101,13 @@ const Surebet = () => {
 
   return (
     <div className={isDesktop ? classes.oddsPediaIframeDesktop : classes.oddsPediaIframeMobile}>
-      <div id="oddspedia-widget-sure-bets">
-        <PageSeo seoProps={pageSeoProps} />
+      <PageSeo seoProps={pageSeoProps} />
+        {isLoading ? (
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <CircularProgress />
+        </Box>
+        ) : (<div id="oddspedia-widget-sure-bets" />)}
+        
         {/* {odds ? (
         odds?.data?.slice(0, 30).map((i) => {
           return <SurebetWidget obj={i} />;
@@ -131,7 +138,6 @@ const Surebet = () => {
           <CircularProgress />
         </Box>
       )} */}
-      </div>
     </div>
   );
 };
