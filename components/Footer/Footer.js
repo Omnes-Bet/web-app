@@ -38,9 +38,9 @@ const Footer = () => {
             <FooterList
               title="Websites"
               options={[
-                { title: "How it works", route: "/como-funciona" },
-                { title: "Questions", route: "/duvidas" },
-                { title: "Rules", route: "/regras" },
+                { title: "How it works", route: "/informative/how-it-works" },
+                { title: "Questions", route: "/informative/questions" },
+                { title: "Rules", route: "/informative/rules" },
               ]}
             />
           </Grid>
@@ -48,10 +48,10 @@ const Footer = () => {
             <FooterList
               title="Company"
               options={[
-                { title: "Service terms", route: "/termos-de-servico" },
+                { title: "Service terms", route: "/informative/services-terms" },
                 {
                   title: "Accounts & Payouts",
-                  route: "/accounts-payouts-and-bonuses",
+                  route: "/informative/accounts-payouts",
                 },
               ]}
             />
@@ -60,8 +60,8 @@ const Footer = () => {
             <FooterList
               title="About"
               options={[
-                { title: "Who we are", route: "/quem-somos" },
-                { title: "Privacy Policy" },
+                { title: "Who we are", route: "/informative/who-we-are" },
+                { title: "Privacy Policy", route: "/informative/privacy-policy" },
               ]}
             />
           </Grid>
@@ -111,9 +111,11 @@ const FooterList = ({ title, options = [] }) => {
       {/*eslint-disable-next-line arrow-parens*/}
       {options.map((opt) => {
         return (
-          <Box fontSize="body2.fontSize" color="grey.400">
-            <Typography>{opt.title}</Typography>
-          </Box>
+          <Link href={opt?.route ? opt?.route : ""}>
+            <Box fontSize="body2.fontSize" color="grey.400">
+              <Typography>{opt.title}</Typography>
+            </Box>
+          </Link>
         );
       })}
     </List>
