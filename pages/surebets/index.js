@@ -111,7 +111,7 @@ const Surebet = () => {
   return (
     <div className={isDesktop ? classes.oddsPediaIframeDesktop : classes.oddsPediaIframeMobile}>
       <PageSeo seoProps={pageSeoProps} />
-      <div id="oddspedia-widget-sure-bets" ref={oddsPediaTag} style={{ width: "1020px", margin: "0 auto" }}/>
+      <div id="oddspedia-widget-sure-bets" ref={oddsPediaTag} style={{ width: isDesktop ? "1020px" : "", margin: "0 auto" }}/>
         {isLoading && (
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
