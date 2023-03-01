@@ -95,7 +95,7 @@ const Surebet = () => {
     document.body.appendChild(script);
     setTimeout(() => {
       setIsLoading(false)
-      console.log("oiiii", scrollFocus())
+      scrollFocus().firstChild.style.borderRadius = "20px"
     }, 5000);
   }, []);
 
