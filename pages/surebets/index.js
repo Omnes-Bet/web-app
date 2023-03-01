@@ -57,7 +57,6 @@ const Surebet = () => {
 
   useEffect(() => {
     setPageUrl(window?.location?.href);
-    console.log("oiiii", scrollFocus())
   }, []);
 
   const pageSeoProps = {
@@ -94,7 +93,10 @@ const Surebet = () => {
     script.src = "https://widgets.oddspedia.com/js/widget/init.js";
     script.async = true;
     document.body.appendChild(script);
-    setTimeout(() => setIsLoading(false), 5000);
+    setTimeout(() => {
+      setIsLoading(false)
+      console.log("oiiii", scrollFocus())
+    }, 5000);
   }, []);
 
   useEffect(() => {
