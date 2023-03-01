@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   container: {
-    backgroundColor: '#262626',
+    backgroundImage: 'linear-gradient(to right, #060C23 , black, #060C23)',
     borderRadius: '1rem',
     boxShadow: '0 0 1rem rgba(255, 255, 255, 0.1)',
     paddingTop: "6rem"

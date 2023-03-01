@@ -5,8 +5,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const useStyles = makeStyles({
   container: {
-    backgroundColor: '#262626',
+    backgroundImage: 'linear-gradient(to right, #060C23 , black, #060C23)',
     padding: "3rem",
+    paddingTop: "6rem",
     fontFamily: "sans-serif",
     borderRadius: '1rem',
   },
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
     margin: "0 auto",
   },
   title: {
-    color: '#262626',
+    color: 'white',
     fontSize: '3rem',
     marginBottom: '2rem',
     textAlign: 'center',

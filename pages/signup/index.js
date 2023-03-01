@@ -16,10 +16,10 @@ const Register = () => {
   };
 
   return (
-    <>
+    <div style={{ backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)", height: "650px", borderRadius: "20px", paddingTop: "100px" }}>
       <PageSeo seoProps={pageSeoProps} />
       <SignUpCard />
-    </>
+    </div>
   );
 };
 

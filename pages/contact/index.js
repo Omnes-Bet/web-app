@@ -122,7 +122,7 @@ const Contact = () => {
   }, [isLoading]);
 
   return (
-    <>
+    <div style={{ paddingTop: "150px", height: "600px", backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)", borderRadius: "20px" }}>
       <PageSeo seoProps={pageSeoProps} />
       <Modal
         open={open}
@@ -139,7 +139,7 @@ const Contact = () => {
       >
         <CircularProgress />
       </Modal>
-      <Card sx={{ maxWidth: 345, margin: "150px auto" }}>
+      <Card sx={{ maxWidth: 345, margin: "0 auto" }}>
         <CardContent sx={{ textAlign: "center" }}>
           <Typography gutterBottom variant="h5" component="h2">
             Contact Us
@@ -186,7 +186,7 @@ const Contact = () => {
           <ChildModal handleCloseParent={handleClose} handleOpen={openChild} />
         </CardContent>
       </Card>
-    </>
+    </div>
   );
 };
 

@@ -51,7 +51,7 @@ const SignUpCard = () => {
 
 
   return (
-    <Card sx={{ maxWidth: 400, margin: "150px auto" }}>
+    <Card sx={{ maxWidth: 400, margin: "0 auto" }}>
       <Modal
         open={open}
         onClose={handleClose}

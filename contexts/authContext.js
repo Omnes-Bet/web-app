@@ -85,7 +85,6 @@ export function AuthProvider({ children }) {
 
     // window.localStorage.setItem("logout", Date.now()guardialo on successguardialo on success);
     setUser(null);
-    console.log("Logged out. Redirecting");
     Router.push("/");
   }
 

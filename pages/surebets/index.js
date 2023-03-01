@@ -31,12 +31,12 @@ const useStyles = makeStyles((theme) => ({
   oddsPediaIframeDesktop: {
     paddingTop: "7rem",
     paddingBottom: "6rem",
-    backgroundColor: "white"
+    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)"
   },
   oddsPediaIframeMobile: {
     paddingTop: "7rem",
     paddingBottom: "4rem",
-    backgroundColor: "white"
+    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)"
   }
 }));
 

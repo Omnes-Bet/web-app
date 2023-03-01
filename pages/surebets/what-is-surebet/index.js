@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
     padding: 40,
     marginTop: 40,
-    backgroundColor: "#212121",
+    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
     color: "#fff",
     borderRadius: 20,
     boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.4)",

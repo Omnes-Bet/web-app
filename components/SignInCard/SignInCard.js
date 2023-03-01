@@ -33,7 +33,7 @@ const SignInCard = () => {
   }, [isLoading]);
 
   return (
-    <Card sx={{ maxWidth: 345, margin: "150px auto" }}>
+    <Card sx={{ maxWidth: 345, margin: "0 auto" }}>
       <Modal
         open={open}
         onClose={handleClose}

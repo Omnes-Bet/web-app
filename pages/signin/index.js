@@ -16,10 +16,10 @@ const LogIn = () => {
   };
 
   return (
-    <>
+    <div style={{ backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)", height: "600px", borderRadius: "20px", paddingTop: "150px" }}>
       <PageSeo seoProps={pageSeoProps} />
       <SignInCard />
-    </>
+    </ div>
   );
 };
 

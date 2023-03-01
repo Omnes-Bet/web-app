@@ -33,7 +33,7 @@ const Header = ({ setOpen }) => {
           </Link>
           {!user ? (
             <>
-              <Link href={"signin"} style={{ marginLeft: "auto" }}>
+              <Link href={"/signin"} style={{ marginLeft: "auto" }}>
                 <Button variant="contained" sx={{ backgroundColor: "#1c50abcc" }}>
                   Log In
                 </Button>
