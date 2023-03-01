@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { makeStyles } from "@mui/styles";
 // import { Paper, Container, Box, CircularProgress } from "@mui/material";
 // import SurebetTable from "../../components/SurebetTable/SurebetTable";
@@ -49,8 +49,15 @@ const Surebet = () => {
   const [isLoading, setIsLoading] = useState(true)
   // const [odds, setOdds] = useState();
 
+  const oddsPediaTag = useRef();
+
+  const scrollFocus = () => {
+    return oddsPediaTag.current;
+  };
+
   useEffect(() => {
     setPageUrl(window?.location?.href);
+    console.log("oiiii", scrollFocus())
   }, []);
 
   const pageSeoProps = {
@@ -102,7 +109,7 @@ const Surebet = () => {
   return (
     <div className={isDesktop ? classes.oddsPediaIframeDesktop : classes.oddsPediaIframeMobile}>
       <PageSeo seoProps={pageSeoProps} />
-      <div id="oddspedia-widget-sure-bets" style={{ backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)" }}/>
+      <div id="oddspedia-widget-sure-bets" style={{ width: "1020px", margin: "0 auto" }}/>
         {isLoading && (
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
