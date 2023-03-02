@@ -15,7 +15,6 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 import Router, { useRouter } from "next/router";
-// import Router from "next/router";
 import Link from "next/link";
 import { AuthContext } from "../../contexts/authContext";
 
@@ -87,12 +86,11 @@ const Payments = () => {
   const classes = useStyles();
   const matches = useMediaQuery("(min-width:600px)");
   const { user } = useContext(AuthContext);
-
-  if(!user){
-    Router.push("/");
-  }
-
+  
   useEffect(() => {
+    if(!user){
+      Router.push("/");
+    }
     setPageUrl(window?.location?.href);
   }, []);
 
