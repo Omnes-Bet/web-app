@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PageSeo from "../../components/PageSeo";
 import { makeStyles } from "@mui/styles";
 import {
@@ -14,14 +14,19 @@ import {
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
+// import Router from "next/router";
 import Link from "next/link";
+import { AuthContext } from "../../contexts/authContext";
 
 const useStyles = makeStyles((theme) => ({
   main: {
     display: "flex",
     justifyContent: "center",
     paddingTop: "6rem",
+    height: "500px",
+    borderRadius: "15px",
+    backgroundImage: 'linear-gradient(to right, #060C23 , black, #060C23)'
   },
   paymentSection: {
     display: "flex",
@@ -81,6 +86,11 @@ const Payments = () => {
   const router = useRouter();
   const classes = useStyles();
   const matches = useMediaQuery("(min-width:600px)");
+  const { user } = useContext(AuthContext);
+
+  if(!user){
+    Router.push("/");
+  }
 
   useEffect(() => {
     setPageUrl(window?.location?.href);

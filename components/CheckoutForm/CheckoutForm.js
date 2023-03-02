@@ -24,12 +24,12 @@ function CheckoutForm({ plandId, planName }) {
   const cardStyle = {
     style: {
       base: {
-        color: "#32325d",
+        color: "white",
         fontFamily: 'Arial, sans-serif',
         fontSmoothing: "antialiased",
         fontSize: "20px",
         "::placeholder": {
-          color: "#32325d"
+          color: "white"
         }
       },
       invalid: {
@@ -94,23 +94,34 @@ function CheckoutForm({ plandId, planName }) {
         <CircularProgress />
       </Modal>
       <TextField 
+        sx={{ marginBottom: "15px" }}
+        color="primary" 
+        focused
         fullWidth
         required 
         label="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
+        InputProps={{
+          style: { color: 'white' }
+        }}
       />
       <br />
       <TextField 
         sx={{ marginBottom: "15px" }}
+        color="primary" 
+        focused
         fullWidth
         required 
         label="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        InputProps={{
+          style: { color: 'white' }
+        }}
       />
       <CardElement options={cardStyle} />
-      <Button sx={{ marginTop: "15px" }} variant="contained" color="success" onClick={handleNewSubscription} disabled={!stripe}>
+      <Button sx={{ marginTop: "15px" }} variant="contained" color="primary" onClick={handleNewSubscription} disabled={!stripe}>
         Subscribe
       </Button>
     </Box>

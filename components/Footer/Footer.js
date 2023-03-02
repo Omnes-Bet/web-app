@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import omnislogo from "../../assets/logo-no-background.png";
+import plusEighteenIcon from "../../assets/plus-18-movie.png";
+import visaIcon from "../../assets/visa.png";
+import mastercardIcon from "../../assets/mastercard.png";
 
 import {
   ListItem,
@@ -14,6 +17,7 @@ import {
 
 import { FacebookRounded } from "@mui/icons-material";
 import { Instagram } from "@mui/icons-material";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import Link from "next/link";
 
 const Footer = () => {
@@ -25,7 +29,13 @@ const Footer = () => {
             <img src={omnislogo.src} alt="OmnesBet" height={"75px"} />
             <Box display={"flex"} mt={4}>
               <Box mr={2} color="grey.400">
-                <FacebookRounded />
+                <Link
+                  href={
+                    "https://www.facebook.com/profile.php?id=100090355054176"
+                  }
+                >
+                  <FacebookRounded />
+                </Link>
               </Box>
               <Box color="grey.400">
                 <Link href={"https://www.instagram.com/omnesbet/"}>
@@ -48,7 +58,10 @@ const Footer = () => {
             <FooterList
               title="Company"
               options={[
-                { title: "Service terms", route: "/informative/services-terms" },
+                {
+                  title: "Service terms",
+                  route: "/informative/services-terms",
+                },
                 {
                   title: "Accounts & Payouts",
                   route: "/informative/accounts-payouts",
@@ -61,7 +74,10 @@ const Footer = () => {
               title="About"
               options={[
                 { title: "Who we are", route: "/informative/who-we-are" },
-                { title: "Privacy Policy", route: "/informative/privacy-policy" },
+                {
+                  title: "Privacy Policy",
+                  route: "/informative/privacy-policy",
+                },
               ]}
             />
           </Grid>
@@ -72,6 +88,37 @@ const Footer = () => {
         <Box bgcolor="grey.400" style={{ opacity: 0.2 }}>
           <Divider />
         </Box>
+        <Box bgcolor="grey.400" style={{ opacity: 0.2 }}>
+          <Divider />
+        </Box>
+
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            padding: "10px",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img
+              src={plusEighteenIcon.src}
+              alt="plus-eighteen"
+              style={{ width: "50px", marginRight: "15px" }}
+            />
+            <VerifiedUserIcon fontSize="large" />
+          </div>
+
+          <div>
+            <img src={visaIcon.src} alt="visa" style={{ width: "50px" }} />
+            <img
+              src={mastercardIcon.src}
+              alt="mastercard"
+              style={{ width: "70px" }}
+            />
+          </div>
+        </Box>
+
         <Box bgcolor="grey.400" style={{ opacity: 0.2 }}>
           <Divider />
         </Box>

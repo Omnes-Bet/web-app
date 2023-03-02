@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SignInCard from "../../components/SignInCard/SignInCard";
 import PageSeo from "../../components/PageSeo";
+import { AuthContext } from "../../contexts/authContext";
+import Router from "next/router";
 
 const LogIn = () => {
   const [pageUrl, setPageUrl] = useState();
+  const { user } = useContext(AuthContext);
+
+  if(user){
+    Router.push("/");
+  }
 
   useEffect(() => {
     setPageUrl(window?.location?.href);
