@@ -97,7 +97,7 @@ export default function Home() {
         ></script>
         <script>
           window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
+          {window.dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'AW-11108087420');
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
