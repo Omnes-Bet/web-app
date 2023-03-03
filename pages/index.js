@@ -91,15 +91,6 @@ export default function Home() {
   return (
     <>
       <Head>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-11108087420"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {window.dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'AW-11108087420');
-        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={logo.src} />
         <link rel="canonical" href="https://omnesbet.com" key="canonical" />
