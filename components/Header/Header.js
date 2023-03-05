@@ -11,6 +11,7 @@ import DensitySmallIcon from "@mui/icons-material/DensitySmall";
 import UserHeader from "../UserHeader/UserHeader";
 import Link from "next/link";
 import { AuthContext } from "../../contexts/authContext";
+import omnesLogo from "../../assets/logo-white.png"
 
 const Header = ({ setOpen }) => {
   const { user } = useContext(AuthContext);
@@ -29,7 +30,8 @@ const Header = ({ setOpen }) => {
             <DensitySmallIcon />
           </IconButton>
           <Link href={"/"}>
-            <Typography>OmnesBet</Typography>
+            {/* <Typography>OmnesBet</Typography> */}
+            <img src={omnesLogo.src} style={{ width: "80px", height: "75px"}} alt="omnesbet"/>
           </Link>
           {!user ? (
             <>
