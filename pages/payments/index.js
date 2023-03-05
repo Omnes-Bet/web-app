@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
   main: {
     display: "flex",
     justifyContent: "center",
-    paddingTop: "6rem",
-    height: "500px",
+    flexDirection: "column",
+    height: "auto",
     borderRadius: "15px",
-    backgroundImage: 'linear-gradient(to right, #060C23 , black, #060C23)'
+    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
   },
   paymentSection: {
     display: "flex",
@@ -86,9 +86,9 @@ const Payments = () => {
   const classes = useStyles();
   const matches = useMediaQuery("(min-width:600px)");
   const { user } = useContext(AuthContext);
-  
+
   useEffect(() => {
-    if(!user){
+    if (!user) {
       Router.push("/");
     }
     setPageUrl(window?.location?.href);
@@ -107,7 +107,7 @@ const Payments = () => {
   return (
     <div className={classes.main}>
       <PageSeo seoProps={pageSeoProps} />
-      <div>
+      <div style={{ margin: "0 auto", paddingTop: "8rem" }}>
         <Link href={"/payments/all"}>
           <Button variant="outlined" color="primary">
             See other plans
@@ -176,6 +176,60 @@ const Payments = () => {
             />
           </Elements>
         </div>
+      </div>
+      <div
+        style={{
+          maxWidth: "700px",
+          margin: "0 auto",
+          marginTop: "20px",
+          fontFamily: "sans-serif",
+          color: "white",
+          padding: "20px"
+        }}
+      >
+        <p>
+          We would like to inform our users that the information we provide is
+          for informational purposes only. We do not take responsibility for any
+          losses incurred while using our service. Our service is designed to
+          provide users with information about potential arbitrage opportunities
+          in the sports betting market, but we do not guarantee the accuracy of
+          the information provided.
+        </p>
+        <br />
+        <p>
+          It is important for users to understand that the information we
+          provide may change at any time. Therefore, it is the user's
+          responsibility to verify all information before placing any bets. We
+          highly recommend that users conduct their own research before making
+          any decisions and to consult with a professional if necessary.
+        </p>
+        <br />
+        <p>
+          While surebetting can be a profitable strategy, it also carries risks.
+          Users must understand that there is always a chance of losing money
+          when placing bets, even when using a surebetting strategy.
+          Additionally, there are other risks to consider such as betting
+          limits, account restrictions, and unforeseen events that may affect
+          the outcome of a match.
+        </p>
+        <br />
+        <p>
+          It is crucial for users to approach surebetting with caution and to
+          only bet within their means. Users should never place bets that they
+          cannot afford to lose. Our goal is to provide users with information
+          that can help them make informed decisions, but ultimately, it is the
+          user's responsibility to manage their own risk and make their own
+          decisions.
+        </p>
+        <br />
+        <p>
+          In summary, while we strive to provide accurate and up-to-date
+          information, we do not take responsibility for any losses incurred
+          while using our service. Users must verify all information before
+          placing any bets and are responsible for managing their own risk. We
+          encourage users to approach surebetting with caution and to only bet
+          within their means.
+        </p>
       </div>
     </div>
   );
