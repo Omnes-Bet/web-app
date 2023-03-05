@@ -134,9 +134,9 @@ export default function Home() {
               </>
             ) : (
               <>
-                <h1>Check the current Arbs & Surebts</h1>
+                <h1>Check the current Arbs & Surebets</h1>
                 <p>
-                  Make you bets and investments safe with our arbitrage services
+                  Make your bets and investments safe with our arbitrage services
                 </p>
                 <Link href={"/surebets"}>
                   <Button

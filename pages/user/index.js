@@ -158,7 +158,7 @@ const User = () => {
             >
               {user?.subsInfo?.status == "active" ? (
                 <>
-                { user?.subsInfo?.cancel_at &&
+                { !user?.subsInfo?.cancel_at &&
                 <>
                   <Typography variant="h6">Cancel Plan:</Typography>
                   <Button
