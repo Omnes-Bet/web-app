@@ -63,8 +63,8 @@ const Footer = () => {
                   route: "/informative/services-terms",
                 },
                 {
-                  title: "Accounts & Payouts",
-                  route: "/informative/accounts-payouts",
+                  title: "Accounts",
+                  route: "/informative/accounts",
                 },
               ]}
             />

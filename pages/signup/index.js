@@ -4,7 +4,7 @@ import PageSeo from "../../components/PageSeo";
 import { AuthContext } from "../../contexts/authContext";
 import Router from "next/router";
 
-const Register = () => {
+const SignUp = () => {
   const [pageUrl, setPageUrl] = useState();
   const { user } = useContext(AuthContext);
 
@@ -30,4 +30,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SignUp;

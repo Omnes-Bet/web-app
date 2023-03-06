@@ -131,7 +131,7 @@ const SocialProof = () => {
       <Link href={"/payments/all"}>
         <Button
           variant="contained"
-          sx={{ backgroundColor: "#1c50abcc", width: "fit-content" }}
+          sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)", width: "fit-content" }}
         >
           Subscribe Now
         </Button>

@@ -121,7 +121,7 @@ const SignUpCard = () => {
                 variant="contained"
                 onClick={() => {handleSubmit()}}
                 >
-                Press to Register
+                Press to Sign Up
               </Button>
             </Box>
           </Stack>

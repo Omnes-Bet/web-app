@@ -36,7 +36,7 @@ const Header = ({ setOpen }) => {
           {!user ? (
             <>
               <Link href={"/signin"} style={{ marginLeft: "auto" }}>
-                <Button variant="contained" sx={{ backgroundColor: "#1c50abcc" }}>
+                <Button variant="contained" sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)" }}>
                   Log In
                 </Button>
               </Link>
@@ -44,9 +44,9 @@ const Header = ({ setOpen }) => {
               <Link href={"/signup"}>
                 <Button
                   variant="contained"
-                  sx={{ marginLeft: "5px", backgroundColor: "#1c50abcc" }}
+                  sx={{ marginLeft: "5px", background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)" }}
                 >
-                  Register
+                  Sign Up
                 </Button>
               </Link>
             </>
