@@ -43,13 +43,14 @@ export function AuthProvider({ children }) {
     Router.push("/");
   }
 
-  async function signup({ name, email, phoneNumber, birthday, password }) {
+  async function signup({ name, email, phoneNumber, birthday, password, promoCode }) {
     await registerUser({
       name,
       email,
       phoneNumber,
       birthday,
       password,
+      promoCode
     });
 
     async function getUserInformation() {

@@ -24,6 +24,7 @@ const SignUpCard = () => {
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
   const [password, setPassword] = useState('');
+  const [promoCode, setPromoCode] = useState('');
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -39,7 +40,8 @@ const SignUpCard = () => {
       phoneNumber: phoneNumber,
       email: email,
       birthday: birthday,
-      password: password
+      password: password,
+      promoCode: promoCode
     };
 
     await signup(credentials);
@@ -116,6 +118,12 @@ const SignUpCard = () => {
                 autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+              />
+              <TextField 
+                id="outlined-required" 
+                label="Bonus Code"
+                value={promoCode}
+                onChange={(e) => setPromoCode(e.target.value)}
               />
               <Button 
                 variant="contained"
