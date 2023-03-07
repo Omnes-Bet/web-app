@@ -100,7 +100,7 @@ const Surebet = () => {
   }, []);
 
   useEffect(() => {
-    if (!(user?.subsInfo?.status == "active")) {
+    if ((!(user?.subsInfo?.status == "active")) && !(user?.is_trial == 1)) {
       Router.push("/");
     } /*else {
       getArbs();

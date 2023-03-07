@@ -33,7 +33,7 @@ const SideBar = ({ isOpen, setOpen }) => {
         }}
       >
         <List>
-          {user?.subsInfo?.status == "active" && (
+          {((user?.subsInfo?.status == "active") || (user?.is_trial == 1)) && (
             <Link href={"/surebets"} onClick={() => setOpen(false)}>
               <ListItem disablePadding>
                 <ListItemButton>
