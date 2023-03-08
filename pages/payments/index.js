@@ -53,7 +53,7 @@ const stripePromise = loadStripe(
 const subscriptionOptions = [
   {
     title: "Silver",
-    price: "$19",
+    price: "R$99",
     suffix: " / mo",
     benefit1: "Surebets & Arbs",
     benefit2: "Contact over email and about 3 day to be replied.",
@@ -61,7 +61,7 @@ const subscriptionOptions = [
   },
   {
     title: "Gold",
-    price: "$29",
+    price: "R$149",
     suffix: " / mo",
     benefit1: "Surebets & Arbs",
     benefit2: "Contact over email and be replied within 24hrs",
@@ -69,7 +69,7 @@ const subscriptionOptions = [
   },
   {
     title: "Pro",
-    price: "$39",
+    price: "R$199",
     suffix: " / mo",
     benefit1: "Surebets & Arbs",
     benefit2: "Contact over email, phone and video calls with our team",
