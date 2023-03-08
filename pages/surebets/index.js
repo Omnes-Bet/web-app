@@ -95,7 +95,7 @@ const Surebet = () => {
     document.body.appendChild(script);
     setTimeout(() => {
       setIsLoading(false)
-      console.log("oddspedia", scrollFocus().firstChild.style.borderRadius = "20px")
+      console.log("teste oddspedia", scrollFocus().firstChild.style.borderRadius = "20px")
     }, 5000);
   }, []);
 
