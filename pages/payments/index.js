@@ -53,29 +53,26 @@ const stripePromise = loadStripe(
 const subscriptionOptions = [
   {
     title: "Silver",
-    price: "$99",
+    price: "$19",
     suffix: " / mo",
-    benefit1: "Surebets",
-    benefit2: "Prematch comparison service",
-    benefit3: "Middles",
+    benefit1: "Surebets & Arbs",
+    benefit2: "Contact over email and about 3 day to be replied.",
     benefit4: "Sorting by ROI",
   },
   {
     title: "Gold",
-    price: "$149",
+    price: "$29",
     suffix: " / mo",
-    benefit1: "Surebets",
-    benefit2: "Prematch comparison service",
-    benefit3: "Middles",
+    benefit1: "Surebets & Arbs",
+    benefit2: "Contact over email and be replied within 24hrs",
     benefit4: "Sorting by ROI",
   },
   {
     title: "Pro",
-    price: "$199",
+    price: "$39",
     suffix: " / mo",
-    benefit1: "Surebets",
-    benefit2: "Prematch comparison service",
-    benefit3: "Middles",
+    benefit1: "Surebets & Arbs",
+    benefit2: "Contact over email, phone and video calls with our team",
     benefit4: "Sorting by ROI",
   },
 ];
@@ -149,13 +146,6 @@ const Payments = () => {
                     component="p"
                   >
                     {content?.benefit2}
-                  </Typography>
-                  <Typography
-                    color="textSecondary"
-                    variant="subtitle1"
-                    component="p"
-                  >
-                    {content?.benefit3}
                   </Typography>
                   <Typography
                     color="textSecondary"
