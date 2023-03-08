@@ -145,7 +145,7 @@ const Plans = (props) => {
                       pathname: "/payments",
                       query: {
                         planSelected: "Silver",
-                        id: "price_1MjGC4BNTabfN8Iz1Wmr8GRx",
+                        id: "price_1MjGSrBNTabfN8Iz2HX6IHdX",
                       },
                     }}
                   >
