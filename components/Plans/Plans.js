@@ -34,7 +34,7 @@ const Plans = (props) => {
     option1: "Monthly",
     option2: "Annual",
     "01_title": "Silver",
-    "01_price": "$99",
+    "01_price": "$19",
     "01_suffix": " / mo",
     "01_benefit1": "Surebets & Arbs",
     // "01_benefit2": "Prematch comparison service",
@@ -43,7 +43,7 @@ const Plans = (props) => {
     "01_primary-action": "Select plan",
     "01_secondary-action": "Learn more",
     "02_title": "Gold",
-    "02_price": "$149",
+    "02_price": "$29",
     "02_suffix": " / mo",
     "02_benefit1": "Surebets & Arbs",
     // "02_benefit2": "Prematch comparison service",
@@ -52,7 +52,7 @@ const Plans = (props) => {
     "02_primary-action": "Select plan",
     "02_secondary-action": "Learn more",
     "03_title": "Pro",
-    "03_price": "$199",
+    "03_price": "$39",
     "03_suffix": " / mo",
     "03_benefit1": "Surebets & Arbs",
     // "03_benefit2": "Prematch comparison service",
@@ -145,7 +145,7 @@ const Plans = (props) => {
                       pathname: "/payments",
                       query: {
                         planSelected: "Silver",
-                        id: "price_1MKtefBNTabfN8IzoE3uYZ8u",
+                        id: "price_1MjFXVBNTabfN8IzVBtbppYu",
                       },
                     }}
                   >
@@ -213,7 +213,7 @@ const Plans = (props) => {
                       pathname: "/payments",
                       query: {
                         planSelected: "Gold",
-                        id: "price_1MKtfZBNTabfN8IzPlgxCF4c",
+                        id: "price_1MjFYgBNTabfN8Izn9pE6vr9",
                       },
                     }}
                   >
@@ -277,7 +277,7 @@ const Plans = (props) => {
                       pathname: "/payments",
                       query: {
                         planSelected: "Pro",
-                        id: "price_1MKasvBNTabfN8IzK3sybKA0",
+                        id: "price_1MjFaJBNTabfN8IzAFciIDmg",
                       },
                     }}
                   >

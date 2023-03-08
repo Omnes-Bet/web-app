@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const stripePromise = loadStripe(
-  "pk_test_51MKap3BNTabfN8IzF0rfqaA0XyRnjYndESH3tjQtjjhcoFNmO12WAnSKr730ZosVnsP4imvqKkw4Y6fiqWTyeyai00gPyFHQ5Z"
+  "pk_live_51MKap3BNTabfN8IzVrtVYUCaUPmcjtkywMKBngay9fMq4Y4pynDeGzZbpT77wp8inUsR1sO5AhZX9xLhSufEbwaz00hWP8S8We"
 );
 
 const subscriptionOptions = [
