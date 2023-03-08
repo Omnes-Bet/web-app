@@ -67,7 +67,7 @@ function CheckoutForm({ plandId, planName }) {
       if (confirmPayment?.error) {
         alert(confirmPayment.error.message);
       } else {
-        alert("Success! Enjoy Omnesbet!.");
+        alert("Success! Check your email for the invoice.");
         window.location.href = "https://omnesbet.com";
 
       }
