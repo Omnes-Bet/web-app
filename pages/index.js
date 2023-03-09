@@ -116,12 +116,11 @@ export default function Home() {
               !isMobile ? classes.heroMobileInfo : classes.heroDesktopInfo
             }
           >
-            {!(user?.subsInfo?.status == "active") ? (
+            {(user && !(user?.subsInfo?.status == "active") && !(user?.is_trial == 1)) ? (
               <>
-                <h1>Ensure your winning bets</h1>
+                <h1>Ensure Your Winning Bets</h1>
                 <p>
-                  Make your bets and investments safe with our arbitrage
-                  services
+                  Subscribe Now for Unlimited Access to the OmnesBet Sports Betting Tool
                 </p>
                 <Link href={"/payments/all"}>
                   <Button
@@ -132,11 +131,11 @@ export default function Home() {
                   </Button>
                 </Link>
               </>
-            ) : (
+            ) : (user && !(user?.subsInfo?.status == "active") && (user?.is_trial == 1)) ? (
               <>
-                <h1>Check the current Arbs & Surebets</h1>
+                <h1>Enjoy Your Trial Mode</h1>
                 <p>
-                  Make your bets and investments safe with our arbitrage services
+                  Enjoy Your 1-Day Free Trial and Experience OmnesBet
                 </p>
                 <Link href={"/surebets"}>
                   <Button
@@ -144,6 +143,36 @@ export default function Home() {
                     sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)", width: "fit-content" }}
                   >
                     Surebets
+                  </Button>
+                </Link>
+              </>
+            ) : (user?.subsInfo?.status == "active") ? (
+              <>
+                <h1>Welcome to OmnesBet</h1>
+                <p>
+                  Your All-in-One Sports Betting Solution for Arbitrages & Surebets
+                </p>
+                <Link href={"/surebets"}>
+                  <Button
+                    variant="contained"
+                    sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)", width: "fit-content" }}
+                  >
+                    Surebets
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <h1>Sign up now for 1-Day Free Trial</h1>
+                <p>
+                  The Ultimate Sports Betting Tool for Consistent Wins
+                </p>
+                <Link href={"/signup"}>
+                  <Button
+                    variant="contained"
+                    sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)", width: "fit-content" }}
+                  >
+                    Sign up
                   </Button>
                 </Link>
               </>
