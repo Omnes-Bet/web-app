@@ -75,6 +75,7 @@ const WhatIsASurebetBanner = () => {
           <img
             className={isDesktop ? classes.imgDesktop : classes.imgMobile}
             src={mobileSurebets.src}
+            alt="surebet-image"
           />
         </div>
       </div>

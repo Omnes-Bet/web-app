@@ -31,7 +31,7 @@ const Header = ({ setOpen }) => {
           </IconButton>
           <Link href={"/"}>
             {/* <Typography>OmnesBet</Typography> */}
-            <img src={omnesLogo.src} style={{ width: "80px", height: "75px"}} alt="omnesbet"/>
+            <img src={omnesLogo.src} alt="omnesbet-logo" style={{ width: "80px", height: "75px"}} alt="omnesbet"/>
           </Link>
           {!user ? (
             <>

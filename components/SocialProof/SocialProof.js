@@ -108,12 +108,12 @@ const SocialProof = () => {
               <SwiperSlide className={classes.swiperSlide}>
                 <div className={classes.proofSection}>
                   <div className={classes.witnessImg}>
-                    <img src={i.photo.src} style={{ borderRadius: "7px" }} />
+                    <img src={i.photo.src} alt="slide-swiper" style={{ borderRadius: "7px" }} />
                   </div>
                   <div className={classes.witness}>
                     <div className={classes.witnessRateStar}>
                       <h2 className={classes.witnessRate}>{i.rate}</h2>
-                      <img src={stars.src} />
+                      <img src={stars.src} alt="star-pic" />
                     </div>
                     <div>
                       <h3 className={classes.witnessMessage}>{i.message}</h3>
