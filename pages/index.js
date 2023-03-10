@@ -10,6 +10,7 @@ import PageSeo from "../components/PageSeo";
 import WhatIsASurebetBanner from "../components/WhatIsASurebetBanner/WhatIsASurebetBanner";
 import WinEveryWeekBanner from "../components/WinEveryWeekBanner/WinEveryWeekBanner";
 import SocialProof from "../components/SocialProof/SocialProof";
+import Logo from "../assets/logo-white.ico";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -92,8 +93,9 @@ export default function Home() {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href={logo.src} />
         <link rel="canonical" href="https://omnesbet.com" key="canonical" />
+        <link rel="shortcut icon" href={Logo.src} type="image/x-icon" />
+        <link rel="icon" href={Logo.src} type="image/x-icon" />
       </Head>
       <PageSeo seoProps={pageSeoProps} />
       <div className={classes.main}>
