@@ -82,7 +82,7 @@ const Surebet = () => {
       width: "0",
       theme: "1",
       odds_type: "1",
-      language: "pt",
+      language: "br",
       primary_color: "#1976D2",
       accent_color: "#15EADB",
       font: "Roboto",
