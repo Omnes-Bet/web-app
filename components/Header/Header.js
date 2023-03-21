@@ -60,7 +60,7 @@ const Header = ({ setOpen }) => {
                       "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
                   }}
                 >
-                  Inscrever-se
+                  Registrar
                 </Button>
               </Link>
             </>
