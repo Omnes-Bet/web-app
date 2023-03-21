@@ -8,7 +8,7 @@ const LogIn = () => {
   const [pageUrl, setPageUrl] = useState();
   const { user } = useContext(AuthContext);
 
-  if(user){
+  if (user) {
     Router.push("/");
   }
 
@@ -17,16 +17,23 @@ const LogIn = () => {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | Sign In",
-    description: "Sign In for the Best Arbitrage Software",
+    title: "Omnesbet | Entrar",
+    description: "Entre no melhor software de arbitragem",
     pageUrl: pageUrl,
   };
 
   return (
-    <div style={{ backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)", height: "600px", borderRadius: "20px", paddingTop: "150px" }}>
+    <div
+      style={{
+        backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
+        height: "600px",
+        borderRadius: "20px",
+        paddingTop: "150px",
+      }}
+    >
       <PageSeo seoProps={pageSeoProps} />
       <SignInCard />
-    </ div>
+    </div>
   );
 };
 

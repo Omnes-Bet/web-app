@@ -1092,7 +1092,7 @@ const PaymentForm = () => {
       <Box sx={{ maxWidth: 400, margin: "150px auto" }}>
         <Grid container item xs={12}>
           <Grid item xs={12} sm={3}>
-            <Typography variant="h6">Payment Data</Typography>
+            <Typography variant="h6">Dados de Pagamento</Typography>
           </Grid>
           <Grid container item xs={12} sm={9} justify="space-between">
             {cardsLogo.map((e) => (

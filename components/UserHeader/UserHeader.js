@@ -42,7 +42,11 @@ const UserHeader = ({ user }) => {
           <Typography>{user.name}</Typography>
           <Box className={classes.userWallet}>
             <Wallet />
-            {(user?.subsInfo?.status == "active") ? "ACTIVE" : (user?.is_trial == 1) ? "TRIAL" : "INACTIVE"}
+            {user?.subsInfo?.status == "active"
+              ? "ATIVO"
+              : user?.is_trial == 1
+              ? "TESTE"
+              : "INATIVO"}
           </Box>
         </Box>
 

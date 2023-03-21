@@ -77,7 +77,7 @@ const WinEveryWeekBanner = () => {
       <div className={classes.main}>
         <div className={classes.box}>
           <div className={classes.titleSection}>
-            <h2 className={classes.title}>Win Every Week</h2>
+            <h2 className={classes.title}>Ganhe Toda Semana</h2>
           </div>
           <div
             className={
@@ -95,12 +95,14 @@ const WinEveryWeekBanner = () => {
             >
               <div className={classes.option}>
                 <AttachMoneyIcon />
-                <h3 className={classes.optionTitle}>Profitable Surebets</h3>
+                <h3 className={classes.optionTitle}>Surebets Lucrativas</h3>
               </div>
 
               <div className={classes.option}>
                 <SignalCellularAltIcon />
-                <h3 className={classes.optionTitle}>Algorithms work for you</h3>
+                <h3 className={classes.optionTitle}>
+                  Algoritmos trabalham para você
+                </h3>
               </div>
             </div>
             <div
@@ -112,19 +114,23 @@ const WinEveryWeekBanner = () => {
             >
               <div
                 className={classes.option}
-                style={isDesktop ? {"":""} : { paddingTop: "16px" }}
+                style={isDesktop ? { "": "" } : { paddingTop: "16px" }}
               >
                 <CloudQueueIcon />
-                <h3 className={classes.optionTitle}> No need to download</h3>
+                <h3 className={classes.optionTitle}>
+                  {" "}
+                  Não é necessário baixar
+                </h3>
               </div>
 
               <div
                 className={classes.option}
-                style={isDesktop ? {"":""} : { paddingTop: "16px" }}
+                style={isDesktop ? { "": "" } : { paddingTop: "16px" }}
               >
                 <AccountTreeIcon />
                 <h3 className={classes.optionTitle}>
-                  Bet on all the results of a event and still profit
+                  Aposte em todos os resultados de um evento e ainda obtenha
+                  lucro
                 </h3>
               </div>
             </div>

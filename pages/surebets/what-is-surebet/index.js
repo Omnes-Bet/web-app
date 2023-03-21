@@ -81,15 +81,14 @@ const WhatIsSurebet = () => {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | What is Surebets && Arbitrage",
+    title: "Omnesbet | O que é Surebets && Arbitrage",
     description:
-      "Get a deep understanding of what is a surebet & arbitrage in sports betting.",
+      "Obtenha uma compreensão profunda do que é uma aposta certa e arbitragem em apostas esportivas.",
     pageUrl: pageUrl,
   };
 
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width:600px)");
-
 
   return (
     <Container maxWidth="lg" className={classes.container}>
@@ -97,61 +96,78 @@ const WhatIsSurebet = () => {
       <Box className={classes.section}>
         <Box className={classes.sectionContent}>
           <Typography variant="h4" className={classes.sectionTitle}>
-            What are Surebets?
+            O que são Surebets?
           </Typography>
           <Typography variant="body1">
-            Surebets, also known as arbitrage bets, are a type of bet where the
-            bettor can make a profit regardless of the outcome of the game. This
-            is achieved by taking advantage of differences in odds offered by
-            different bookmakers.
+            Surebets, também conhecidas como apostas de arbitragem, são um tipo
+            de aposta em que o o apostador pode lucrar independentemente do
+            resultado do jogo. Esse é alcançado aproveitando as diferenças nas
+            probabilidades oferecidas por diferentes casas de apostas.
           </Typography>
           <Typography variant="body1">
-            In a surebet, the bettor places a bet on all possible outcomes of a
-            game with different bookmakers, so that the total odds are greater
-            than 1. This ensures a profit no matter the outcome of the game. The
-            profit is usually small, but can be significant when large amounts
-            of money are bet.
+            Em uma surebet, o apostador aposta em todos os resultados possíveis
+            de uma jogo com diferentes casas de apostas, para que as
+            probabilidades totais sejam maiores de 1. Isso garante um lucro,
+            independentemente do resultado do jogo. O o lucro geralmente é
+            pequeno, mas pode ser significativo quando grandes quantias de
+            dinheiro são apostados.
           </Typography>
           <Typography variant="body1">
-            Surebets are popular among professional bettors, who are always
-            looking for opportunities to make a profit. However, they require
-            careful analysis and monitoring of odds, and can be difficult to
-            find and execute.
+            As Surebets são populares entre os apostadores profissionais, que
+            estão sempre em busca de oportunidades de lucro. No entanto, eles
+            exigem análise cuidadosa e monitoramento de probabilidades, e pode
+            ser difícil de encontrar e executar.
           </Typography>
         </Box>
-        <Box className={classes.sectionImage} style={{ margin: !isDesktop ? "0 auto" : ""}}>
-          <img style={{ width: !isDesktop ? "100%" : ""}} src={surebetsImg.src} alt="surebets" />
+        <Box
+          className={classes.sectionImage}
+          style={{ margin: !isDesktop ? "0 auto" : "" }}
+        >
+          <img
+            style={{ width: !isDesktop ? "100%" : "" }}
+            src={surebetsImg.src}
+            alt="surebets"
+          />
         </Box>
       </Box>
       <Box className={classes.section} sx={{ gap: "40px" }}>
-        <Box className={classes.sectionImage} style={{ margin: !isDesktop ? "0 auto" : ""}}>
-          <img style={{ width: !isDesktop ? "100%" : ""}} src={arbitrageImg.src} alt="arbitrage" />
+        <Box
+          className={classes.sectionImage}
+          style={{ margin: !isDesktop ? "0 auto" : "" }}
+        >
+          <img
+            style={{ width: !isDesktop ? "100%" : "" }}
+            src={arbitrageImg.src}
+            alt="arbitrage"
+          />
         </Box>
         <Box className={classes.sectionContent}>
           <Typography variant="h4" className={classes.sectionTitle}>
-            What is Arbitrage?
+            O que é Arbitragem?
           </Typography>
           <Typography variant="body1">
-            Arbitrage is a trading strategy that involves buying and selling the
-            same asset on different markets in order to take advantage of price
-            differences and make a profit. In the world of sports betting,
-            arbitrage refers to the same concept, but instead of trading assets,
-            the bettor is placing bets on different outcomes of the same game.
+            A arbitragem é uma estratégia de negociação que envolve a compra e
+            venda de mesmo ativo em diferentes mercados, a fim de aproveitar o
+            preço e diferenças e lucrar. No mundo das apostas esportivas,
+            arbitragem refere-se ao mesmo conceito, mas em vez de negociar
+            ativos, o apostador está apostando em diferentes resultados do mesmo
+            jogo.
           </Typography>
           <Typography variant="body1">
-            Like surebets, arbitrage bets can be used to guarantee a profit
-            regardless of the outcome of the game. This is done by taking
-            advantage of differences in odds offered by different bookmakers.
-            The bettor places bets on all possible outcomes of the game with
-            different bookmakers, so that the total odds are greater than 1. In
-            this way, the bettor can make a profit no matter the outcome of the
-            game.
+            Assim como as surebets, as apostas de arbitragem podem ser usadas
+            para garantir lucro independentemente do resultado do jogo. Isso é
+            feito tomando vantagem das diferenças de cotas oferecidas por
+            diferentes casas de apostas. O apostador faz apostas em todos os
+            resultados possíveis do jogo com diferentes casas de apostas, para
+            que as probabilidades totais sejam superiores a 1. Em desta forma, o
+            apostador pode lucrar independentemente do resultado da jogo.
           </Typography>
           <Typography variant="body1">
-            However, as with surebets, arbitrage bets require careful analysis
-            and monitoring of odds, and can be difficult to find and execute.
-            The profit from arbitrage bets is usually small, but can be
-            significant when large amounts of money are bet.
+            No entanto, assim como as surebets, as apostas de arbitragem
+            requerem uma análise cuidadosa e monitoramento de probabilidades, e
+            pode ser difícil de encontrar e executar. O lucro das apostas de
+            arbitragem geralmente é pequeno, mas pode ser significativo quando
+            grandes quantias de dinheiro são apostadas.
           </Typography>
         </Box>
       </Box>

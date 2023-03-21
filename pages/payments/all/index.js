@@ -11,13 +11,20 @@ const AllPlans = () => {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | All Plans",
-    description: "Choose a plan and enjoy the data",
+    title: "Omnesbet | Todos os planos",
+    description: "Escolha um plano e aproveite os dados",
     pageUrl: pageUrl,
   };
 
   return (
-    <Box my={8} sx={{ backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)", borderBottomLeftRadius: "20px", borderBottomRightRadius: "20px" }}>
+    <Box
+      my={8}
+      sx={{
+        backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
+        borderBottomLeftRadius: "20px",
+        borderBottomRightRadius: "20px",
+      }}
+    >
       <PageSeo seoProps={pageSeoProps} />
       <Plans />
     </Box>

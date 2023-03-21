@@ -51,7 +51,7 @@ const SignInCard = () => {
       </Modal>
       <CardContent sx={{ textAlign: "center" }}>
         <Typography gutterBottom variant="h5" component="h2">
-          Enter your credentials
+          Digite suas credenciais
         </Typography>
         <Box
           component="form"
@@ -64,7 +64,7 @@ const SignInCard = () => {
           <TextField
             required
             id="outlined-required"
-            label="email"
+            label="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -72,7 +72,7 @@ const SignInCard = () => {
             width={70}
             m="auto"
             id="outlined-password-input"
-            label="Password"
+            label="Senha"
             type="password"
             autoComplete="current-password"
             value={password}
@@ -84,7 +84,7 @@ const SignInCard = () => {
               handleSubmit();
             }}
           >
-            Press to Log In
+            Pressione para Entrar
           </Button>
         </Box>
       </CardContent>

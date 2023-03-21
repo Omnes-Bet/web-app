@@ -11,7 +11,7 @@ import DensitySmallIcon from "@mui/icons-material/DensitySmall";
 import UserHeader from "../UserHeader/UserHeader";
 import Link from "next/link";
 import { AuthContext } from "../../contexts/authContext";
-import omnesLogo from "../../assets/logo-white.png"
+import omnesLogo from "../../assets/logo-white.png";
 
 const Header = ({ setOpen }) => {
   const { user } = useContext(AuthContext);
@@ -31,22 +31,36 @@ const Header = ({ setOpen }) => {
           </IconButton>
           <Link href={"/"}>
             {/* <Typography>OmnesBet</Typography> */}
-            <img src={omnesLogo.src} alt="omnesbet-logo" style={{ width: "80px", height: "75px"}} alt="omnesbet"/>
+            <img
+              src={omnesLogo.src}
+              alt="omnesbet-logo"
+              style={{ width: "80px", height: "75px" }}
+            />
           </Link>
           {!user ? (
             <>
               <Link href={"/signin"} style={{ marginLeft: "auto" }}>
-                <Button variant="contained" sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)" }}>
-                  Log In
+                <Button
+                  variant="contained"
+                  sx={{
+                    background:
+                      "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                  }}
+                >
+                  Entrar
                 </Button>
               </Link>
 
               <Link href={"/signup"}>
                 <Button
                   variant="contained"
-                  sx={{ marginLeft: "5px", background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)" }}
+                  sx={{
+                    marginLeft: "5px",
+                    background:
+                      "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                  }}
                 >
-                  Sign Up
+                  Inscrever-se
                 </Button>
               </Link>
             </>

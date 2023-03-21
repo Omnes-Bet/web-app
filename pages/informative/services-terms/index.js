@@ -56,7 +56,7 @@ function ServiceTerms() {
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <Typography variant="h1" className={classes.title}>
-          Service Terms
+          Termos de serviço
         </Typography>
         <Accordion>
           <AccordionSummary
@@ -65,25 +65,25 @@ function ServiceTerms() {
             id="panel1a-header"
           >
             <Typography variant="h2" className={classes.subtitle}>
-              Subscription
+              Assinatura
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
               <Typography variant="h3" className={classes.question}>
-                How do I cancel my subscription?
+                Como faço para cancelar minha assinatura?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                You can cancel your subscription anytime by logging into your
-                account and going to the User page. From there, you can
-                choose to cancel your subscription.
+                Você pode cancelar sua assinatura a qualquer momento fazendo
+                login em seu conta e indo para a página do usuário. A partir
+                daí, você pode escolha cancelar sua assinatura.
               </Typography>
 
               <Typography variant="h3" className={classes.question}>
-                Is there a refund policy?
+                Existe uma política de reembolso?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                We do not offer refunds for subscription fees paid.
+                Não oferecemos reembolso de taxas de assinatura pagas.
               </Typography>
             </Typography>
           </AccordionDetails>
@@ -95,29 +95,29 @@ function ServiceTerms() {
             id="panel3a-header"
           >
             <Typography variant="h2" className={classes.subtitle}>
-              Intellectual Property
+              Propriedade intelectual
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
               <Typography variant="h3" className={classes.question}>
-                Who owns the intellectual property rights to the software?
+                Quem detém os direitos de propriedade intelectual do software?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                We own all the intellectual property rights to the software,
-                including but not limited to, patents, copyrights, trademarks,
-                and trade secrets. You may not reproduce, distribute, modify, or
-                create derivative works of our software without our prior
-                written consent.
+                Possuímos todos os direitos de propriedade intelectual do
+                software, incluindo, entre outros, patentes, direitos autorais,
+                marcas registradas, e segredos comerciais. Você não pode
+                reproduzir, distribuir, modificar ou criar trabalhos derivados
+                de nosso software sem nossa prévia permissão por escrito.
               </Typography>
               <Typography variant="h3" className={classes.question}>
-                What is the license for using the software?
+                Qual é a licença para usar o software?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                By subscribing to our software, we grant you a non-exclusive,
-                non-transferable license to use the software for your own
-                personal or business use, in accordance with these Service
-                Terms.
+                Ao assinar nosso software, concedemos a você um direito não
+                exclusivo, licença intransferível para usar o software para seu
+                próprio uso pessoal ou comercial, de acordo com estes Serviços
+                Termos.
               </Typography>
             </Typography>
           </AccordionDetails>
@@ -129,28 +129,28 @@ function ServiceTerms() {
             id="panel4a-header"
           >
             <Typography variant="h2" className={classes.subtitle}>
-              Termination
+              Terminação
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
               <Typography variant="h3" className={classes.question}>
-                What are the grounds for terminating your subscription?
+                Quais são os motivos para rescindir sua assinatura?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                We reserve the right to terminate your subscription at any time
-                and for any reason, including but not limited to, breach of
-                these Service Terms, fraudulent activity, or violation of
-                applicable laws or regulations.
+                Reservamo-nos o direito de encerrar sua assinatura a qualquer
+                momento e por qualquer motivo, incluindo, mas não limitado a,
+                violação de estes Termos de serviço, atividade fraudulenta ou
+                violação de leis ou regulamentos aplicáveis.
               </Typography>
 
               <Typography variant="h3" className={classes.question}>
-                What happens if your subscription is terminated?
+                O que acontece se sua assinatura for encerrada?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                If your subscription is terminated, you will no longer have
-                access to our software and all rights granted to you under these
-                Service Terms will immediately cease.
+                Se sua assinatura for encerrada, você não terá mais acesso ao
+                nosso software e todos os direitos concedidos a você sob estes
+                Os Termos de Serviço cessarão imediatamente.
               </Typography>
             </Typography>
           </AccordionDetails>

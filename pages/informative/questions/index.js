@@ -1,46 +1,51 @@
-import React from 'react';
+import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const useStyles = makeStyles({
   container: {
-    backgroundImage: 'linear-gradient(to right, #060C23 , black, #060C23)',
+    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
     padding: "3rem",
     paddingTop: "6rem",
     fontFamily: "sans-serif",
-    borderRadius: '1rem',
+    borderRadius: "1rem",
   },
   wrapper: {
     maxWidth: "1100px",
     margin: "0 auto",
   },
   title: {
-    color: 'white',
-    fontSize: '3rem',
-    marginBottom: '2rem',
-    textAlign: 'center',
+    color: "white",
+    fontSize: "3rem",
+    marginBottom: "2rem",
+    textAlign: "center",
   },
   subtitle: {
-    color: '#262626',
-    fontSize: '2rem',
+    color: "#262626",
+    fontSize: "2rem",
     fontWeight: "500",
-    marginBottom: '1rem',
-    textAlign: 'left',
+    marginBottom: "1rem",
+    textAlign: "left",
   },
   question: {
-    color: '#262626',
-    fontSize: '1.5rem',
-    marginBottom: '10px',
-    textAlign: 'left',
+    color: "#262626",
+    fontSize: "1.5rem",
+    marginBottom: "10px",
+    textAlign: "left",
   },
   answer: {
-    color: '#5e5e5e',
-    fontSize: '1rem',
+    color: "#5e5e5e",
+    fontSize: "1rem",
     lineHeight: 2,
-    textAlign: 'justify',
-    marginBottom: '30px',
-    marginLeft: "15px"
+    textAlign: "justify",
+    marginBottom: "30px",
+    marginLeft: "15px",
   },
 });
 
@@ -50,67 +55,155 @@ function FAQ() {
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
-        <Typography variant="h1" className={classes.title}>Frequently Asked Questions</Typography>
+        <Typography variant="h1" className={classes.title}>
+          Perguntas Frequentes
+        </Typography>
         <Accordion>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-            <Typography variant="h2" className={classes.subtitle}>General</Typography>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography variant="h2" className={classes.subtitle}>
+              Geral
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              <Typography variant="h3" className={classes.question}>What is OmnesBet?</Typography>
-              <Typography variant="body1" className={classes.answer}>OmnesBet is an innovative and easy-to-use platform for identifying and taking advantage of surebets in the sports betting market.</Typography>
+              <Typography variant="h3" className={classes.question}>
+                O que é OmnesBet?
+              </Typography>
+              <Typography variant="body1" className={classes.answer}>
+                OmnesBet é uma plataforma inovadora e fácil de usar para
+                identificar e aproveitar surebets no mercado de apostas
+                esportivas.
+              </Typography>
 
-              <Typography variant="h3" className={classes.question}>How does OmnesBet work?</Typography>
-              <Typography variant="body1" className={classes.answer}>Our software scans the odds offered by different bookmakers on a large number of sports events and identifies surebet opportunities in real-time. You can use our platform to search for surebets on specific sports, leagues or events, and to filter the results based on different criteria, such as profit margin, minimum and maximum odds, and bookmaker preferences. Once you have identified a surebet, our software calculates the optimal bet amounts to place on each outcome, taking into account the odds and the commission charged by the bookmakers.</Typography>
+              <Typography variant="h3" className={classes.question}>
+                Como a OmnesBet funciona?
+              </Typography>
+              <Typography variant="body1" className={classes.answer}>
+                Nosso software verifica as probabilidades oferecidas por
+                diferentes casas de apostas em um grande número de eventos
+                esportivos e identifica oportunidades de surebet em tempo real.
+                Você pode usar nossa plataforma para procurar surebets em
+                esportes, ligas ou eventos específicos e filtrar os resultados
+                com base em diferentes critérios, como margem de lucro, odds
+                mínimas e máximas e preferências de casa de apostas. Depois de
+                identificar uma surebet, nosso software calcula as quantias
+                ótimas para apostar em cada resultado, levando em consideração
+                as probabilidades e a comissão cobrada pelas casas de apostas.
+              </Typography>
 
-              <Typography variant="h3" className={classes.question}>Is OmnesBet software easy to use?</Typography>
-              <Typography variant="body1" className={classes.answer}>Yes, our software is designed to be user-friendly and easy to navigate, with clear instructions and helpful guides to ensure that you can make the most of our platform.</Typography>
+              <Typography variant="h3" className={classes.question}>
+                O software OmnesBet é fácil de usar?
+              </Typography>
+              <Typography variant="body1" className={classes.answer}>
+                Sim, nosso software foi desenvolvido para ser fácil de usar e
+                navegar, com instruções claras e guias úteis para garantir que
+                você possa aproveitar ao máximo nossa plataforma.
+              </Typography>
             </Typography>
           </AccordionDetails>
         </Accordion>
         <Accordion>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2a-content" id="panel2a-header">
-            <Typography variant="h2" className={classes.subtitle}>Payments</Typography>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          >
+            <Typography variant="h2" className={classes.subtitle}>
+              Pagamentos
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              <Typography variant="h3" className={classes.question}>Is there a subscription fee to use OmnesBet software?</Typography>
-              <Typography variant="body1" className={classes.answer}>Yes, there is a monthly subscription fee to use our platform, which gives you full access to all our features and tools.</Typography>
-              <Typography variant="h3" className={classes.question}>What payment methods is accepted?</Typography>
-          <Typography variant="body1" className={classes.answer}>We accept credit cards. You can find more information about payment options and pricing plans on our payment page.</Typography>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel3a-content" id="panel3a-header">
-        <Typography variant="h2" className={classes.subtitle}>Security</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Typography variant="h3" className={classes.question}>Is my personal information secure with OmnesBet?</Typography>
-          <Typography variant="body1" className={classes.answer}>Yes, we take the security of your personal information very seriously. Our platform uses the latest encryption technologies and firewalls to protect your data, and we never share your information with third parties without your consent. We also comply with all applicable data protection laws and regulations to ensure that your privacy rights are fully respected.</Typography>
+              <Typography variant="h3" className={classes.question}>
+                Há uma taxa de assinatura para usar o software OmnesBet?
+              </Typography>
+              <Typography variant="body1" className={classes.answer}>
+                Sim, há uma taxa de assinatura mensal para usar nossa
+                plataforma, que lhe dá acesso completo a todos os recursos e
+                ferramentas.
+              </Typography>
+              <Typography variant="h3" className={classes.question}>
+                Quais métodos de pagamento são aceitos?
+              </Typography>
+              <Typography variant="body1" className={classes.answer}>
+                Nós aceitamos cartões de crédito. Você pode encontrar mais
+                informações sobre opções de pagamento e planos de preços em
+                nossa página de pagamento.
+              </Typography>
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel3a-content"
+            id="panel3a-header"
+          >
+            <Typography variant="h2" className={classes.subtitle}>
+              Segurança
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              <Typography variant="h3" className={classes.question}>
+                Minhas informações pessoais estão seguras com a OmnesBet?
+              </Typography>
+              <Typography variant="body1" className={classes.answer}>
+                Sim, levamos a segurança de suas informações pessoais muito a
+                sério. Nossa plataforma usa as mais recentes tecnologias de
+                criptografia e firewalls para proteger seus dados e nunca
+                compartilhamos suas informações com terceiros sem o seu
+                consentimento. Também cumprimos todas as leis e regulamentos de
+                proteção de dados aplicáveis ​​para garantir que seus direitos
+                de privacidade sejam totalmente respeitados.
+              </Typography>
 
-          <Typography variant="h3" className={classes.question}>What measures is used to prevent fraud?</Typography>
-          <Typography variant="body1" className={classes.answer}>We have a range of measures in place to prevent fraud, including credentials verification checks, IP tracking, and transaction monitoring. We also work closely with our payment partners and bookmakers to ensure that all transactions are legitimate and transparent.</Typography>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel4a-content" id="panel4a-header">
-        <Typography variant="h2" className={classes.subtitle}>Support</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Typography variant="h3" className={classes.question}>What support is available if I have questions or issues?</Typography>
-          <Typography variant="body1" className={classes.answer}>Our dedicated support team is available 24/7 to assist you with any questions or issues you may have. You can contact us by email, and we will do our best to respond as quickly as possible.</Typography>
-
-         </Typography>
-      </AccordionDetails>
-    </Accordion>
-  </div>
-</div>
-
-);
+              <Typography variant="h3" className={classes.question}>
+                Que medidas são usadas para prevenir fraudes?
+              </Typography>
+              <Typography variant="body1" className={classes.answer}>
+                Temos uma série de medidas em vigor para evitar fraudes,
+                incluindo verificações de verificação de credenciais,
+                rastreamento de IP e monitoramento de transações. Também
+                trabalhamos em estreita colaboração com nossos parceiros de
+                pagamento e casas de apostas para garantir que todas as
+                transações sejam legítimas e transparentes.
+              </Typography>
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel4a-content"
+            id="panel4a-header"
+          >
+            <Typography variant="h2" className={classes.subtitle}>
+              Suporte
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              <Typography variant="h3" className={classes.question}>
+                Qual suporte está disponível se eu tiver dúvidas ou problemas?
+              </Typography>
+              <Typography variant="body1" className={classes.answer}>
+                Nossa equipe de suporte dedicada está disponível 24 horas por
+                dia, 7 dias por semana, para ajudá-lo com qualquer dúvida ou
+                problema que você possa ter. Você pode entrar em contato conosco
+                por e-mail e faremos o possível para responder o mais rápido
+                possível.
+              </Typography>
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+      </div>
+    </div>
+  );
 }
 
 export default FAQ;

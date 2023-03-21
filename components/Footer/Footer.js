@@ -46,24 +46,24 @@ const Footer = () => {
           </Grid>
           <Grid item xs={6} lg={2}>
             <FooterList
-              title="Websites"
+              title="Website"
               options={[
-                { title: "How it works", route: "/informative/how-it-works" },
-                { title: "Questions", route: "/informative/questions" },
-                { title: "Rules", route: "/informative/rules" },
+                { title: "Como Funciona", route: "/informative/how-it-works" },
+                { title: "Perguntas", route: "/informative/questions" },
+                { title: "Regras", route: "/informative/rules" },
               ]}
             />
           </Grid>
           <Grid item xs={6} lg={2}>
             <FooterList
-              title="Company"
+              title="Empresa"
               options={[
                 {
-                  title: "Service terms",
+                  title: "Termos e Serviços",
                   route: "/informative/services-terms",
                 },
                 {
-                  title: "Accounts",
+                  title: "Contas",
                   route: "/informative/accounts",
                 },
               ]}
@@ -71,11 +71,11 @@ const Footer = () => {
           </Grid>
           <Grid item xs={6} lg={2}>
             <FooterList
-              title="About"
+              title="Sobre"
               options={[
-                { title: "Who we are", route: "/informative/who-we-are" },
+                { title: "Quem Somos", route: "/informative/who-we-are" },
                 {
-                  title: "Privacy Policy",
+                  title: "Política de Privacidade",
                   route: "/informative/privacy-policy",
                 },
               ]}

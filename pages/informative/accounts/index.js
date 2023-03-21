@@ -56,7 +56,7 @@ function AccountsPayouts() {
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <Typography variant="h1" className={classes.title}>
-          Accounts & Payouts
+          Contas e Pagamentos
         </Typography>
         <Accordion>
           <AccordionSummary
@@ -65,25 +65,26 @@ function AccountsPayouts() {
             id="panel1a-header"
           >
             <Typography variant="h2" className={classes.subtitle}>
-              Account Setup
+              Configuração de conta
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
               <Typography variant="h3" className={classes.question}>
-                How do I create an account?
+                Como criar uma conta?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                You can create an account by visiting our website and clicking
-                on the "Sign Up" button. Follow the prompts to enter your
-                information and create your account.
+                Você pode criar uma conta visitando nosso site e clicando no
+                botão "Inscreva-se". Siga as instruções para inserir suas
+                informações e criar sua conta.
               </Typography>
               <Typography variant="h3" className={classes.question}>
-                Can I have multiple accounts?
+                Posso ter várias contas?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                Each user is allowed one account. If you need multiple accounts
-                for your business, please contact our customer support team.
+                Cada usuário tem permissão para ter uma conta. Se você precisar
+                de várias contas para o seu negócio, entre em contato com nossa
+                equipe de suporte ao cliente.
               </Typography>
             </Typography>
           </AccordionDetails>
@@ -95,25 +96,27 @@ function AccountsPayouts() {
             id="panel4a-header"
           >
             <Typography variant="h2" className={classes.subtitle}>
-              Account Security
+              Segurança da conta
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
               <Typography variant="h3" className={classes.question}>
-                How do I protect my account from unauthorized access?
+                Como proteger minha conta contra acessos não autorizados?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                You can protect your account by using a strong password. We also recommend that you
-                do not share your account login credentials with anyone and be
-                cautious of phishing attempts.
+                Você pode proteger sua conta usando uma senha forte. Também
+                recomendamos que você não compartilhe suas credenciais de login
+                da conta com ninguém e seja cauteloso em relação a tentativas de
+                phishing.
               </Typography>
               <Typography variant="h3" className={classes.question}>
-                What should I do if I suspect unauthorized access to my account?
+                O que devo fazer se suspeitar de acesso não autorizado à minha
+                conta?
               </Typography>
               <Typography variant="body1" className={classes.answer}>
-                If you suspect unauthorized access to your account, please
-                contact our customer support team immediately.
+                Se você suspeitar de acesso não autorizado à sua conta, entre em
+                contato imediatamente com nossa equipe de suporte ao cliente.
               </Typography>
             </Typography>
           </AccordionDetails>

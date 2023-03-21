@@ -1,32 +1,32 @@
-import React from 'react';
+import React from "react";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   container: {
-    backgroundImage: 'linear-gradient(to right, #060C23 , black, #060C23)',
-    borderRadius: '1rem',
-    boxShadow: '0 0 1rem rgba(255, 255, 255, 0.1)',
-    paddingTop: "6rem"
+    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
+    borderRadius: "1rem",
+    boxShadow: "0 0 1rem rgba(255, 255, 255, 0.1)",
+    paddingTop: "6rem",
   },
   wrapper: {
     maxWidth: "1100px",
     margin: "0 auto",
-    padding: "2rem"
+    padding: "2rem",
   },
   title: {
-    color: '#fff',
-    fontSize: '3rem',
-    marginBottom: '2rem',
-    textAlign: 'center',
+    color: "#fff",
+    fontSize: "3rem",
+    marginBottom: "2rem",
+    textAlign: "center",
     fontFamily: "sans-serif",
   },
   text: {
-    color: '#fff',
+    color: "#fff",
     fontFamily: "sans-serif",
-    fontSize: '1rem',
+    fontSize: "1rem",
     lineHeight: 2.5,
-    marginBottom: '2rem',
-    textAlign: 'justify',
+    marginBottom: "2rem",
+    textAlign: "justify",
   },
 });
 
@@ -36,25 +36,55 @@ function HowItWorks() {
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
-      <h1 className={classes.title}>How It Works</h1>
-      <p className={classes.text}>
-        Welcome to our surebet software website, where we provide you with an innovative and easy-to-use platform for identifying and taking advantage of surebets in the sports betting market. In this page, we'll explain how our software works and how you can use it to make profit from sports betting.
-      </p>
-      <p className={classes.text}>
-        First of all, let's define what is a surebet. A surebet, also known as an arbitrage bet, is a situation in which different bookmakers offer odds on a sports event that guarantee a profit for the bettor, regardless of the outcome of the event. By placing bets on all possible outcomes with different bookmakers, the bettor can ensure a profit, no matter who wins the game.
-      </p>
-      <p className={classes.text}>
-        Our software scans the odds offered by different bookmakers on a large number of sports events and identifies surebet opportunities in real-time. You can use our platform to search for surebets on specific sports, leagues or events, and to filter the results based on different criteria, such as profit margin, minimum and maximum odds, and bookmaker preferences.
-      </p>
-      <p className={classes.text}>
-        Once you have identified a surebet, our software calculates the optimal bet amounts to place on each outcome, taking into account the odds and the commission charged by the bookmakers. You can use our integrated betting calculator to see how much to bet and how much profit you can expect to make from the surebet.
-      </p>
-      <p className={classes.text}>
-        Using our surebet software can help you to make consistent and risk-free profits from sports betting, without the need for extensive knowledge or experience in the betting industry. Our software is user-friendly, reliable and constantly updated to ensure the highest accuracy and performance.
-      </p>
-      <p className={classes.text}>
-        In conclusion, if you want to take advantage of the surebet opportunities in the sports betting market and increase your winnings, our surebet software is the perfect tool for you. With our innovative platform, you can easily find, calculate and place bets on surebets, and make a profit with minimal effort and risk.
-      </p>
+        <h1 className={classes.title}>Como Funciona</h1>
+        <p className={classes.text}>
+          Bem-vindo ao nosso site de software de apostas seguras, onde
+          fornecemos uma plataforma inovadora e fácil de usar para identificar e
+          aproveitar as apostas seguras no mercado de apostas esportivas. Nesta
+          página, explicaremos como nosso software funciona e como você pode
+          usá-lo para lucrar com as apostas esportivas.
+        </p>
+        <p className={classes.text}>
+          Antes de tudo, vamos definir o que é uma aposta segura. Uma aposta
+          segura, também conhecida como aposta de arbitragem, é uma situação em
+          que diferentes casas de apostas oferecem probabilidades em um evento
+          esportivo que garantem um lucro para o apostador, independentemente do
+          resultado do evento. Ao fazer apostas em todos os resultados possíveis
+          com diferentes casas de apostas, o apostador pode garantir um lucro,
+          não importa quem vença o jogo.
+        </p>
+        <p className={classes.text}>
+          Nosso software escaneia as probabilidades oferecidas por diferentes
+          casas de apostas em um grande número de eventos esportivos e
+          identifica oportunidades de apostas seguras em tempo real. Você pode
+          usar nossa plataforma para procurar por apostas seguras em esportes,
+          ligas ou eventos específicos e filtrar os resultados com base em
+          diferentes critérios, como margem de lucro, odds mínimas e máximas e
+          preferências de casa de apostas.
+        </p>
+        <p className={classes.text}>
+          Assim que você identificar uma aposta segura, nosso software calculará
+          os valores ideais de aposta a serem colocados em cada resultado,
+          levando em consideração as probabilidades e a comissão cobrada pelas
+          casas de apostas. Você pode usar nossa calculadora de apostas
+          integrada para ver quanto apostar e quanto lucro esperar da aposta
+          segura.
+        </p>
+        <p className={classes.text}>
+          Usando nosso software de apostas seguras, você pode obter lucros
+          consistentes e sem riscos em apostas esportivas, sem a necessidade de
+          conhecimento ou experiência extensos na indústria de apostas. Nosso
+          software é fácil de usar, confiável e constantemente atualizado para
+          garantir a maior precisão e desempenho.
+        </p>
+        <p className={classes.text}>
+          Em conclusão, se você deseja aproveitar as oportunidades de apostas
+          seguras no mercado de apostas esportivas e aumentar seus ganhos, nosso
+          software de apostas seguras é a ferramenta perfeita para você. Com
+          nossa plataforma inovadora, você pode facilmente encontrar, calcular e
+          fazer apostas em apostas seguras e obter lucro com esforço e risco
+          mínimos.
+        </p>
       </div>
     </div>
   );
