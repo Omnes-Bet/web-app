@@ -71,22 +71,22 @@ const proofs = [
   {
     name: "Mike Boyle",
     message:
-      "Great product! I have been using the software for 3 weeks and making an average of $40 per week",
-    rate: "Excelent!",
+      "Ótimo produto! Tenho usado o software por 3 semanas e ganhando em média $40 por semana.",
+    rate: "Excelente!",
     photo: mikeBoyle,
   },
   {
     name: "Daniel Alves",
     message:
-      "Outstanding performance! I've been employing the software for a year and generating a monthly average of $3,000.",
-    rate: "Awesome!",
+      "Desempenho excepcional! Tenho utilizado o software por um ano e gerando uma média mensal de $1.000.",
+    rate: "Incrível!",
     photo: danielAlves,
   },
   {
     name: "John Dale",
     message:
-      "Awesome service! I've been utilizing the platform for 2 months and earning approximately $800 per month.",
-    rate: "Fantastic!",
+      "Serviço incrível! Tenho utilizado a plataforma por 2 meses e ganhando aproximadamente $800 por mês.",
+    rate: "Fantástico!",
     photo: john_dale,
   },
 ];
@@ -108,7 +108,11 @@ const SocialProof = () => {
               <SwiperSlide className={classes.swiperSlide}>
                 <div className={classes.proofSection}>
                   <div className={classes.witnessImg}>
-                    <img src={i.photo.src} alt="slide-swiper" style={{ borderRadius: "7px" }} />
+                    <img
+                      src={i.photo.src}
+                      alt="slide-swiper"
+                      style={{ borderRadius: "7px" }}
+                    />
                   </div>
                   <div className={classes.witness}>
                     <div className={classes.witnessRateStar}>
@@ -131,9 +135,13 @@ const SocialProof = () => {
       <Link href={"/payments/all"}>
         <Button
           variant="contained"
-          sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)", width: "fit-content" }}
+          sx={{
+            background:
+              "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+            width: "fit-content",
+          }}
         >
-          Subscribe Now
+          Assinar Agora
         </Button>
       </Link>
     </div>

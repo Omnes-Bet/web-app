@@ -106,7 +106,7 @@ const SignUpCard = () => {
       </Modal>
       <CardContent sx={{ textAlign: "center" }}>
         <Typography gutterBottom variant="h5" component="h2">
-          Please fill out these fields
+          Preencha por favor esses campos
         </Typography>
 
         <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -122,13 +122,13 @@ const SignUpCard = () => {
               <TextField
                 required
                 id="outlined-required"
-                label="Full Name"
+                label="Nome"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
               <TextField
                 required
-                label="Phone Number"
+                label="Telefone"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 type="number"
@@ -140,11 +140,13 @@ const SignUpCard = () => {
                 value={email}
                 onChange={handleEmailChange}
                 error={emailError}
-                helperText={emailError ? "Please enter a valid email" : ""}
+                helperText={
+                  emailError ? "Por favor, insira um e-mail válido" : ""
+                }
               />
               <MobileDatePicker
                 required
-                label="Date of Birth"
+                label="Data de Nascimento"
                 inputFormat="MM/dd/yyyy"
                 value={birthday}
                 onChange={handleChange}
@@ -153,7 +155,9 @@ const SignUpCard = () => {
                     {...params}
                     error={birthdayError}
                     helperText={
-                      birthdayError ? "You must be 18 or older to sign up" : ""
+                      birthdayError
+                        ? "É preciso ter 18 anos ou mais para se cadastrar"
+                        : ""
                     }
                   />
                 )}
@@ -163,7 +167,7 @@ const SignUpCard = () => {
                 width={70}
                 m="auto"
                 id="outlined-password-input"
-                label="Password"
+                label="Senha"
                 type="password"
                 autoComplete="current-password"
                 value={password}
@@ -171,13 +175,13 @@ const SignUpCard = () => {
                 error={passwordError}
                 helperText={
                   passwordError
-                    ? "Password must be at least 8 characters long"
+                    ? "A senha deve ter pelo menos 8 caracteres de comprimento"
                     : ""
                 }
               />
               <TextField
                 id="outlined-required"
-                label="Bonus Code"
+                label="Código Promocional"
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value)}
               />
@@ -187,7 +191,7 @@ const SignUpCard = () => {
                   handleSubmit();
                 }}
               >
-                Press to Sign Up
+                Pressione para Registrar
               </Button>
             </Box>
           </Stack>

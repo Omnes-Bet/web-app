@@ -55,8 +55,8 @@ function ChildModal({ handleCloseParent, handleOpen }) {
             alignItems: "center",
           }}
         >
-          <Typography>Success!</Typography>
-          <Typography>Cancel scheduled</Typography>
+          <Typography>Sucesso!</Typography>
+          <Typography>Cancelamento agendado</Typography>
           <Button
             variant="contained"
             color="primary"
@@ -65,7 +65,7 @@ function ChildModal({ handleCloseParent, handleOpen }) {
               Router.push("/");
             }}
           >
-            Close
+            Fechar
           </Button>
         </Box>
       </Modal>
@@ -86,12 +86,13 @@ const User = () => {
     setPageUrl(window?.location?.href);
   }, []);
 
-  const dataDoCancelamento = new Date(user?.subsInfo?.cancel_at * 1000)
-  const dataCancel = (dataDoCancelamento.getMonth() + 1) + "/" + dataDoCancelamento?.getDate()
+  const dataDoCancelamento = new Date(user?.subsInfo?.cancel_at * 1000);
+  const dataCancel =
+    dataDoCancelamento.getMonth() + 1 + "/" + dataDoCancelamento?.getDate();
 
   const pageSeoProps = {
-    title: "Omnesbet | User Info",
-    description: "Check your info and subscription status",
+    title: "Omnesbet | Informação de usuário",
+    description: "Verifique suas informações e o status da assinatura",
     pageUrl: pageUrl,
   };
 
@@ -111,7 +112,13 @@ const User = () => {
   const isDesktop = useMediaQuery("(min-width:600px)");
 
   return (
-    <Container sx={{ borderRadius: "15px", backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)", color: "white" }}>
+    <Container
+      sx={{
+        borderRadius: "15px",
+        backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
+        color: "white",
+      }}
+    >
       <PageSeo seoProps={pageSeoProps} />
       <Box my={8} sx={{ maxHeight: "500px" }}>
         <Box container className={styles.main}>
@@ -122,7 +129,7 @@ const User = () => {
                 gap: "20px",
                 width: "300px",
                 height: "100px",
-                alignItems: "center"
+                alignItems: "center",
               }}
             >
               <Avatar
@@ -133,22 +140,64 @@ const User = () => {
               <Typography variant="h5">Hi, {user?.name}</Typography>
             </Box>
 
-            <Box sx={{ display: "flex", flexDirection: !isDesktop ? "column" : "", alignItems: "center", justifyContent: "space-between" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: !isDesktop ? "column" : "",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
               <Typography variant="h6">
-                Your subscription status is: 
+                O status da sua assinatura é:
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "10px", marginLeft: "10px", background: "blue", fontFamily: "sans-serif", height: "30px", width: "300px", color: "white" }}>
-              {user?.subsInfo?.status == "active" ? " ACTIVE" : " DEACTIVATED"}
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "10px",
+                  marginLeft: "10px",
+                  background: "blue",
+                  fontFamily: "sans-serif",
+                  height: "30px",
+                  width: "300px",
+                  color: "white",
+                }}
+              >
+                {user?.subsInfo?.status == "active" ? " ATIVO" : " INATIVO"}
               </Box>
             </Box>
-            {user?.subsInfo?.cancel_at_period_end && <Box sx={{ display: "flex", flexDirection: !isDesktop ? "column" : "", alignItems: "center", justifyContent: "space-between" }}>
-              <Typography variant="h6">
-                Your plan is scheduled to be canceled at: 
-              </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "10px", marginLeft: "10px", background: "blue", fontFamily: "sans-serif", height: "30px", width: "300px", color: "white" }}>
-              {dataCancel}
+            {user?.subsInfo?.cancel_at_period_end && (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: !isDesktop ? "column" : "",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography variant="h6">
+                  Seu plano está programado para ser cancelado em:
+                </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    marginLeft: "10px",
+                    background: "blue",
+                    fontFamily: "sans-serif",
+                    height: "30px",
+                    width: "300px",
+                    color: "white",
+                  }}
+                >
+                  {dataCancel}
+                </Box>
               </Box>
-            </Box>}
+            )}
             <Box
               sx={{
                 display: " flex",
@@ -158,70 +207,73 @@ const User = () => {
             >
               {user?.subsInfo?.status == "active" ? (
                 <>
-                { !user?.subsInfo?.cancel_at &&
-                <>
-                  <Typography variant="h6">Cancel Plan:</Typography>
-                  <Button
-                    variant="contained"
-                    color="error"
-                    onClick={handleOpen}
-                  >
-                    Cancel
-                  </Button>
-                  <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                  >
-                    <Box sx={style}>
-                      <Typography
-                        id="modal-modal-title"
-                        variant="h6"
-                        component="h2"
+                  {!user?.subsInfo?.cancel_at && (
+                    <>
+                      <Typography variant="h6">Cancelar Plano:</Typography>
+                      <Button
+                        variant="contained"
+                        color="error"
+                        onClick={handleOpen}
                       >
-                        Are you Sure?
-                      </Typography>
-                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        By clicking the button down below, you subscription will
-                        be valid until the end of the paid month.
-                      </Typography>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
+                        Cancelar
+                      </Button>
+                      <Modal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
                       >
-                        <Button
-                          variant="contained"
-                          color="error"
-                          onClick={handleCancelSubscription}
-                        >
-                          Cancel Subscription
-                        </Button>
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          onClick={handleClose}
-                        >
-                          Back
-                        </Button>
-                        <ChildModal
-                          handleCloseParent={handleClose}
-                          handleOpen={openChild}
-                        />
-                      </Box>
-                    </Box>
-                  </Modal>
-                  </>
-                  }
+                        <Box sx={style}>
+                          <Typography
+                            id="modal-modal-title"
+                            variant="h6"
+                            component="h2"
+                          >
+                            Tem certeza?
+                          </Typography>
+                          <Typography
+                            id="modal-modal-description"
+                            sx={{ mt: 2 }}
+                          >
+                            Ao clicar no botão abaixo, sua assinatura será
+                            válido até o final do mês pago.
+                          </Typography>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <Button
+                              variant="contained"
+                              color="error"
+                              onClick={handleCancelSubscription}
+                            >
+                              Cancelar Assinatura
+                            </Button>
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              onClick={handleClose}
+                            >
+                              Voltar
+                            </Button>
+                            <ChildModal
+                              handleCloseParent={handleClose}
+                              handleOpen={openChild}
+                            />
+                          </Box>
+                        </Box>
+                      </Modal>
+                    </>
+                  )}
                 </>
               ) : (
                 <>
-                  <Typography>Activate subscription:</Typography>
+                  <Typography>Ativar assinatura:</Typography>
                   <Link href={"/payments/all"}>
                     <Button variant="contained" color="error">
-                      See Plans
+                      Ver Planos
                     </Button>
                   </Link>
                 </>

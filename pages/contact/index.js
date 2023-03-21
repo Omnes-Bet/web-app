@@ -55,7 +55,7 @@ function ChildModal({ handleCloseParent, handleOpen }) {
         >
           <CheckCircleOutline color="success" />
           <Typography color="green">Success!</Typography>
-          <Typography>Email Sent</Typography>
+          <Typography>Email Enviado</Typography>
           <Button
             variant="contained"
             sx={{ backgroundColor: "#1c50abcc" }}
@@ -64,7 +64,7 @@ function ChildModal({ handleCloseParent, handleOpen }) {
               Router.push("/");
             }}
           >
-            Close
+            Fechar
           </Button>
         </Box>
       </Modal>
@@ -83,16 +83,15 @@ const Contact = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleOpenChildModal = () => setOpenChild(true);
-  
 
   useEffect(() => {
     setPageUrl(window?.location?.href);
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | Contact Us",
+    title: "Omnesbet | Entre em Contato",
     description:
-      "Reach out to our team with your needs. We are looking forward to it.",
+      "Entre em contato com nossa equipe com suas necessidades. Estamos ansiosos por isso.",
     pageUrl: pageUrl,
   };
 
@@ -122,7 +121,14 @@ const Contact = () => {
   }, [isLoading]);
 
   return (
-    <div style={{ paddingTop: "150px", height: "600px", backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)", borderRadius: "20px" }}>
+    <div
+      style={{
+        paddingTop: "150px",
+        height: "600px",
+        backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
+        borderRadius: "20px",
+      }}
+    >
       <PageSeo seoProps={pageSeoProps} />
       <Modal
         open={open}
@@ -142,7 +148,7 @@ const Contact = () => {
       <Card sx={{ maxWidth: 345, margin: "0 auto" }}>
         <CardContent sx={{ textAlign: "center" }}>
           <Typography gutterBottom variant="h5" component="h2">
-            Contact Us
+            Entre em Contato
           </Typography>
           <Box
             component="form"
@@ -155,21 +161,21 @@ const Contact = () => {
             <TextField
               required
               id="outlined-required"
-              label="name"
+              label="Nome"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <TextField
               required
               id="outlined-required"
-              label="email"
+              label="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               required
               fullWidth
-              label="message"
+              label="Mensagem"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               id="fullWidth"
@@ -180,7 +186,7 @@ const Contact = () => {
                 handleSubmit();
               }}
             >
-              Send Email
+              Enviar Email
             </Button>
           </Box>
           <ChildModal handleCloseParent={handleClose} handleOpen={openChild} />

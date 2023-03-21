@@ -16,7 +16,7 @@ const ContactForm = () => {
         <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto" }}>
           <CardContent>
             <Typography gutterBottom variant="h5" align="center">
-              Contact Us
+              Entre em Contato
             </Typography>
             <Typography
               variant="body2"
@@ -25,7 +25,7 @@ const ContactForm = () => {
               gutterBottom
               align="center"
             >
-              Our team will get back to you within 24 hours.
+              Entraremos em contato com você dentro de 24hrs.
             </Typography>
             <Grid item xs={12}>
               <Button
@@ -35,7 +35,7 @@ const ContactForm = () => {
                 fullWidth
                 onClick={() => Router.push("/")}
               >
-                Send e-mail
+                Enviar e-mail
               </Button>
             </Grid>
           </CardContent>

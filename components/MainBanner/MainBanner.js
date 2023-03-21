@@ -1,10 +1,9 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import CardGame from "../CardGame/CardGame";
-import stadium from "../../assets/stadium.jpg"
+import stadium from "../../assets/stadium.jpg";
 
 const MainBanner = () => {
-
   return (
     <Grid item xs={12} md={6}>
       <CardGame

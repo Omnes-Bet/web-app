@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     background: "rgba(245, 245, 245, 0.1)",
     borderRadius: "16px",
-    width: "600px"
+    width: "600px",
   },
   textSection: {
     color: "white",
@@ -65,10 +65,10 @@ const WhatIsASurebetBanner = () => {
     <div className={classes.main}>
       <div className={isDesktop ? classes.boxDesktop : classes.boxMobile}>
         <div className={classes.textSection}>
-          <h3 className={classes.title}>What are surebets?</h3>
+          <h3 className={classes.title}>O que são surebets?</h3>
           <div className={classes.description}>
-            A surebet is a mathematically calculated arbitrage situation where
-            the bettor wins whatever the outcome!
+            Uma Surebet é uma situação de arbitragem calculada matematicamente
+            em que o apostador ganha em qualquer que seja o resultado!
           </div>
         </div>
         <div>

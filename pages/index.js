@@ -83,9 +83,9 @@ export default function Home() {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | Arbitrage Software",
+    title: "Omnesbet | Software de Arbitragem",
     description:
-      "Best Software for Sports Betting Arbitrage. Earn risk free money with Omnesbet Software.",
+      "Melhor Software para Arbitragem de Apostas Esportivas. Ganhe dinheiro sem riscos com o Software Omnesbet.",
     pageUrl: pageUrl,
   };
 
@@ -118,46 +118,64 @@ export default function Home() {
               !isMobile ? classes.heroMobileInfo : classes.heroDesktopInfo
             }
           >
-            {(user && !(user?.subsInfo?.status == "active") && !(user?.is_trial == 1)) ? (
+            {user &&
+            !(user?.subsInfo?.status == "active") &&
+            !(user?.is_trial == 1) ? (
               <>
-                <h1>Ensure Your Winning Bets</h1>
+                <h1>Garanta Suas Apostas Ganhadoras</h1>
                 <p>
-                  Subscribe Now for Unlimited Access to the OmnesBet Sports Betting Tool
+                  Inscreva-se Para Acesso Ilimitado à Ferramenta de Apostas
+                  Esportivas OmnesBet
                 </p>
                 <Link href={"/payments/all"}>
                   <Button
                     variant="contained"
-                    sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)", width: "fit-content" }}
+                    sx={{
+                      background:
+                        "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                      width: "fit-content",
+                    }}
                   >
-                    Subscribe Now
+                    Inscreva-se Agora
                   </Button>
                 </Link>
               </>
-            ) : (user && !(user?.subsInfo?.status == "active") && (user?.is_trial == 1)) ? (
+            ) : user &&
+              !(user?.subsInfo?.status == "active") &&
+              user?.is_trial == 1 ? (
               <>
-                <h1>Enjoy Your Trial Mode</h1>
+                <h1>Aproveite o Seu Modo de Teste</h1>
                 <p>
-                  Enjoy Your 1-Day Free Trial and Experience OmnesBet
+                  Aproveite Seu Teste Gratuito de 1 Dia e Experimente a OmnesBet
                 </p>
                 <Link href={"/surebets"}>
                   <Button
                     variant="contained"
-                    sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)", width: "fit-content" }}
+                    sx={{
+                      background:
+                        "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                      width: "fit-content",
+                    }}
                   >
                     Surebets
                   </Button>
                 </Link>
               </>
-            ) : (user?.subsInfo?.status == "active") ? (
+            ) : user?.subsInfo?.status == "active" ? (
               <>
-                <h1>Welcome to OmnesBet</h1>
+                <h1>Bem-vindo a OmniBet</h1>
                 <p>
-                  Your All-in-One Sports Betting Solution for Arbitrages & Surebets
+                  Sua Solução Completa de Apostas Esportivas Para Arbitragens e
+                  Surebets
                 </p>
                 <Link href={"/surebets"}>
                   <Button
                     variant="contained"
-                    sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)", width: "fit-content" }}
+                    sx={{
+                      background:
+                        "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                      width: "fit-content",
+                    }}
                   >
                     Surebets
                   </Button>
@@ -165,16 +183,21 @@ export default function Home() {
               </>
             ) : (
               <>
-                <h1>Sign up now for 1-Day Free Trial</h1>
+                <h1>Inscreva-se Para Uma Avaliação Gratuita de 1 Dia</h1>
                 <p>
-                  The Ultimate Sports Betting Tool for Consistent Wins
+                  A Melhor Ferramenta de Apostas Esportivas Para Vitórias
+                  Consistentes
                 </p>
                 <Link href={"/signup"}>
                   <Button
                     variant="contained"
-                    sx={{ background: "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)", width: "fit-content" }}
+                    sx={{
+                      background:
+                        "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                      width: "fit-content",
+                    }}
                   >
-                    Sign up
+                    Registrar
                   </Button>
                 </Link>
               </>

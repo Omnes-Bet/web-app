@@ -54,26 +54,27 @@ const subscriptionOptions = [
   {
     title: "Silver",
     price: "R$99",
-    suffix: " / mo",
+    suffix: " / mês",
     benefit1: "Surebets & Arbs",
-    benefit2: "Contact over email and about 3 day to be replied.",
-    benefit4: "Sorting by ROI",
+    benefit2: "Contato por e-mail e cerca de 3 dias para ser respondido",
+    benefit4: "Classificando por ROI",
   },
   {
     title: "Gold",
     price: "R$149",
-    suffix: " / mo",
+    suffix: " / mês",
     benefit1: "Surebets & Arbs",
-    benefit2: "Contact over email and be replied within 24hrs",
-    benefit4: "Sorting by ROI",
+    benefit2: "Entre em contato por e-mail e seja respondido em até 24h",
+    benefit4: "Classificando por ROI",
   },
   {
     title: "Pro",
     price: "R$199",
-    suffix: " / mo",
+    suffix: " / mês",
     benefit1: "Surebets & Arbs",
-    benefit2: "Contact over email, phone and video calls with our team",
-    benefit4: "Sorting by ROI",
+    benefit2:
+      "Entre em contato por e-mail, telefone e video chamadas com nossa equipe",
+    benefit4: "Classificando por ROI",
   },
 ];
 
@@ -92,8 +93,8 @@ const Payments = () => {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | Plan Selected",
-    description: "Subscribe and enjoy the data",
+    title: "Omnesbet | Plano selecionado",
+    description: "Assine e aproveite os dados",
     pageUrl: pageUrl,
   };
 
@@ -107,7 +108,7 @@ const Payments = () => {
       <div style={{ margin: "0 auto", paddingTop: "8rem" }}>
         <Link href={"/payments/all"}>
           <Button variant="outlined" color="primary">
-            See other plans
+            Veja outros planos
           </Button>
         </Link>
         <div
@@ -174,51 +175,53 @@ const Payments = () => {
           marginTop: "20px",
           fontFamily: "sans-serif",
           color: "white",
-          padding: "20px"
+          padding: "20px",
         }}
       >
         <p>
-          We would like to inform our users that the information we provide is
-          for informational purposes only. We do not take responsibility for any
-          losses incurred while using our service. Our service is designed to
-          provide users with information about potential arbitrage opportunities
-          in the sports betting market, but we do not guarantee the accuracy of
-          the information provided.
+          Gostaríamos de informar aos nossos usuários que as informações que
+          fornecemos são apenas para fins informativos. Não nos
+          responsabilizamos por nenhum perdas sofridas ao usar nosso serviço.
+          Nosso serviço é projetado para fornecer aos usuários informações sobre
+          possíveis oportunidades de arbitragem no mercado de apostas
+          esportivas, mas não garantimos a precisão as informações fornecidas.
         </p>
         <br />
         <p>
-          It is important for users to understand that the information we
-          provide may change at any time. Therefore, it is the user's
-          responsibility to verify all information before placing any bets. We
-          highly recommend that users conduct their own research before making
-          any decisions and to consult with a professional if necessary.
+          É importante que os usuários entendam que as informações que fornecer
+          pode mudar a qualquer momento. Portanto, é do usuário responsabilidade
+          de verificar todas as informações antes de fazer qualquer aposta. Nós
+          altamente recomendável que os usuários realizem suas próprias
+          pesquisas antes de fazer tomar qualquer decisão e consultar um
+          profissional, se necessário.
         </p>
         <br />
         <p>
-          While surebetting can be a profitable strategy, it also carries risks.
-          Users must understand that there is always a chance of losing money
-          when placing bets, even when using a surebetting strategy.
-          Additionally, there are other risks to consider such as betting
-          limits, account restrictions, and unforeseen events that may affect
-          the outcome of a match.
+          Embora a aposta segura possa ser uma estratégia lucrativa, ela também
+          traz riscos. Os usuários devem entender que sempre há uma chance de
+          perder dinheiro ao fazer apostas, mesmo ao usar uma estratégia de
+          surebetting. Além disso, existem outros riscos a serem considerados,
+          como apostas limites, restrições de conta e imprevistos que possam
+          afetar o resultado de uma partida.
         </p>
         <br />
         <p>
-          It is crucial for users to approach surebetting with caution and to
-          only bet within their means. Users should never place bets that they
-          cannot afford to lose. Our goal is to provide users with information
-          that can help them make informed decisions, but ultimately, it is the
-          user's responsibility to manage their own risk and make their own
-          decisions.
+          É crucial que os usuários abordem as apostas seguras com cautela e
+          apenas apostar dentro de suas possibilidades. Os usuários nunca devem
+          fazer apostas que eles não pode perder. Nosso objetivo é fornecer aos
+          usuários informações que podem ajudá-los a tomar decisões informadas,
+          mas, em última análise, é o responsabilidade do usuário gerenciar seu
+          próprio risco e fazer suas próprias decisões.
         </p>
         <br />
         <p>
-          In summary, while we strive to provide accurate and up-to-date
-          information, we do not take responsibility for any losses incurred
-          while using our service. Users must verify all information before
-          placing any bets and are responsible for managing their own risk. We
-          encourage users to approach surebetting with caution and to only bet
-          within their means.
+          Em resumo, embora nos esforcemos para fornecer informações precisas e
+          atualizadas informações, não assumimos responsabilidade por quaisquer
+          perdas incorridas durante a utilização do nosso serviço. Os usuários
+          devem verificar todas as informações antes colocar quaisquer apostas e
+          são responsáveis ​​por gerir o seu próprio risco. Nós encorajar os
+          usuários a abordar as apostas seguras com cautela e apenas apostar
+          dentro de seus meios.
         </p>
       </div>
     </div>

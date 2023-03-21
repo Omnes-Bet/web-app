@@ -33,7 +33,7 @@ const SideBar = ({ isOpen, setOpen }) => {
         }}
       >
         <List>
-          {((user?.subsInfo?.status == "active") || (user?.is_trial == 1)) && (
+          {(user?.subsInfo?.status == "active" || user?.is_trial == 1) && (
             <Link href={"/surebets"} onClick={() => setOpen(false)}>
               <ListItem disablePadding>
                 <ListItemButton>
@@ -53,7 +53,7 @@ const SideBar = ({ isOpen, setOpen }) => {
                   <ListItemIcon>
                     <AttachMoney />
                   </ListItemIcon>
-                  <ListItemText primary={"Plans"} />
+                  <ListItemText primary={"Planos"} />
                 </ListItemButton>
               </ListItem>
             </Link>
@@ -68,7 +68,7 @@ const SideBar = ({ isOpen, setOpen }) => {
                 <ListItemIcon>
                   <MenuBookIcon />
                 </ListItemIcon>
-                <ListItemText primary={"What is Surebets"} />
+                <ListItemText primary={"O que são Surebets"} />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -79,7 +79,7 @@ const SideBar = ({ isOpen, setOpen }) => {
                 <ListItemIcon>
                   <ContactMail />
                 </ListItemIcon>
-                <ListItemText primary={"Contact"} />
+                <ListItemText primary={"Contato"} />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -94,7 +94,7 @@ const SideBar = ({ isOpen, setOpen }) => {
               setOpen(false);
             }}
           >
-            Logout
+            Sair
           </Button>
         )}
       </Box>

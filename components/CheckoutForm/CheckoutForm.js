@@ -25,19 +25,19 @@ function CheckoutForm({ plandId, planName }) {
     style: {
       base: {
         color: "white",
-        fontFamily: 'Arial, sans-serif',
+        fontFamily: "Arial, sans-serif",
         fontSmoothing: "antialiased",
         fontSize: "20px",
         "::placeholder": {
-          color: "white"
-        }
+          color: "white",
+        },
       },
       invalid: {
-        fontFamily: 'Arial, sans-serif',
+        fontFamily: "Arial, sans-serif",
         color: "#fa755a",
-        iconColor: "#fa755a"
-      }
-    }
+        iconColor: "#fa755a",
+      },
+    },
   };
 
   const handleNewSubscription = async () => {
@@ -52,13 +52,13 @@ function CheckoutForm({ plandId, planName }) {
       });
 
       const result = await createSubscription({
-            paymentMethod: paymentMethod?.paymentMethod?.id,
-            name,
-            email,
-            priceId: plandId,
-            userId: user?.id,
-            planName
-      })
+        paymentMethod: paymentMethod?.paymentMethod?.id,
+        name,
+        email,
+        priceId: plandId,
+        userId: user?.id,
+        planName,
+      });
 
       const confirmPayment = await stripe?.confirmCardPayment(
         result.data.clientSecret
@@ -67,9 +67,8 @@ function CheckoutForm({ plandId, planName }) {
       if (confirmPayment?.error) {
         alert(confirmPayment.error.message);
       } else {
-        alert("Success! Check your email for the invoice.");
+        alert("Sucesso! Aproveite o melhor serviço de Surebet.");
         window.location.href = "https://omnesbet.com";
-
       }
     } catch (error) {
       console.log(error);
@@ -93,36 +92,42 @@ function CheckoutForm({ plandId, planName }) {
       >
         <CircularProgress />
       </Modal>
-      <TextField 
+      <TextField
         sx={{ marginBottom: "15px" }}
-        color="primary" 
+        color="primary"
         focused
         fullWidth
-        required 
-        label="Name"
+        required
+        label="Nome"
         value={name}
         onChange={(e) => setName(e.target.value)}
         InputProps={{
-          style: { color: 'white' }
+          style: { color: "white" },
         }}
       />
       <br />
-      <TextField 
+      <TextField
         sx={{ marginBottom: "15px" }}
-        color="primary" 
+        color="primary"
         focused
         fullWidth
-        required 
+        required
         label="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         InputProps={{
-          style: { color: 'white' }
+          style: { color: "white" },
         }}
       />
       <CardElement options={cardStyle} />
-      <Button sx={{ marginTop: "15px" }} variant="contained" color="primary" onClick={handleNewSubscription} disabled={!stripe}>
-        Subscribe
+      <Button
+        sx={{ marginTop: "15px" }}
+        variant="contained"
+        color="primary"
+        onClick={handleNewSubscription}
+        disabled={!stripe}
+      >
+        Assinar
       </Button>
     </Box>
   );

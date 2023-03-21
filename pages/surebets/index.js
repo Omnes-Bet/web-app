@@ -31,13 +31,13 @@ const useStyles = makeStyles((theme) => ({
   oddsPediaIframeDesktop: {
     paddingTop: "7rem",
     paddingBottom: "6rem",
-    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)"
+    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
   },
   oddsPediaIframeMobile: {
     paddingTop: "7rem",
     paddingBottom: "4rem",
-    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)"
-  }
+    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
+  },
 }));
 
 const Surebet = () => {
@@ -46,7 +46,7 @@ const Surebet = () => {
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width:600px)");
   const [pageUrl, setPageUrl] = useState();
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
   // const [odds, setOdds] = useState();
 
   const oddsPediaTag = useRef();
@@ -61,7 +61,7 @@ const Surebet = () => {
 
   const pageSeoProps = {
     title: "Omnesbet | Surebets",
-    description: "Choose the best arbitrage and earn money with it",
+    description: "Escolha a melhor arbitragem e ganhe dinheiro com ela",
     pageUrl: pageUrl,
   };
 
@@ -82,7 +82,7 @@ const Surebet = () => {
       width: "0",
       theme: "1",
       odds_type: "1",
-      language: "en",
+      language: "pt",
       primary_color: "#1976D2",
       accent_color: "#15EADB",
       font: "Roboto",
@@ -94,13 +94,16 @@ const Surebet = () => {
     script.async = true;
     document.body.appendChild(script);
     setTimeout(() => {
-      setIsLoading(false)
-      console.log("teste oddspedia", scrollFocus().firstChild.style.borderRadius = "20px")
+      setIsLoading(false);
+      console.log(
+        "odds",
+        (scrollFocus().firstChild.style.borderRadius = "20px")
+      );
     }, 5000);
   }, []);
 
   useEffect(() => {
-    if ((!(user?.subsInfo?.status == "active")) && !(user?.is_trial == 1)) {
+    if (!(user?.subsInfo?.status == "active") && !(user?.is_trial == 1)) {
       Router.push("/");
     } /*else {
       getArbs();
@@ -109,16 +112,26 @@ const Surebet = () => {
   }, []);
 
   return (
-    <div className={isDesktop ? classes.oddsPediaIframeDesktop : classes.oddsPediaIframeMobile}>
+    <div
+      className={
+        isDesktop
+          ? classes.oddsPediaIframeDesktop
+          : classes.oddsPediaIframeMobile
+      }
+    >
       <PageSeo seoProps={pageSeoProps} />
-      <div id="oddspedia-widget-sure-bets" ref={oddsPediaTag} style={{ width: isDesktop ? "1020px" : "", margin: "0 auto" }}/>
-        {isLoading && (
+      <div
+        id="oddspedia-widget-sure-bets"
+        ref={oddsPediaTag}
+        style={{ width: isDesktop ? "1020px" : "", margin: "0 auto" }}
+      />
+      {isLoading && (
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CircularProgress />
         </Box>
-        )}
-        
-        {/* {odds ? (
+      )}
+
+      {/* {odds ? (
         odds?.data?.slice(0, 30).map((i) => {
           return <SurebetWidget obj={i} />;
         })
@@ -127,7 +140,7 @@ const Surebet = () => {
           <CircularProgress />
         </Box>
       )} */}
-        {/* {arbs ? (
+      {/* {arbs ? (
         arbs?.data?.map((data) => {
           return (
             <Box my={8}>

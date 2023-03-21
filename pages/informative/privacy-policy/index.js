@@ -36,60 +36,65 @@ function PrivacyPolicy() {
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
-        <h1 className={classes.title}>Privacy Policy</h1>
+        <h1 className={classes.title}>Política de Privacidade</h1>
         <p className={classes.text}>
-          At our surebet software, we value your privacy and are committed to
-          protecting your personal information. This privacy policy outlines our
-          practices for collecting, using, and sharing your information when you
-          use our website and services. By accessing or using our website, you
-          agree to the terms of this privacy policy.
+          No nosso software de apostas seguras, valorizamos sua privacidade e
+          nos comprometemos a proteger suas informações pessoais. Esta política
+          de privacidade descreve nossas práticas para coleta, uso e
+          compartilhamento de suas informações quando você usa nosso site e
+          serviços. Ao acessar ou usar nosso site, você concorda com os termos
+          desta política de privacidade.
         </p>
-        <h2 className={classes.text}>Information We Collect</h2>
+        <h2 className={classes.text}>Informações que coletamos</h2>
         <p className={classes.text}>
-          We collect information that you provide to us when you register for
-          our services, or contact us for support.
-          This information may include your name, email address, payment
-          information, and other personal details.
-        </p>
-        <p className={classes.text}>
-          We may also collect information about your use of our website and
-          services, including your IP address, browser type, and device
-          information. This information may be collected through the use of
-          cookies, web beacons, and other tracking technologies.
-        </p>
-        <h2 className={classes.text}>How We Use Your Information</h2>
-        <p className={classes.text}>
-          We use the information we collect to provide and improve our services,
-          communicate with you about your account, and personalize your
-          experience on our website. We may also use your information to send
-          you promotional emails and newsletters, but you can opt out of these
-          communications at any time.
+          Coletamos informações que você nos fornece quando se registra para
+          nossos serviços ou nos contata para suporte. Essas informações podem
+          incluir seu nome, endereço de e-mail, informações de pagamento e
+          outros detalhes pessoais.
         </p>
         <p className={classes.text}>
-          We may share your information with our trusted partners and service
-          providers who assist us in providing our services, but we do not sell
-          or rent your personal information to third parties.
+          Também podemos coletar informações sobre o uso do nosso site e
+          serviços, incluindo seu endereço IP, tipo de navegador e informações
+          do dispositivo. Essas informações podem ser coletadas por meio do uso
+          de cookies, web beacons e outras tecnologias de rastreamento.
         </p>
-        <h2 className={classes.text}>How We Protect Your Information</h2>
+        <h2 className={classes.text}>Como usamos suas informações</h2>
         <p className={classes.text}>
-          We take the security of your information seriously and use
-          industry-standard measures to protect it from unauthorized access,
-          disclosure, and destruction. However, no method of transmission over
-          the internet or electronic storage is 100% secure, and we cannot
-          guarantee the absolute security of your information.
+          Usamos as informações que coletamos para fornecer e melhorar nossos
+          serviços, nos comunicar com você sobre sua conta e personalizar sua
+          experiência em nosso site. Também podemos usar suas informações para
+          enviar a você e-mails promocionais e boletins informativos, mas você
+          pode optar por sair dessas comunicações a qualquer momento.
         </p>
-        <h2 className={classes.text}>Changes to This Privacy Policy</h2>
         <p className={classes.text}>
-          We may update this privacy policy from time to time, and we will
-          notify you of any changes by posting the new policy on our website. We
-          encourage you to review this policy periodically to stay informed
-          about our practices.
+          Poderemos compartilhar suas informações com nossos parceiros
+          confiáveis e provedores de serviços que nos ajudam a fornecer nossos
+          serviços, mas não vendemos nem alugamos suas informações pessoais para
+          terceiros.
         </p>
-        <h2 className={classes.text}>Contact Us</h2>
+        <h2 className={classes.text}>Como protegemos suas informações</h2>
         <p className={classes.text}>
-          If you have any questions or concerns about our privacy policy, please
-          contact us on our contact page. We are committed to resolving any
-          issues promptly and transparently.
+          Levamos a segurança de suas informações a sério e usamos medidas
+          padrão do setor para protegê-las contra acesso, divulgação e
+          destruição não autorizados. No entanto, nenhum método de transmissão
+          pela internet ou armazenamento eletrônico é 100% seguro e não podemos
+          garantir a segurança absoluta de suas informações.
+        </p>
+        <h2 className={classes.text}>
+          Alterações a esta Política de Privacidade
+        </h2>
+        <p className={classes.text}>
+          Poderemos atualizar esta política de privacidade de tempos em tempos e
+          notificaremos você sobre quaisquer alterações, publicando a nova
+          política em nosso site. Recomendamos que você revise esta política
+          periodicamente para se manter informado sobre nossas práticas.
+        </p>
+        <h2 className={classes.text}>Entre em Contato</h2>
+        <p className={classes.text}>
+          Se você tiver alguma dúvida ou preocupação sobre nossa política de
+          privacidade, entre em contato conosco por meio de nossa página de
+          contato. Estamos comprometidos em resolver quaisquer problemas
+          prontamente e de forma transparente.
         </p>
       </div>
     </div>
