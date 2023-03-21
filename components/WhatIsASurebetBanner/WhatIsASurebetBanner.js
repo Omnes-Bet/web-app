@@ -65,7 +65,7 @@ const WhatIsASurebetBanner = () => {
     <div className={classes.main}>
       <div className={isDesktop ? classes.boxDesktop : classes.boxMobile}>
         <div className={classes.textSection}>
-          <h3 className={classes.title}>O que são surebets?</h3>
+          <h3 className={classes.title}>Surebets</h3>
           <div className={classes.description}>
             Uma Surebet é uma situação de arbitragem calculada matematicamente
             em que o apostador ganha em qualquer que seja o resultado!
