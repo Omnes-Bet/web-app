@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import { useMediaQuery } from "@mui/material";
-import mobileSurebets from "../../assets/mobile-surebets.png";
+import mobileSurebets from "../../assets/iphone_oddspedia.png";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -50,10 +50,10 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: "0.2px",
   },
   imgDesktop: {
-    width: "250px",
+    width: "230px",
   },
   imgMobile: {
-    width: "180px",
+    width: "150px",
   },
 }));
 

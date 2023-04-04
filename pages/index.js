@@ -136,7 +136,7 @@ export default function Home() {
                       width: "fit-content",
                     }}
                   >
-                    Inscreva-se Agora
+                    Quero Assinar
                   </Button>
                 </Link>
               </>

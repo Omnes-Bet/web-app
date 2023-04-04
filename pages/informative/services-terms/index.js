@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import {
   Accordion,
@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import PageSeo from "../../../components/PageSeo";
 
 const useStyles = makeStyles({
   container: {
@@ -51,112 +52,128 @@ const useStyles = makeStyles({
 
 function ServiceTerms() {
   const classes = useStyles();
+  const [pageUrl, setPageUrl] = useState();
+
+  useEffect(() => {
+    setPageUrl(window?.location?.href);
+  }, []);
+
+  const pageSeoProps = {
+    title: "Omnesbet | Termos de Serviços",
+    description:
+      "Aprenda mais sobre como funciona a OmnesBet",
+    pageUrl: pageUrl,
+  };
 
   return (
-    <div className={classes.container}>
-      <div className={classes.wrapper}>
-        <Typography variant="h1" className={classes.title}>
-          Termos de serviço
-        </Typography>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography variant="h2" className={classes.subtitle}>
-              Assinatura
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              <Typography variant="h3" className={classes.question}>
-                Como faço para cancelar minha assinatura?
+    <>
+      <PageSeo seoProps={pageSeoProps} />
+      <div className={classes.container}>
+        <div className={classes.wrapper}>
+          <Typography variant="h1" className={classes.title}>
+            Termos de serviço
+          </Typography>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography variant="h2" className={classes.subtitle}>
+                Assinatura
               </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Você pode cancelar sua assinatura a qualquer momento fazendo
-                login em seu conta e indo para a página do usuário. A partir
-                daí, você pode escolha cancelar sua assinatura.
-              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <Typography variant="h3" className={classes.question}>
+                  Como faço para cancelar minha assinatura?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Você pode cancelar sua assinatura a qualquer momento fazendo
+                  login em sua conta e indo para a página do usuário. A partir
+                  daí, você pode escolha cancelar sua assinatura.
+                </Typography>
 
-              <Typography variant="h3" className={classes.question}>
-                Existe uma política de reembolso?
+                <Typography variant="h3" className={classes.question}>
+                  Existe uma política de reembolso?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Não oferecemos reembolso de taxas de assinatura pagas.
+                </Typography>
               </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Não oferecemos reembolso de taxas de assinatura pagas.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3a-content"
+              id="panel3a-header"
+            >
+              <Typography variant="h2" className={classes.subtitle}>
+                Propriedade intelectual
               </Typography>
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel3a-content"
-            id="panel3a-header"
-          >
-            <Typography variant="h2" className={classes.subtitle}>
-              Propriedade intelectual
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              <Typography variant="h3" className={classes.question}>
-                Quem detém os direitos de propriedade intelectual do software?
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <Typography variant="h3" className={classes.question}>
+                  Quem detém os direitos de propriedade intelectual do software?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Possuímos todos os direitos de propriedade intelectual do
+                  software, incluindo, entre outros, patentes, direitos
+                  autorais, marcas registradas, e segredos comerciais. Você não
+                  pode reproduzir, distribuir, modificar ou criar trabalhos
+                  derivados de nosso software sem nossa prévia permissão por
+                  escrito.
+                </Typography>
+                <Typography variant="h3" className={classes.question}>
+                  Qual é a licença para usar o software?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Ao assinar nosso software, concedemos a você um direito não
+                  exclusivo, licença intransferível para usar o software para
+                  seu próprio uso pessoal ou comercial, de acordo com estes
+                  termos.
+                </Typography>
               </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Possuímos todos os direitos de propriedade intelectual do
-                software, incluindo, entre outros, patentes, direitos autorais,
-                marcas registradas, e segredos comerciais. Você não pode
-                reproduzir, distribuir, modificar ou criar trabalhos derivados
-                de nosso software sem nossa prévia permissão por escrito.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel4a-content"
+              id="panel4a-header"
+            >
+              <Typography variant="h2" className={classes.subtitle}>
+                Terminação
               </Typography>
-              <Typography variant="h3" className={classes.question}>
-                Qual é a licença para usar o software?
-              </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Ao assinar nosso software, concedemos a você um direito não
-                exclusivo, licença intransferível para usar o software para seu
-                próprio uso pessoal ou comercial, de acordo com estes Serviços
-                Termos.
-              </Typography>
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel4a-content"
-            id="panel4a-header"
-          >
-            <Typography variant="h2" className={classes.subtitle}>
-              Terminação
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              <Typography variant="h3" className={classes.question}>
-                Quais são os motivos para rescindir sua assinatura?
-              </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Reservamo-nos o direito de encerrar sua assinatura a qualquer
-                momento e por qualquer motivo, incluindo, mas não limitado a,
-                violação de estes Termos de serviço, atividade fraudulenta ou
-                violação de leis ou regulamentos aplicáveis.
-              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <Typography variant="h3" className={classes.question}>
+                  Quais são os motivos para rescindir sua assinatura?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Reservamo-nos o direito de encerrar sua assinatura a qualquer
+                  momento e por qualquer motivo, incluindo, mas não limitado a,
+                  violação destes termos de serviços, atividade fraudulenta,
+                  violação de leis ou regulamentos aplicáveis.
+                </Typography>
 
-              <Typography variant="h3" className={classes.question}>
-                O que acontece se sua assinatura for encerrada?
+                <Typography variant="h3" className={classes.question}>
+                  O que acontece se sua assinatura for encerrada?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Se sua assinatura for encerrada, você não terá mais acesso ao
+                  nosso software e todos os direitos concedidos a você sob estes
+                  termos de serviço cessarão imediatamente.
+                </Typography>
               </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Se sua assinatura for encerrada, você não terá mais acesso ao
-                nosso software e todos os direitos concedidos a você sob estes
-                Os Termos de Serviço cessarão imediatamente.
-              </Typography>
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+            </AccordionDetails>
+          </Accordion>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

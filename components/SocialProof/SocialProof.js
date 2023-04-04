@@ -9,6 +9,7 @@ import { Button } from "@mui/material";
 import mikeBoyle from "../../assets/mike_boyle.png";
 import danielAlves from "../../assets/daniel_alves.jpeg";
 import john_dale from "../../assets/john_dale.jpg";
+import thiago_caetano from "../../assets/thiago_caetano.png";
 import stars from "../../assets/starsProof.png";
 import Link from "next/link";
 
@@ -69,25 +70,25 @@ const useStyles = makeStyles((theme) => ({
 
 const proofs = [
   {
-    name: "Mike Boyle",
-    message:
-      "Ótimo produto! Tenho usado o software por 3 semanas e ganhando em média $40 por semana.",
-    rate: "Excelente!",
-    photo: mikeBoyle,
-  },
-  {
     name: "Daniel Alves",
     message:
-      "Desempenho excepcional! Tenho utilizado o software por um ano e gerando uma média mensal de $1.000.",
+      "Desempenho excepcional! Tenho utilizado o software por um ano e gerando uma média mensal de R$1.000.",
     rate: "Incrível!",
     photo: danielAlves,
   },
   {
-    name: "John Dale",
+    name: "Thiago Caetano",
     message:
-      "Serviço incrível! Tenho utilizado a plataforma por 2 meses e ganhando aproximadamente $800 por mês.",
+      "Serviço incrível! Tenho utilizado a plataforma por 2 meses e ganhando aproximadamente R$800 por mês.",
     rate: "Fantástico!",
-    photo: john_dale,
+    photo: thiago_caetano,
+  },
+  {
+    name: "Mike Boyle",
+    message:
+      "Ótimo produto! Tenho usado o software por 3 semanas e ganhando em média R$400 por semana.",
+    rate: "Excelente!",
+    photo: mikeBoyle,
   },
 ];
 
@@ -117,7 +118,7 @@ const SocialProof = () => {
                   <div className={classes.witness}>
                     <div className={classes.witnessRateStar}>
                       <h2 className={classes.witnessRate}>{i.rate}</h2>
-                      <img src={stars.src} alt="star-pic" />
+                      <img src={stars.src} alt="star-pic" style={{ width: "30px"}} />
                     </div>
                     <div>
                       <h3 className={classes.witnessMessage}>{i.message}</h3>
@@ -141,7 +142,7 @@ const SocialProof = () => {
             width: "fit-content",
           }}
         >
-          Assinar Agora
+          Quero Assinar
         </Button>
       </Link>
     </div>

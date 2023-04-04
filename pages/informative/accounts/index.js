@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@mui/styles";
 import {
   Accordion,
@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import PageSeo from "../../../components/PageSeo";
 
 const useStyles = makeStyles({
   container: {
@@ -51,78 +52,93 @@ const useStyles = makeStyles({
 
 function AccountsPayouts() {
   const classes = useStyles();
+  const [pageUrl, setPageUrl] = useState();
+
+  useEffect(() => {
+    setPageUrl(window?.location?.href);
+  }, []);
+
+  const pageSeoProps = {
+    title: "Omnesbet | Contas",
+    description: "Aprenda mais sobre como funciona a OmnesBet",
+    pageUrl: pageUrl,
+  };
 
   return (
-    <div className={classes.container}>
-      <div className={classes.wrapper}>
-        <Typography variant="h1" className={classes.title}>
-          Contas e Pagamentos
-        </Typography>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography variant="h2" className={classes.subtitle}>
-              Configuração de conta
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              <Typography variant="h3" className={classes.question}>
-                Como criar uma conta?
+    <>
+      <PageSeo seoProps={pageSeoProps} />
+      <div className={classes.container}>
+        <div className={classes.wrapper}>
+          <Typography variant="h1" className={classes.title}>
+            Contas e Pagamentos
+          </Typography>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography variant="h2" className={classes.subtitle}>
+                Configuração de conta
               </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Você pode criar uma conta visitando nosso site e clicando no
-                botão "Inscreva-se". Siga as instruções para inserir suas
-                informações e criar sua conta.
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <Typography variant="h3" className={classes.question}>
+                  Como criar uma conta?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Você pode criar uma conta visitando nosso site e clicando no
+                  botão "Registrar". Siga as instruções para inserir suas
+                  informações e criar sua conta.
+                </Typography>
+                <Typography variant="h3" className={classes.question}>
+                  Posso ter várias contas?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Cada usuário tem permissão para ter uma conta. Se você
+                  precisar de várias contas para o seu negócio, entre em contato
+                  com nossa equipe de suporte ao cliente.
+                </Typography>
               </Typography>
-              <Typography variant="h3" className={classes.question}>
-                Posso ter várias contas?
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel4a-content"
+              id="panel4a-header"
+            >
+              <Typography variant="h2" className={classes.subtitle}>
+                Segurança da conta
               </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Cada usuário tem permissão para ter uma conta. Se você precisar
-                de várias contas para o seu negócio, entre em contato com nossa
-                equipe de suporte ao cliente.
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <Typography variant="h3" className={classes.question}>
+                  Como proteger minha conta contra acessos não autorizados?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Você pode proteger sua conta usando uma senha forte. Também
+                  recomendamos que você não compartilhe suas credenciais de
+                  login da conta com ninguém e seja cauteloso em relação a
+                  tentativas de phishing.
+                </Typography>
+                <Typography variant="h3" className={classes.question}>
+                  O que devo fazer se suspeitar de acesso não autorizado à minha
+                  conta?
+                </Typography>
+                <Typography variant="body1" className={classes.answer}>
+                  Se você suspeitar de acesso não autorizado à sua conta, entre
+                  em contato imediatamente com nossa equipe de suporte ao
+                  cliente.
+                </Typography>
               </Typography>
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel4a-content"
-            id="panel4a-header"
-          >
-            <Typography variant="h2" className={classes.subtitle}>
-              Segurança da conta
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              <Typography variant="h3" className={classes.question}>
-                Como proteger minha conta contra acessos não autorizados?
-              </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Você pode proteger sua conta usando uma senha forte. Também
-                recomendamos que você não compartilhe suas credenciais de login
-                da conta com ninguém e seja cauteloso em relação a tentativas de
-                phishing.
-              </Typography>
-              <Typography variant="h3" className={classes.question}>
-                O que devo fazer se suspeitar de acesso não autorizado à minha
-                conta?
-              </Typography>
-              <Typography variant="body1" className={classes.answer}>
-                Se você suspeitar de acesso não autorizado à sua conta, entre em
-                contato imediatamente com nossa equipe de suporte ao cliente.
-              </Typography>
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+            </AccordionDetails>
+          </Accordion>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 export default AccountsPayouts;

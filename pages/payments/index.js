@@ -181,47 +181,46 @@ const Payments = () => {
         <p>
           Gostaríamos de informar aos nossos usuários que as informações que
           fornecemos são apenas para fins informativos. Não nos
-          responsabilizamos por nenhum perdas sofridas ao usar nosso serviço.
+          responsabilizamos por quaisquer perdas sofridas ao usar nosso serviço.
           Nosso serviço é projetado para fornecer aos usuários informações sobre
           possíveis oportunidades de arbitragem no mercado de apostas
-          esportivas, mas não garantimos a precisão as informações fornecidas.
+          esportivas, mas não garantimos a precisão das informações fornecidas.
         </p>
         <br />
         <p>
-          É importante que os usuários entendam que as informações que fornecer
-          pode mudar a qualquer momento. Portanto, é do usuário responsabilidade
-          de verificar todas as informações antes de fazer qualquer aposta. Nós
-          altamente recomendável que os usuários realizem suas próprias
-          pesquisas antes de fazer tomar qualquer decisão e consultar um
-          profissional, se necessário.
+          É importante que os usuários entendam que as informações fornecidas
+          podem mudar a qualquer momento. Portanto, é responsabilidade do
+          usuário verificar todas as informações antes de fazer qualquer aposta.
+          Recomendamos que os usuários realizem suas próprias pesquisas antes de
+          tomar qualquer decisão e, se necessário, consultem um profissional.
         </p>
         <br />
         <p>
           Embora a aposta segura possa ser uma estratégia lucrativa, ela também
           traz riscos. Os usuários devem entender que sempre há uma chance de
-          perder dinheiro ao fazer apostas, mesmo ao usar uma estratégia de
-          surebetting. Além disso, existem outros riscos a serem considerados,
-          como apostas limites, restrições de conta e imprevistos que possam
+          perder dinheiro ao fazer apostas, mesmo ao usar a estratégia de
+          arbitragem. Além disso, existem outros riscos a serem considerados,
+          como limites de apostas, restrições de conta e imprevistos que possam
           afetar o resultado de uma partida.
         </p>
         <br />
         <p>
           É crucial que os usuários abordem as apostas seguras com cautela e
-          apenas apostar dentro de suas possibilidades. Os usuários nunca devem
-          fazer apostas que eles não pode perder. Nosso objetivo é fornecer aos
-          usuários informações que podem ajudá-los a tomar decisões informadas,
-          mas, em última análise, é o responsabilidade do usuário gerenciar seu
-          próprio risco e fazer suas próprias decisões.
+          apostem apenas dentro de suas possibilidades. Os usuários nunca devem
+          fazer apostas que não possam perder. Nosso objetivo é fornecer aos
+          usuários informações que possam ajudá-los a tomar decisões informadas,
+          mas, em última análise, é responsabilidade do usuário gerenciar seu
+          próprio risco e tomar suas próprias decisões.
         </p>
         <br />
         <p>
           Em resumo, embora nos esforcemos para fornecer informações precisas e
-          atualizadas informações, não assumimos responsabilidade por quaisquer
-          perdas incorridas durante a utilização do nosso serviço. Os usuários
-          devem verificar todas as informações antes colocar quaisquer apostas e
-          são responsáveis ​​por gerir o seu próprio risco. Nós encorajar os
-          usuários a abordar as apostas seguras com cautela e apenas apostar
-          dentro de seus meios.
+          atualizadas, não assumimos responsabilidade por quaisquer perdas
+          incorridas durante a utilização do nosso serviço. Os usuários devem
+          verificar todas as informações antes de fazer qualquer aposta e são
+          responsáveis ​​por gerir seu próprio risco. Encorajamos os usuários a
+          abordar as apostas seguras com cautela e apostar apenas dentro de suas
+          possibilidades.
         </p>
       </div>
     </div>

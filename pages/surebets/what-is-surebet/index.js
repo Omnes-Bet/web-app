@@ -81,9 +81,9 @@ const WhatIsSurebet = () => {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | O que é Surebets && Arbitrage",
+    title: "Omnesbet | Como Funciona o Software",
     description:
-      "Obtenha uma compreensão profunda do que é uma aposta certa e arbitragem em apostas esportivas.",
+      "Aprenda mais sobre como funciona a OmnesBet",
     pageUrl: pageUrl,
   };
 
@@ -99,22 +99,23 @@ const WhatIsSurebet = () => {
             O que são Surebets?
           </Typography>
           <Typography variant="body1">
-            Surebets, também conhecidas como apostas de arbitragem, são um tipo
-            de aposta em que o o apostador pode lucrar independentemente do
-            resultado do jogo. Esse é alcançado aproveitando as diferenças nas
-            probabilidades oferecidas por diferentes casas de apostas.
+            Surebets, ou apostas de arbitragem, são um tipo de aposta que
+            permite ao apostador lucrar independentemente do resultado do jogo,
+            explorando diferenças nas probabilidades oferecidas por diferentes
+            casas de apostas.
           </Typography>
           <Typography variant="body1">
-            Em uma surebet, o apostador aposta em todos os resultados possíveis
-            de uma jogo com diferentes casas de apostas, para que as
-            probabilidades totais sejam maiores de 1. Isso garante um lucro,
-            independentemente do resultado do jogo. O o lucro geralmente é
-            pequeno, mas pode ser significativo quando grandes quantias de
-            dinheiro são apostados.
+            Para fazer uma Surebet, o apostador precisa encontrar um jogo em que
+            as diferentes casas de apostas ofereçam probabilidades diferentes
+            para cada resultado possível. O objetivo é encontrar uma combinação
+            de apostas que garanta um lucro, independentemente do resultado do
+            jogo. Para alcançar isso, o apostador divide sua aposta em todos os
+            resultados possíveis do jogo, de acordo com as probabilidades
+            oferecidas por cada casa de apostas.
           </Typography>
           <Typography variant="body1">
             As Surebets são populares entre os apostadores profissionais, que
-            estão sempre em busca de oportunidades de lucro. No entanto, eles
+            estão sempre em busca de oportunidades de lucro. No entanto, elas
             exigem análise cuidadosa e monitoramento de probabilidades, e pode
             ser difícil de encontrar e executar.
           </Typography>
@@ -146,28 +147,29 @@ const WhatIsSurebet = () => {
             O que é Arbitragem?
           </Typography>
           <Typography variant="body1">
-            A arbitragem é uma estratégia de negociação que envolve a compra e
-            venda de mesmo ativo em diferentes mercados, a fim de aproveitar o
-            preço e diferenças e lucrar. No mundo das apostas esportivas,
-            arbitragem refere-se ao mesmo conceito, mas em vez de negociar
+            Arbitragem é uma estratégia de negociação que consiste na compra e
+            venda do mesmo ativo em diferentes mercados, a fim de aproveitar as
+            diferenças de preço e lucrar. No mundo das apostas esportivas,
+            arbitragem refere-se ao mesmo conceito, mas, em vez de negociar
             ativos, o apostador está apostando em diferentes resultados do mesmo
             jogo.
           </Typography>
           <Typography variant="body1">
-            Assim como as surebets, as apostas de arbitragem podem ser usadas
-            para garantir lucro independentemente do resultado do jogo. Isso é
-            feito tomando vantagem das diferenças de cotas oferecidas por
-            diferentes casas de apostas. O apostador faz apostas em todos os
-            resultados possíveis do jogo com diferentes casas de apostas, para
-            que as probabilidades totais sejam superiores a 1. Em desta forma, o
-            apostador pode lucrar independentemente do resultado da jogo.
+            Assim como as Surebets, as apostas de arbitragem podem ser usadas
+            para garantir lucro independentemente do resultado do jogo. O
+            apostador aproveita as diferenças de cotações oferecidas por
+            diferentes casas de apostas e aposta em todos os resultados
+            possíveis do jogo com diferentes casas de apostas, de modo que as
+            probabilidades totais sejam superiores a 1. Dessa forma, o apostador
+            pode lucrar independentemente do resultado do jogo.
           </Typography>
           <Typography variant="body1">
-            No entanto, assim como as surebets, as apostas de arbitragem
-            requerem uma análise cuidadosa e monitoramento de probabilidades, e
-            pode ser difícil de encontrar e executar. O lucro das apostas de
-            arbitragem geralmente é pequeno, mas pode ser significativo quando
-            grandes quantias de dinheiro são apostadas.
+            No entanto, assim como as Surebets, as apostas de arbitragem exigem
+            análise cuidadosa e monitoramento constante das cotações oferecidas
+            pelas diferentes casas de apostas, além de serem difíceis de
+            encontrar e executar. O lucro das apostas de arbitragem geralmente é
+            pequeno, mas pode ser significativo quando grandes quantias de
+            dinheiro são apostadas.
           </Typography>
         </Box>
       </Box>
