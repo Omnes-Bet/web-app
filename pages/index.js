@@ -163,7 +163,7 @@ export default function Home() {
               </>
             ) : user?.subsInfo?.status == "active" ? (
               <>
-                <h1>Bem-vindo a OmniBet</h1>
+                <h1>Bem-vindo a OmnesBet</h1>
                 <p>
                   Sua Solução Completa de Apostas Esportivas Para Arbitragens e
                   Surebets
