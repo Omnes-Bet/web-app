@@ -9,6 +9,7 @@ import {
   ListItemText,
   Button,
 } from "@mui/material";
+import styled from "@emotion/styled";
 import { Storage } from "@mui/icons-material";
 import { ContactMail } from "@mui/icons-material";
 import { CompareArrows } from "@mui/icons-material";
@@ -18,6 +19,38 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { AttachMoney } from "@mui/icons-material";
 import Link from "next/link";
 import { AuthContext } from "../../contexts/authContext";
+
+const StyledListItemText = styled(ListItemText)(({ theme }) => ({
+  animation: "colorChange 2s linear infinite",
+
+  "@keyframes colorChange": {
+    "0%": {
+      color: "rgba(0, 0, 0, 0.87)",
+    },
+    "50%": {
+      color: "#1c50abcc",
+    },
+    "100%": {
+      color: "rgba(0, 0, 0, 0.87)",
+    },
+  },
+}));
+
+const StyledListItemIcon = styled(ListItemIcon)(({ theme }) => ({
+  animation: "colorChange 2s linear infinite",
+
+  "@keyframes colorChange": {
+    "0%": {
+      color: "rgba(0, 0, 0, 0.87)",
+    },
+    "50%": {
+      color: "#1c50abcc",
+    },
+    "100%": {
+      color: "rgba(0, 0, 0, 0.87)",
+    },
+  },
+}));
 
 const SideBar = ({ isOpen, setOpen }) => {
   const { user, logout } = useContext(AuthContext);
@@ -53,9 +86,9 @@ const SideBar = ({ isOpen, setOpen }) => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <CastConnected />
+                  <CastConnected sx={{ color: "#c70704" }} />
                 </ListItemIcon>
-                <ListItemText primary={"Ao Vivo"} />
+                <ListItemText primary={"Ao Vivo"} sx={{ color: "#c70704" }} />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -86,10 +119,10 @@ const SideBar = ({ isOpen, setOpen }) => {
             <Link href={"/payments/all"} onClick={() => setOpen(false)}>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <ListItemIcon>
+                  <StyledListItemIcon>
                     <AttachMoney />
-                  </ListItemIcon>
-                  <ListItemText primary={"Planos"} />
+                  </StyledListItemIcon>
+                  <StyledListItemText primary={"Planos"} />
                 </ListItemButton>
               </ListItem>
             </Link>
