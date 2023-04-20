@@ -84,7 +84,7 @@ const OddsComparison = () => {
     setTimeout(() => {
       setIsLoading(false);
       scrollFocus().firstChild.style.borderRadius = "20px"
-      scrollFocus().firstChild.style.height = "1145px"
+      scrollFocus().firstChild.style.height = "1147px"
     }, 5000);
   }, []);
 
