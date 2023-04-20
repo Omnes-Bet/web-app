@@ -15,6 +15,8 @@ import { ContactMail } from "@mui/icons-material";
 import { CompareArrows } from "@mui/icons-material";
 import { EmojiEvents } from "@mui/icons-material";
 import { CastConnected } from "@mui/icons-material";
+import { LibraryBooks } from "@mui/icons-material";
+import { TrendingDown } from "@mui/icons-material";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { AttachMoney } from "@mui/icons-material";
 import Link from "next/link";
@@ -28,7 +30,7 @@ const StyledListItemText = styled(ListItemText)(({ theme }) => ({
       color: "rgba(0, 0, 0, 0.87)",
     },
     "50%": {
-      color: "#1c50abcc",
+      color: "green",
     },
     "100%": {
       color: "rgba(0, 0, 0, 0.87)",
@@ -44,7 +46,7 @@ const StyledListItemIcon = styled(ListItemIcon)(({ theme }) => ({
       color: "rgba(0, 0, 0, 0.87)",
     },
     "50%": {
-      color: "#1c50abcc",
+      color: "green",
     },
     "100%": {
       color: "rgba(0, 0, 0, 0.87)",
@@ -74,9 +76,12 @@ const SideBar = ({ isOpen, setOpen }) => {
               <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
-                    <Storage />
+                    <Storage sx={{ color: "#1c50abcc" }} />
                   </ListItemIcon>
-                  <ListItemText primary={"Surebets"} />
+                  <ListItemText
+                    primary={"Surebets"}
+                    sx={{ color: "#1c50abcc" }}
+                  />
                 </ListItemButton>
               </ListItem>
             </Link>
@@ -97,9 +102,40 @@ const SideBar = ({ isOpen, setOpen }) => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <CompareArrows />
+                  <CompareArrows sx={{ color: "#1c50abcc" }} />
                 </ListItemIcon>
-                <ListItemText primary={"Odds Compare"} />
+                <ListItemText
+                  primary={"Compare as Odds"}
+                  sx={{ color: "#1c50abcc" }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+
+          <Link href={"/dropping-odds"} onClick={() => setOpen(false)}>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <TrendingDown sx={{ color: "#1c50abcc" }} />
+                </ListItemIcon>
+                <ListItemText
+                  primary={"Odds Caindo"}
+                  sx={{ color: "#1c50abcc" }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+
+          <Link href={"/match-center"} onClick={() => setOpen(false)}>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <LibraryBooks sx={{ color: "#1c50abcc" }} />
+                </ListItemIcon>
+                <ListItemText
+                  primary={"Central da Partida"}
+                  sx={{ color: "#1c50abcc" }}
+                />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -108,9 +144,9 @@ const SideBar = ({ isOpen, setOpen }) => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <EmojiEvents />
+                  <EmojiEvents sx={{ color: "#1c50abcc" }} />
                 </ListItemIcon>
-                <ListItemText primary={"Ligas"} />
+                <ListItemText primary={"Ligas"} sx={{ color: "#1c50abcc" }} />
               </ListItemButton>
             </ListItem>
           </Link>

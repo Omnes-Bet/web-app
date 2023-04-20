@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Leagues = () => {
+const MatchCenter = () => {
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width:600px)");
   const [pageUrl, setPageUrl] = useState();
@@ -50,38 +50,44 @@ const Leagues = () => {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | Ligas",
-    description: "Veja as Principais Ligas",
+    title: "Omnesbet | Central do Partida",
+    description: "Veja os Detalhes da Partida",
     pageUrl: pageUrl,
   };
 
   useEffect(() => {
     window.oddspediaWidget = {
       api_token: "4284fe60768c63b526c6af991cfc1608063cc071f7e15bd6ace4fd5f58a0",
-      type: "competition",
+      match_id: "7375065",
+      type: "match-center",
       domain: "omnesbet.com",
-      selector: "oddspedia-widget-competition-league-1",
+      selector: "oddspedia-widget-match-center-7375065",
       width: "0",
       theme: "1",
       odds_type: "1",
       language: "br",
       primary_color: "#1976D2",
+      primary_color_opacity: "90",
+      secondary_color: "#53647B",
       accent_color: "#15EADB",
       font: "Roboto",
-      league_id: "1",
-      limit: "8",
-      show_odds: "true",
+      logos: "true",
+      image: "true",
+      best_odds: "true",
+      header: "true",
+      odds: "true",
+      featured_bookie: "0",
+      limitVisibleOperators: "15",
     };
 
     const script = document.createElement("script");
     script.src =
-      "https://widgets.oddspedia.com/js/widget/init.js?widgetId=oddspediaWidgetCompetitionLeague1";
+      "https://widgets.oddspedia.com/js/widget/init.js?widgetId=oddspediaWidgetMatchCenter7375065";
     script.async = true;
     document.body.appendChild(script);
     setTimeout(() => {
       setIsLoading(false);
       scrollFocus().firstChild.style.borderRadius = "20px";
-      scrollFocus().firstChild.style.height = "575px";
     }, 5000);
   }, []);
 
@@ -95,7 +101,7 @@ const Leagues = () => {
     >
       <PageSeo seoProps={pageSeoProps} />
       <div
-        id="oddspedia-widget-competition-league-1"
+        id="oddspedia-widget-match-center-7375065"
         ref={oddsPediaTag}
         style={{ width: isDesktop ? "1020px" : "", margin: "0 auto" }}
       />
@@ -108,4 +114,4 @@ const Leagues = () => {
   );
 };
 
-export default Leagues;
+export default MatchCenter;

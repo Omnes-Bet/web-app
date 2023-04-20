@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Leagues = () => {
+const DroppingOdds = () => {
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width:600px)");
   const [pageUrl, setPageUrl] = useState();
@@ -50,17 +50,17 @@ const Leagues = () => {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | Ligas",
-    description: "Veja as Principais Ligas",
+    title: "Omnesbet | Odds Caindo",
+    description: "Veja as Odds Caindo no Momento!",
     pageUrl: pageUrl,
   };
 
   useEffect(() => {
     window.oddspediaWidget = {
       api_token: "4284fe60768c63b526c6af991cfc1608063cc071f7e15bd6ace4fd5f58a0",
-      type: "competition",
+      type: "dropping-odds",
       domain: "omnesbet.com",
-      selector: "oddspedia-widget-competition-league-1",
+      selector: "oddspedia-widget-dropping-odds",
       width: "0",
       theme: "1",
       odds_type: "1",
@@ -68,20 +68,16 @@ const Leagues = () => {
       primary_color: "#1976D2",
       accent_color: "#15EADB",
       font: "Roboto",
-      league_id: "1",
-      limit: "8",
-      show_odds: "true",
+      limit: "5",
     };
 
     const script = document.createElement("script");
-    script.src =
-      "https://widgets.oddspedia.com/js/widget/init.js?widgetId=oddspediaWidgetCompetitionLeague1";
+    script.src = "https://widgets.oddspedia.com/js/widget/init.js";
     script.async = true;
     document.body.appendChild(script);
     setTimeout(() => {
       setIsLoading(false);
       scrollFocus().firstChild.style.borderRadius = "20px";
-      scrollFocus().firstChild.style.height = "575px";
     }, 5000);
   }, []);
 
@@ -95,7 +91,7 @@ const Leagues = () => {
     >
       <PageSeo seoProps={pageSeoProps} />
       <div
-        id="oddspedia-widget-competition-league-1"
+        id="oddspedia-widget-dropping-odds"
         ref={oddsPediaTag}
         style={{ width: isDesktop ? "1020px" : "", margin: "0 auto" }}
       />
@@ -108,4 +104,4 @@ const Leagues = () => {
   );
 };
 
-export default Leagues;
+export default DroppingOdds;

@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const OddsComparison = () => {
+const LiveScore = () => {
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width:600px)");
   const [pageUrl, setPageUrl] = useState();
@@ -114,4 +114,4 @@ const OddsComparison = () => {
   );
 };
 
-export default OddsComparison;
+export default LiveScore;
