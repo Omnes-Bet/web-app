@@ -43,8 +43,7 @@ const Header = ({ setOpen }) => {
                 <Button
                   variant="contained"
                   sx={{
-                    background:
-                      "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                    background: "#1c50abcc",
                   }}
                 >
                   Entrar
@@ -56,8 +55,7 @@ const Header = ({ setOpen }) => {
                   variant="contained"
                   sx={{
                     marginLeft: "5px",
-                    background:
-                      "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                    background: "#1c50abcc",
                   }}
                 >
                   Registrar

@@ -117,8 +117,8 @@ export default function Home() {
     document.body.appendChild(script);
     setTimeout(() => {
       setIsLoading(false);
-      scrollFocus().firstChild.style.borderRadius = "20px"
-      scrollFocus().firstChild.style.height = "1147px"
+      scrollFocus().firstChild.style.borderRadius = "20px";
+      scrollFocus().firstChild.style.height = "1147px";
     }, 5000);
   }, []);
 
@@ -171,8 +171,7 @@ export default function Home() {
                   <Button
                     variant="contained"
                     sx={{
-                      background:
-                        "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                      background: "#1c50abcc",
                       width: "fit-content",
                     }}
                   >
@@ -192,8 +191,7 @@ export default function Home() {
                   <Button
                     variant="contained"
                     sx={{
-                      background:
-                        "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                      background: "#1c50abcc",
                       width: "fit-content",
                     }}
                   >
@@ -212,8 +210,7 @@ export default function Home() {
                   <Button
                     variant="contained"
                     sx={{
-                      background:
-                        "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                      background: "#1c50abcc",
                       width: "fit-content",
                     }}
                   >
@@ -232,8 +229,7 @@ export default function Home() {
                   <Button
                     variant="contained"
                     sx={{
-                      background:
-                        "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+                      background: "#1c50abcc",
                       width: "fit-content",
                     }}
                   >

@@ -118,7 +118,11 @@ const SocialProof = () => {
                   <div className={classes.witness}>
                     <div className={classes.witnessRateStar}>
                       <h2 className={classes.witnessRate}>{i.rate}</h2>
-                      <img src={stars.src} alt="star-pic" style={{ width: "30px"}} />
+                      <img
+                        src={stars.src}
+                        alt="star-pic"
+                        style={{ width: "30px" }}
+                      />
                     </div>
                     <div>
                       <h3 className={classes.witnessMessage}>{i.message}</h3>
@@ -137,8 +141,7 @@ const SocialProof = () => {
         <Button
           variant="contained"
           sx={{
-            background:
-              "linear-gradient(68.8deg, #1c50abcc 1.8%, #1c50abcc 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%)",
+            background: "#1c50abcc",
             width: "fit-content",
           }}
         >
