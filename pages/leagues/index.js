@@ -80,10 +80,9 @@ const OddsComparison = () => {
     document.body.appendChild(script);
     setTimeout(() => {
       setIsLoading(false);
-      console.log(
-        "odds",
-        (scrollFocus().firstChild.style.borderRadius = "20px")
-      );
+      scrollFocus().firstChild.style.borderRadius = "20px"
+      scrollFocus().firstChild.style.height = "575px"
+      ;
     }, 5000);
   }, []);
 
