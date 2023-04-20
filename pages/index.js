@@ -261,7 +261,7 @@ export default function Home() {
             id="oddspedia-widget-odds-comparison-popular-false-sports-false-leagues-false"
             ref={oddsPediaTag}
             style={{
-              width: isMobile ? "1020px" : "",
+              width: isMobile ? "1020px" : "100%",
               background: "",
             }}
           />
