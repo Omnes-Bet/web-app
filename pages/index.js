@@ -1,7 +1,7 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { Box, useMediaQuery, Button } from "@mui/material";
+import { Box, useMediaQuery, Button, CircularProgress } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Plans from "../components/Plans/Plans";
 import { AuthContext } from "../contexts/authContext";
@@ -77,9 +77,51 @@ export default function Home() {
   const { user } = useContext(AuthContext);
   const classes = useStyles();
   const isMobile = useMediaQuery("(min-width:600px)");
+  const [isLoading, setIsLoading] = useState(true);
+
+  const oddsPediaTag = useRef();
+
+  const scrollFocus = () => {
+    return oddsPediaTag.current;
+  };
 
   useEffect(() => {
     setPageUrl(window?.location?.href);
+  }, []);
+
+  useEffect(() => {
+    window.oddspediaWidget = {
+      api_token: "4284fe60768c63b526c6af991cfc1608063cc071f7e15bd6ace4fd5f58a0",
+      type: "odds-comparison",
+      domain: "omnesbet.com",
+      selector:
+        "oddspedia-widget-odds-comparison-popular-false-sports-false-leagues-false",
+      width: "0",
+      theme: "1",
+      odds_type: "1",
+      language: "br",
+      primary_color: "#283E5B",
+      accent_color: "#00B1FF",
+      font: "Roboto",
+      logos: "true",
+      limit: "10",
+      popular: "false",
+      sports: "",
+      leagues: "",
+    };
+
+    const script = document.createElement("script");
+    script.src =
+      "https://widgets.oddspedia.com/js/widget/init.js?widgetId=oddspediaWidgetOddsComparisonPopularSportsLeagues";
+    script.async = true;
+    document.body.appendChild(script);
+    setTimeout(() => {
+      setIsLoading(false);
+      console.log(
+        "odds",
+        (scrollFocus().firstChild.style.borderRadius = "20px")
+      );
+    }, 5000);
   }, []);
 
   const pageSeoProps = {
@@ -203,6 +245,33 @@ export default function Home() {
               </>
             )}
           </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            backgroundImage:
+              "linear-gradient(to right, #060C23 , black, #060C23)",
+            marginTop: "5px",
+            padding: "15px",
+          }}
+        >
+          <div
+            id="oddspedia-widget-odds-comparison-popular-false-sports-false-leagues-false"
+            ref={oddsPediaTag}
+            style={{
+              width: isMobile ? "1020px" : "",
+              background: "",
+            }}
+          />
+          {isLoading && (
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <CircularProgress />
+            </Box>
+          )}
         </div>
 
         <WhatIsASurebetBanner />
