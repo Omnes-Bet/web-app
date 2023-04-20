@@ -12,6 +12,7 @@ import {
 import { Storage } from "@mui/icons-material";
 import { ContactMail } from "@mui/icons-material";
 import { CompareArrows } from "@mui/icons-material";
+import { EmojiEvents } from "@mui/icons-material";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { AttachMoney } from "@mui/icons-material";
 import Link from "next/link";
@@ -54,6 +55,17 @@ const SideBar = ({ isOpen, setOpen }) => {
                   <CompareArrows />
                 </ListItemIcon>
                 <ListItemText primary={"Odds Compare"} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+
+          <Link href={"/leagues"} onClick={() => setOpen(false)}>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <EmojiEvents />
+                </ListItemIcon>
+                <ListItemText primary={"Ligas"} />
               </ListItemButton>
             </ListItem>
           </Link>
