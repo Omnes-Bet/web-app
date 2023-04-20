@@ -50,17 +50,18 @@ const OddsComparison = () => {
   }, []);
 
   const pageSeoProps = {
-    title: "Omnesbet | Ligas",
-    description: "Veja as Principais Ligas",
+    title: "Omnesbet | Ao Vivo",
+    description: "Acompanhe os Jogos Ocorrendo no Momento",
     pageUrl: pageUrl,
   };
 
   useEffect(() => {
     window.oddspediaWidget = {
       api_token: "4284fe60768c63b526c6af991cfc1608063cc071f7e15bd6ace4fd5f58a0",
-      type: "competition",
+      type: "live-score",
       domain: "omnesbet.com",
-      selector: "oddspedia-widget-competition-league-1",
+      selector:
+        "oddspedia-widget-live-score-popular-false-sports-false-leagues-false",
       width: "0",
       theme: "1",
       odds_type: "1",
@@ -68,21 +69,24 @@ const OddsComparison = () => {
       primary_color: "#1976D2",
       accent_color: "#15EADB",
       font: "Roboto",
-      league_id: "1",
-      limit: "8",
-      show_odds: "true",
+      logos: "true",
+      inplay_only: "false",
+      extended_match_info: "true",
+      live_stream: "true",
+      limit: "15",
+      popular: "false",
+      sports: "",
+      leagues: "",
     };
 
     const script = document.createElement("script");
     script.src =
-      "https://widgets.oddspedia.com/js/widget/init.js?widgetId=oddspediaWidgetCompetitionLeague1";
+      "https://widgets.oddspedia.com/js/widget/init.js?widgetId=oddspediaWidgetLiveScorePopularSportsLeagues";
     script.async = true;
     document.body.appendChild(script);
     setTimeout(() => {
       setIsLoading(false);
-      scrollFocus().firstChild.style.borderRadius = "20px"
-      scrollFocus().firstChild.style.height = "575px"
-      ;
+      scrollFocus().firstChild.style.borderRadius = "20px";
     }, 5000);
   }, []);
 
@@ -96,7 +100,7 @@ const OddsComparison = () => {
     >
       <PageSeo seoProps={pageSeoProps} />
       <div
-        id="oddspedia-widget-competition-league-1"
+        id="oddspedia-widget-live-score-popular-false-sports-false-leagues-false"
         ref={oddsPediaTag}
         style={{ width: isDesktop ? "1020px" : "", margin: "0 auto" }}
       />

@@ -13,6 +13,7 @@ import { Storage } from "@mui/icons-material";
 import { ContactMail } from "@mui/icons-material";
 import { CompareArrows } from "@mui/icons-material";
 import { EmojiEvents } from "@mui/icons-material";
+import { CastConnected } from "@mui/icons-material";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { AttachMoney } from "@mui/icons-material";
 import Link from "next/link";
@@ -47,6 +48,17 @@ const SideBar = ({ isOpen, setOpen }) => {
               </ListItem>
             </Link>
           )}
+
+          <Link href={"/live-score"} onClick={() => setOpen(false)}>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <CastConnected />
+                </ListItemIcon>
+                <ListItemText primary={"Ao Vivo"} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
 
           <Link href={"/odds-comparison"} onClick={() => setOpen(false)}>
             <ListItem disablePadding>
