@@ -81,8 +81,7 @@ const Leagues = () => {
     setTimeout(() => {
       setIsLoading(false);
       scrollFocus().firstChild.style.borderRadius = "20px";
-      scrollFocus().firstChild.style.height = "575px";
-    }, 5000);
+    }, 1000);
   }, []);
 
   return (

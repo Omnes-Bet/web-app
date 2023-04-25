@@ -87,8 +87,7 @@ const LiveScore = () => {
     setTimeout(() => {
       setIsLoading(false);
       scrollFocus().firstChild.style.borderRadius = "20px";
-      scrollFocus().firstChild.style.height = "1050px";
-    }, 5000);
+    }, 1000);
   }, []);
 
   return (

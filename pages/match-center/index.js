@@ -88,7 +88,7 @@ const MatchCenter = () => {
     setTimeout(() => {
       setIsLoading(false);
       scrollFocus().firstChild.style.borderRadius = "20px";
-    }, 5000);
+    }, 1000);
   }, []);
 
   return (
