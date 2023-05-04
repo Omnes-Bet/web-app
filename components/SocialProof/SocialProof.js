@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     gap: "15px",
-    backgroundImage: "linear-gradient(to right, #060C23 , black, #060C23)",
+    backgroundImage: "linear-gradient(to bottom, black, black, #060C23)",
   },
   carouselWrapper: {
     width: "500px",
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "400px",
+    width: "350px",
     height: "250px",
     backgroundColor: "rgba(245, 245, 245, 0.1)",
     borderRadius: "16px",

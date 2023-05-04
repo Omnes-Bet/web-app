@@ -95,7 +95,6 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     overflow: "hidden",
     height: "600px",
-    marginBottom: "5px",
   },
   imageContainerMobile: {
     position: "relative",
@@ -339,7 +338,7 @@ export default function Home() {
           )}
         </div>
 
-        <WhatIsASurebetBanner />
+        {/* <WhatIsASurebetBanner /> */}
         {isMobile && <WinEveryWeekBanner />}
         <div
           ref={imageContainerRef}
