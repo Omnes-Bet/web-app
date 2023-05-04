@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, useRef } from "react";
+import { useContext, useState, useEffect, useRef, useCallback } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { Box, useMediaQuery, Button, CircularProgress } from "@mui/material";
@@ -11,6 +11,27 @@ import WhatIsASurebetBanner from "../components/WhatIsASurebetBanner/WhatIsASure
 import WinEveryWeekBanner from "../components/WinEveryWeekBanner/WinEveryWeekBanner";
 import SocialProof from "../components/SocialProof/SocialProof";
 import Logo from "../assets/logo-white.ico";
+
+const useInView = (options) => {
+  const [ref, setRef] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const observerCallback = useCallback((entries) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(observerCallback, options);
+    if (ref) observer.observe(ref);
+
+    return () => {
+      if (ref) observer.unobserve(ref);
+    };
+  }, [ref, observerCallback, options]);
+
+  return [setRef, isVisible];
+};
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -70,6 +91,54 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     gap: "20px",
   },
+  imageContainerDesktop: {
+    position: "relative",
+    overflow: "hidden",
+    height: "600px",
+    marginBottom: "5px",
+  },
+  imageContainerMobile: {
+    position: "relative",
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    marginTop: "5px",
+    transition: "transform 7s",
+    transform: "scale(1)",
+  },
+  visible: {
+    "& $image": {
+      transform: "scale(1.2)",
+    },
+    "& $imageTextDesktop, $imageTextMobile": {
+      opacity: 1,
+    },
+  },
+  imageTextDesktop: {
+    position: "absolute",
+    top: "50%",
+    left: "25%",
+    width: "40%",
+    transform: "translate(-50%, -50%)",
+    color: "white",
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+    opacity: 0,
+    transition: "opacity 1s",
+  },
+  imageTextMobile: {
+    position: "absolute",
+    top: "50%",
+    left: "25%",
+    width: "40%",
+    transform: "translate(-50%, -50%)",
+    color: "white",
+    fontSize: "1rem",
+    fontWeight: "bold",
+    opacity: 0,
+    transition: "opacity 1s",
+  },
 }));
 
 export default function Home() {
@@ -84,6 +153,10 @@ export default function Home() {
   const scrollFocus = () => {
     return oddsPediaTag.current;
   };
+
+  const [imageContainerRef, isImageVisible] = useInView({
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     setPageUrl(window?.location?.href);
@@ -219,11 +292,10 @@ export default function Home() {
               </>
             ) : (
               <>
-                <h1>Inscreva-se Para Uma Avaliação Gratuita de 1 Dia</h1>
-                <p>
-                  A Melhor Ferramenta de Apostas Esportivas Para Vitórias
-                  Consistentes
-                </p>
+                <h1 style={!isMobile ? { fontSize: "1.5rem" } : {}}>
+                  Inscreva-se Para Um Dia Grátis
+                </h1>
+                <p>A Melhor Ferramenta Para Vitórias Consistentes</p>
                 <Link href={"/signup"}>
                   <Button
                     variant="contained"
@@ -268,7 +340,29 @@ export default function Home() {
         </div>
 
         <WhatIsASurebetBanner />
-        <WinEveryWeekBanner />
+        {isMobile && <WinEveryWeekBanner />}
+        <div
+          ref={imageContainerRef}
+          className={`${
+            isMobile
+              ? classes.imageContainerDesktop
+              : classes.imageContainerMobile
+          } ${isImageVisible ? classes.visible : ""}`}
+        >
+          <img
+            src={"https://static.altenar.com/img/bg-01.jpg"}
+            alt="visa"
+            className={classes.image}
+          />
+          <div
+            className={
+              isMobile ? classes.imageTextDesktop : classes.imageTextMobile
+            }
+          >
+            Aprenda a Ser Um Profissional em Arbitragem e Tenha Ganhos
+            Consistentes
+          </div>
+        </div>
         <SocialProof />
 
         {!(user?.subsInfo?.status == "active") && (
