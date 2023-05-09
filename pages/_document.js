@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import { useEffect } from "react";
+import LogoBlack from "../assets/logo-white.png";
 
 export default function Document() {
   useEffect(() => {
@@ -20,6 +21,17 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+      <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                url: 'http://omnesbet.com',
+                logo: LogoBlack.src,
+              }),
+            }}
+          />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-11108087420"
