@@ -1,6 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import { useEffect } from "react";
-import LogoBlack from "../assets/logo-white.png";
 
 export default function Document() {
   useEffect(() => {
@@ -28,7 +27,7 @@ export default function Document() {
                 '@context': 'https://schema.org',
                 '@type': 'Organization',
                 url: 'http://omnesbet.com',
-                logo: LogoBlack.src,
+                logo: "https://omnesbet.com/_next/static/media/logo-white.b2c6d482.png",
               }),
             }}
           />
