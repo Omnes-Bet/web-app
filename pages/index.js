@@ -191,8 +191,7 @@ export default function Home() {
       setIsLoading(false);
       scrollFocus().firstChild.style.borderRadius = "20px";
       scrollFocus().firstChild.style.height = `${(parseInt(scrollFocus().firstChild.style.height) - 90)}px`;
-
-    }, 1000);
+    }, 3000);
   }, []);
 
   const pageSeoProps = {
