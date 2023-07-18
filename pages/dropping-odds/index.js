@@ -78,7 +78,8 @@ const DroppingOdds = () => {
     setTimeout(() => {
       setIsLoading(false);
       scrollFocus().firstChild.style.borderRadius = "20px";
-    }, 1000);
+      scrollFocus().firstChild.style.height = `${(parseInt(scrollFocus().firstChild.style.height) - 87)}px`;
+    }, 3000);
   }, []);
 
   return (
