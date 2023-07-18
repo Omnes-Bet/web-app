@@ -190,6 +190,8 @@ export default function Home() {
     setTimeout(() => {
       setIsLoading(false);
       scrollFocus().firstChild.style.borderRadius = "20px";
+      scrollFocus().firstChild.style.height = `${(parseInt(scrollFocus().firstChild.style.height) - 90)}px`;
+
     }, 1000);
   }, []);
 
