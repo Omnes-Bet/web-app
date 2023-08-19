@@ -11,6 +11,8 @@ import WhatIsASurebetBanner from "../components/WhatIsASurebetBanner/WhatIsASure
 import WinEveryWeekBanner from "../components/WinEveryWeekBanner/WinEveryWeekBanner";
 import SocialProof from "../components/SocialProof/SocialProof";
 import Logo from "../assets/logo-white.ico";
+import AltenarLower from "../assets/altenar-lower.jpeg";
+import Basket from "../assets/freestylebasket.jpg";
 
 const useInView = (options) => {
   const [ref, setRef] = useState(null);
@@ -42,11 +44,11 @@ const useStyles = makeStyles((theme) => ({
   },
   heroSectionDesktop: {
     position: "relative",
-    height: "600px",
+    // height: "600px",
   },
   heroSectionMobile: {
     position: "relative",
-    height: "400px",
+    // height: "250px",
   },
   videoParticles: {
     width: "100%",
@@ -94,14 +96,17 @@ const useStyles = makeStyles((theme) => ({
   imageContainerDesktop: {
     position: "relative",
     overflow: "hidden",
-    height: "600px",
+    height: "400px",
   },
   imageContainerMobile: {
     position: "relative",
     overflow: "hidden",
+    height: "300px",
   },
   image: {
     width: "100%",
+    height: "90vh",
+    objectFit: "cover",
     marginTop: "5px",
     transition: "transform 7s",
     transform: "scale(1)",
@@ -137,6 +142,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     opacity: 0,
     transition: "opacity 1s",
+  },
+  heroImage: {
+    width: "100%",
+    height: "90vh", // Set the height to 100vh (viewport height)
+    objectFit: "cover",
   },
 }));
 
@@ -216,7 +226,7 @@ export default function Home() {
             !isMobile ? classes.heroSectionMobile : classes.heroSectionDesktop
           }
         >
-          <video
+          {/* <video
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
             autoPlay
             loop
@@ -224,7 +234,12 @@ export default function Home() {
             playsInline
           >
             <source src="/particleEffect.mp4" type="video/mp4" />
-          </video>
+          </video> */}
+          <img
+            src={AltenarLower.src}
+            alt="visa"
+            className={classes.heroImage}
+          />
           <div
             className={
               !isMobile ? classes.heroMobileInfo : classes.heroDesktopInfo
@@ -350,7 +365,7 @@ export default function Home() {
           } ${isImageVisible ? classes.visible : ""}`}
         >
           <img
-            src={"https://static.altenar.com/img/bg-01.jpg"}
+            src={Basket.src}
             alt="visa"
             className={classes.image}
           />

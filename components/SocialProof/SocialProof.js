@@ -70,11 +70,11 @@ const useStyles = makeStyles((theme) => ({
 
 const proofs = [
   {
-    name: "Daniel Alves",
+    name: "Mike Boyle",
     message:
-      "Desempenho excepcional! Tenho utilizado o software por um ano e gerando uma média mensal de R$1.000.",
-    rate: "Incrível!",
-    photo: danielAlves,
+      "Ótimo produto! Tenho usado o software por 3 semanas e ganhando em média R$400 por semana.",
+    rate: "Excelente!",
+    photo: mikeBoyle,
   },
   {
     name: "Thiago Caetano",
@@ -83,13 +83,13 @@ const proofs = [
     rate: "Fantástico!",
     photo: thiago_caetano,
   },
-  // {
-  //   name: "Mike Boyle",
-  //   message:
-  //     "Ótimo produto! Tenho usado o software por 3 semanas e ganhando em média R$400 por semana.",
-  //   rate: "Excelente!",
-  //   photo: mikeBoyle,
-  // },
+  {
+    name: "Daniel Alves",
+    message:
+      "Desempenho excepcional! Tenho utilizado o software por um ano e gerando uma média mensal de R$1.000.",
+    rate: "Incrível!",
+    photo: danielAlves,
+  },
 ];
 
 const SocialProof = () => {
