@@ -1,3 +1,6 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+
+# Reference to the sitemap
+Sitemap: https://omnesbet.com/sitemap.xml
