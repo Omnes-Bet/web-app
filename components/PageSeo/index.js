@@ -10,14 +10,14 @@ const PageSeo = (seoProps) => {
     description:
       description ||
       "Melhor software para arbitragem de apostas esportivas. Ganhe dinheiro sem risco com o software Omnesbet.",
-    canonical: pageUrl || "https://omnesbet.com",
+    canonical: pageUrl || "",
     openGraph: {
       type: "website",
       title: title || "Omnesbet || Software de Arbitragem",
       description:
         description ||
         "Melhor software para arbitragem de apostas esportivas. Ganhe dinheiro sem risco com o software Omnesbet.",
-      url: pageUrl || "https://omnesbet.com",
+      url: pageUrl || "",
     },
     twitter: "https://twitter.com/Omnesbet",
   };
